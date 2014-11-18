@@ -1,0 +1,457 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3743D7F21A1BCA3B00BE6B15 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3743D7F11A1BCA3B00BE6B15 /* Images.xcassets */; };
+		3743D7F51A1BCA3B00BE6B15 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3743D7F31A1BCA3B00BE6B15 /* LaunchScreen.xib */; };
+		3743D8011A1BCA3B00BE6B15 /* TamagoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3743D8001A1BCA3B00BE6B15 /* TamagoTests.m */; };
+		3743D92E1A1BE4A700BE6B15 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3743D92A1A1BE4A700BE6B15 /* AppDelegate.m */; };
+		3743D92F1A1BE4A700BE6B15 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3743D92C1A1BE4A700BE6B15 /* ViewController2.m */; };
+		3743D9301A1BE4A700BE6B15 /* ViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3743D92D1A1BE4A700BE6B15 /* ViewController2.xib */; };
+		3743D9351A1BE4DA00BE6B15 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 3743D9331A1BE4DA00BE6B15 /* ViewController3.m */; };
+		3743D9361A1BE4DA00BE6B15 /* ViewController3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3743D9341A1BE4DA00BE6B15 /* ViewController3.xib */; };
+		3743D93B1A1BE4F500BE6B15 /* ViewControllerEnergia.m in Sources */ = {isa = PBXBuildFile; fileRef = 3743D9391A1BE4F500BE6B15 /* ViewControllerEnergia.m */; };
+		3743D93C1A1BE4F500BE6B15 /* ViewControllerEnergia.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3743D93A1A1BE4F500BE6B15 /* ViewControllerEnergia.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3743D7FB1A1BCA3B00BE6B15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3743D7D91A1BCA3B00BE6B15 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3743D7E01A1BCA3B00BE6B15;
+			remoteInfo = Tamago;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3743D7E11A1BCA3B00BE6B15 /* Tamago.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tamago.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3743D7F11A1BCA3B00BE6B15 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3743D7F41A1BCA3B00BE6B15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		3743D7FA1A1BCA3B00BE6B15 /* TamagoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TamagoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3743D7FF1A1BCA3B00BE6B15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3743D8001A1BCA3B00BE6B15 /* TamagoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TamagoTests.m; sourceTree = "<group>"; };
+		3743D9291A1BE4A700BE6B15 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3743D92A1A1BE4A700BE6B15 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3743D92B1A1BE4A700BE6B15 /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		3743D92C1A1BE4A700BE6B15 /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		3743D92D1A1BE4A700BE6B15 /* ViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController2.xib; sourceTree = "<group>"; };
+		3743D9321A1BE4DA00BE6B15 /* ViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
+		3743D9331A1BE4DA00BE6B15 /* ViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
+		3743D9341A1BE4DA00BE6B15 /* ViewController3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController3.xib; sourceTree = "<group>"; };
+		3743D9381A1BE4F500BE6B15 /* ViewControllerEnergia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerEnergia.h; sourceTree = "<group>"; };
+		3743D9391A1BE4F500BE6B15 /* ViewControllerEnergia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerEnergia.m; sourceTree = "<group>"; };
+		3743D93A1A1BE4F500BE6B15 /* ViewControllerEnergia.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerEnergia.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3743D7DE1A1BCA3B00BE6B15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3743D7F71A1BCA3B00BE6B15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3743D7D81A1BCA3B00BE6B15 = {
+			isa = PBXGroup;
+			children = (
+				3743D9271A1BE44600BE6B15 /* New Group */,
+				3743D7FD1A1BCA3B00BE6B15 /* TamagoTests */,
+				3743D7E21A1BCA3B00BE6B15 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3743D7E21A1BCA3B00BE6B15 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3743D7E11A1BCA3B00BE6B15 /* Tamago.app */,
+				3743D7FA1A1BCA3B00BE6B15 /* TamagoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3743D7E31A1BCA3B00BE6B15 /* Tamago */ = {
+			isa = PBXGroup;
+			children = (
+				3743D9281A1BE4A700BE6B15 /* Home */,
+				3743D9311A1BE4DA00BE6B15 /* Choose */,
+				3743D9371A1BE4F500BE6B15 /* Energia */,
+				3743D7F11A1BCA3B00BE6B15 /* Images.xcassets */,
+				3743D7F31A1BCA3B00BE6B15 /* LaunchScreen.xib */,
+			);
+			path = Tamago;
+			sourceTree = "<group>";
+		};
+		3743D7FD1A1BCA3B00BE6B15 /* TamagoTests */ = {
+			isa = PBXGroup;
+			children = (
+				3743D8001A1BCA3B00BE6B15 /* TamagoTests.m */,
+				3743D7FE1A1BCA3B00BE6B15 /* Supporting Files */,
+			);
+			path = TamagoTests;
+			sourceTree = "<group>";
+		};
+		3743D7FE1A1BCA3B00BE6B15 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3743D7FF1A1BCA3B00BE6B15 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3743D9271A1BE44600BE6B15 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				3743D7E31A1BCA3B00BE6B15 /* Tamago */,
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
+		3743D9281A1BE4A700BE6B15 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3743D9291A1BE4A700BE6B15 /* AppDelegate.h */,
+				3743D92A1A1BE4A700BE6B15 /* AppDelegate.m */,
+				3743D92B1A1BE4A700BE6B15 /* ViewController2.h */,
+				3743D92C1A1BE4A700BE6B15 /* ViewController2.m */,
+				3743D92D1A1BE4A700BE6B15 /* ViewController2.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3743D9311A1BE4DA00BE6B15 /* Choose */ = {
+			isa = PBXGroup;
+			children = (
+				3743D9321A1BE4DA00BE6B15 /* ViewController3.h */,
+				3743D9331A1BE4DA00BE6B15 /* ViewController3.m */,
+				3743D9341A1BE4DA00BE6B15 /* ViewController3.xib */,
+			);
+			path = Choose;
+			sourceTree = "<group>";
+		};
+		3743D9371A1BE4F500BE6B15 /* Energia */ = {
+			isa = PBXGroup;
+			children = (
+				3743D9381A1BE4F500BE6B15 /* ViewControllerEnergia.h */,
+				3743D9391A1BE4F500BE6B15 /* ViewControllerEnergia.m */,
+				3743D93A1A1BE4F500BE6B15 /* ViewControllerEnergia.xib */,
+			);
+			path = Energia;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3743D7E01A1BCA3B00BE6B15 /* Tamago */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3743D8041A1BCA3B00BE6B15 /* Build configuration list for PBXNativeTarget "Tamago" */;
+			buildPhases = (
+				3743D7DD1A1BCA3B00BE6B15 /* Sources */,
+				3743D7DE1A1BCA3B00BE6B15 /* Frameworks */,
+				3743D7DF1A1BCA3B00BE6B15 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tamago;
+			productName = Tamago;
+			productReference = 3743D7E11A1BCA3B00BE6B15 /* Tamago.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3743D7F91A1BCA3B00BE6B15 /* TamagoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3743D8071A1BCA3B00BE6B15 /* Build configuration list for PBXNativeTarget "TamagoTests" */;
+			buildPhases = (
+				3743D7F61A1BCA3B00BE6B15 /* Sources */,
+				3743D7F71A1BCA3B00BE6B15 /* Frameworks */,
+				3743D7F81A1BCA3B00BE6B15 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3743D7FC1A1BCA3B00BE6B15 /* PBXTargetDependency */,
+			);
+			name = TamagoTests;
+			productName = TamagoTests;
+			productReference = 3743D7FA1A1BCA3B00BE6B15 /* TamagoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3743D7D91A1BCA3B00BE6B15 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Nicolas;
+				TargetAttributes = {
+					3743D7E01A1BCA3B00BE6B15 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					3743D7F91A1BCA3B00BE6B15 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 3743D7E01A1BCA3B00BE6B15;
+					};
+				};
+			};
+			buildConfigurationList = 3743D7DC1A1BCA3B00BE6B15 /* Build configuration list for PBXProject "Tamago" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3743D7D81A1BCA3B00BE6B15;
+			productRefGroup = 3743D7E21A1BCA3B00BE6B15 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3743D7E01A1BCA3B00BE6B15 /* Tamago */,
+				3743D7F91A1BCA3B00BE6B15 /* TamagoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3743D7DF1A1BCA3B00BE6B15 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3743D93C1A1BE4F500BE6B15 /* ViewControllerEnergia.xib in Resources */,
+				3743D9301A1BE4A700BE6B15 /* ViewController2.xib in Resources */,
+				3743D7F51A1BCA3B00BE6B15 /* LaunchScreen.xib in Resources */,
+				3743D9361A1BE4DA00BE6B15 /* ViewController3.xib in Resources */,
+				3743D7F21A1BCA3B00BE6B15 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3743D7F81A1BCA3B00BE6B15 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3743D7DD1A1BCA3B00BE6B15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3743D93B1A1BE4F500BE6B15 /* ViewControllerEnergia.m in Sources */,
+				3743D92E1A1BE4A700BE6B15 /* AppDelegate.m in Sources */,
+				3743D92F1A1BE4A700BE6B15 /* ViewController2.m in Sources */,
+				3743D9351A1BE4DA00BE6B15 /* ViewController3.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3743D7F61A1BCA3B00BE6B15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3743D8011A1BCA3B00BE6B15 /* TamagoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3743D7FC1A1BCA3B00BE6B15 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3743D7E01A1BCA3B00BE6B15 /* Tamago */;
+			targetProxy = 3743D7FB1A1BCA3B00BE6B15 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3743D7F31A1BCA3B00BE6B15 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3743D7F41A1BCA3B00BE6B15 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3743D8021A1BCA3B00BE6B15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3743D8031A1BCA3B00BE6B15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3743D8051A1BCA3B00BE6B15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Tamago/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3743D8061A1BCA3B00BE6B15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Tamago/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3743D8081A1BCA3B00BE6B15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TamagoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tamago.app/Tamago";
+			};
+			name = Debug;
+		};
+		3743D8091A1BCA3B00BE6B15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TamagoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tamago.app/Tamago";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3743D7DC1A1BCA3B00BE6B15 /* Build configuration list for PBXProject "Tamago" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3743D8021A1BCA3B00BE6B15 /* Debug */,
+				3743D8031A1BCA3B00BE6B15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3743D8041A1BCA3B00BE6B15 /* Build configuration list for PBXNativeTarget "Tamago" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3743D8051A1BCA3B00BE6B15 /* Debug */,
+				3743D8061A1BCA3B00BE6B15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3743D8071A1BCA3B00BE6B15 /* Build configuration list for PBXNativeTarget "TamagoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3743D8081A1BCA3B00BE6B15 /* Debug */,
+				3743D8091A1BCA3B00BE6B15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3743D7D91A1BCA3B00BE6B15 /* Project object */;
+}
