@@ -15,7 +15,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *LabelWelcome;
 @property (strong, nonatomic) IBOutlet UILabel *labelPetName;
 @property (strong, nonatomic) IBOutlet UIButton *buttonToElej;
-
+@property (strong, nonatomic) NSString *val;
 
 @end
 
@@ -25,6 +25,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self setTitle:@"Home"];
+    
+    self.nick = [NSMutableArray arrayWithObjects:@"Pedro",@"Marce",nil]; //valoresArray
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,9 +43,66 @@
 
 - (IBAction)Page2:(id)sender
 {
-    ViewController3 *myView = [[ViewController3 alloc] initWithNibName:@"ViewController3" bundle:[NSBundle mainBundle] andPetNombre:self.TextFieldpetName.text];
-    [self.navigationController pushViewController:myView animated:YES];
+    self.val = self.TextFieldpetName.text; //asigno valor al parametro
+
+    if ((![self.nick containsObject:self.TextFieldpetName.text])&&([self validarLength:self.val]))
+    {
+        NSLog(@"Nick accepted");
+        [self.nick addObject:self.TextFieldpetName.text];//lo agrego al array
+        
+        ViewController3 *myView = [[ViewController3 alloc]
+                                   initWithNibName:@"ViewController3"
+                                   bundle:[NSBundle mainBundle]
+                                   andPetNombre:self.TextFieldpetName.text];
+        
+        [self.navigationController pushViewController:myView animated:YES];
+    }
+    
+    else 
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"LogIn"
+                                                  message:@"Already in use"
+                                                  delegate:nil
+                                                  cancelButtonTitle:@"Try Another1"
+                                                  otherButtonTitles:nil];
+        [alert show];
+    
+    }
+    [self.TextFieldpetName setText:@""];//empty textfield
 }
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.view endEditing:YES];
+    return YES;
+}
+        
+-(BOOL)validarLength:(NSString *) nombre
+{
+    BOOL val = NO;
+    NSUInteger length = [nombre length];
+        //valida longitud
+        if(length > 6)
+        {
+            val = YES;
+        }
+    return val;
+}
+
+// Valida los caracterres del TextField
+- (BOOL) textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if([string rangeOfCharacterFromSet:[NSCharacterSet letterCharacterSet]].length)
+    {
+        return YES;
+    }
+    else if(!string.length) //returnexception
+    {
+        return YES;
+    }
+    return NO;
+}
+
 
 /*
 #pragma mark - Navigation

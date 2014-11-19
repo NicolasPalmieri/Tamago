@@ -10,7 +10,8 @@
 
 @interface ViewControllerEnergia : UIViewController
 
--(instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andPetNombre: (NSString *) PetName;
+-(instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andPetNombre: (NSString *) PetName andPetPicture: (NSString *) imagen;
 @property (strong, nonatomic) NSString *variableName;
+@property (strong, nonatomic) NSString *variablePic;
 
 @end

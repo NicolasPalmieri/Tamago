@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController2 : UIViewController
+@interface ViewController2 : UIViewController <UITextFieldDelegate>
+
+@property (strong, nonatomic) NSMutableArray *nick;
 
 @end

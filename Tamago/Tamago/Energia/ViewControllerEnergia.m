@@ -18,12 +18,13 @@
 
 @implementation ViewControllerEnergia
 
--(instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andPetNombre:(NSString *)PetName
+-(instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andPetNombre:(NSString *)PetName andPetPicture:(NSString *) imagen;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if(self)
     {
-        self.variableName = PetName; //almaceno parametro en variable
+        self.variableName = PetName; //almaceno nombre en variable
+        self.variablePic = imagen; //almaceno imagen en variable
     }
     return self;
 }
@@ -32,7 +33,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+
+    [self setTitle:@"Energy"];
+    
     self.labelNameENergy.text = self.variableName; //asigno string de la variable=label
+    self.ImageViewProfileEnergia.image = [UIImage imageNamed: self.variablePic];
 }
 
 - (void)didReceiveMemoryWarning

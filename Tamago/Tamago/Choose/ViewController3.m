@@ -18,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *scrollbut2;
 @property (strong, nonatomic) IBOutlet UIButton *scrollbut3;
 @property (strong, nonatomic) IBOutlet UIButton *scrollbut4;
+@property (strong, nonatomic) NSString *image;
 
 @end
 
@@ -37,10 +38,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+
+    [self setTitle:@"Selection"];
     
     [self.ScrollGroupbox1 setContentSize:CGSizeMake(580, 150)]; //scrolleo
-     self.labelPetName.text = self.variableName; //asigno string de la variable
-     
+    
+    self.labelPetName.text = self.variableName; //asigno string de la variable
+    
+   
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,26 +58,30 @@
 - (IBAction)chooseCiervo:(id)sender
 {
     self.ImageViewPerfilPicture.image = [UIImage imageNamed:@"ciervo_comiendo_1"];
+    self.image =@"ciervo_comiendo_1";
 }
 
 - (IBAction)chooseGato:(id)sender
 {
     self.ImageViewPerfilPicture.image = [UIImage imageNamed: @"gato_comiendo_1"];
+    self.image =@"gato_comiendo_1";
 }
 
 - (IBAction)chooseJirafa:(id)sender
 {
     self.ImageViewPerfilPicture.image = [UIImage imageNamed: @"jirafa_comiendo_1"];
+    self.image =@"jirafa_comiendo_1";
 }
 
 - (IBAction)chooseLeon:(id)sender
 {
     self.ImageViewPerfilPicture.image = [UIImage imageNamed: @"leon_comiendo_1"];
+    self.image =@"leon_comiendo_1";
 }
 
 - (IBAction)buttonVIEW3:(id)sender
 {
-    ViewControllerEnergia *myView = [[ViewControllerEnergia alloc] initWithNibName:@"ViewControllerEnergia" bundle:[NSBundle mainBundle] andPetNombre:self.labelPetName.text];
+    ViewControllerEnergia *myView = [[ViewControllerEnergia alloc] initWithNibName:@"ViewControllerEnergia" bundle:[NSBundle mainBundle] andPetNombre:self.labelPetName.text andPetPicture:self.image];
     [self.navigationController pushViewController:myView animated:YES];
 }
 
