@@ -22,7 +22,7 @@
                     <color key="progressTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </progressView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gato_exhausto_2" translatesAutoresizingMaskIntoConstraints="NO" id="NDJ-Qx-N9Y">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="leon_comiendo_1" translatesAutoresizingMaskIntoConstraints="NO" id="NDJ-Qx-N9Y">
                     <rect key="frame" x="57" y="91" width="206" height="294"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="****" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpo-43-Aeo">
@@ -37,7 +37,7 @@
         </view>
     </objects>
     <resources>
-        <image name="gato_exhausto_2" width="319" height="373"/>
+        <image name="leon_comiendo_1" width="319" height="373"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

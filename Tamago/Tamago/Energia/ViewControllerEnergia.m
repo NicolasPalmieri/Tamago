@@ -37,8 +37,10 @@
     [self setTitle:@"Energy"];
     
     self.labelNameENergy.text = self.variableName; //asigno string de la variable=label
-    self.ImageViewProfileEnergia.image = [UIImage imageNamed: self.variablePic];
+    self.ImageViewProfileEnergia.image = [UIImage imageNamed: self.variablePic]; //parametro
+   
 }
+
 
 - (void)didReceiveMemoryWarning
 {

@@ -81,8 +81,20 @@
 
 - (IBAction)buttonVIEW3:(id)sender
 {
+    if(self.image) //validar selection
+    {
     ViewControllerEnergia *myView = [[ViewControllerEnergia alloc] initWithNibName:@"ViewControllerEnergia" bundle:[NSBundle mainBundle] andPetNombre:self.labelPetName.text andPetPicture:self.image];
     [self.navigationController pushViewController:myView animated:YES];
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Selection"
+                                                        message:@"Choose!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Go"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 
