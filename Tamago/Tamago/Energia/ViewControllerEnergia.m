@@ -18,13 +18,20 @@
 
 @implementation ViewControllerEnergia
 
+-(instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andPetNombre:(NSString *)PetName
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if(self)
+    {
+        self.labelNameENergy.text = PetName;
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    [self.labelNameENergy setText:@"CHUCK"];
-    
 }
 
 - (void)didReceiveMemoryWarning {

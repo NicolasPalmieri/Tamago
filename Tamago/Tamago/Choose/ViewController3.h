@@ -10,4 +10,6 @@
 
 @interface ViewController3 : UIViewController
 
+-(instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andPetNombre: (NSString *) PetName;
+
 @end

@@ -20,7 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    ViewController3* home = [[ViewController3 alloc] initWithNibName:@"ViewController3" bundle:nil];
+    ViewController2* home = [[ViewController2 alloc] initWithNibName:@"ViewController2" bundle:nil];
     UINavigationController* navControllerHome = [[UINavigationController alloc] initWithRootViewController:home];
     
     [self.window setRootViewController:navControllerHome];

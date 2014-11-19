@@ -10,6 +10,4 @@
 
 @interface ViewController2 : UIViewController
 
-@property (strong, nonatomic) IBOutlet UITextField *TextFieldpetName;
-
 @end

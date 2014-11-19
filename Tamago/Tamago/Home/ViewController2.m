@@ -7,9 +7,11 @@
 //
 
 #import "ViewController2.h"
+#import "ViewController3.h"
 
 @interface ViewController2 ()
 
+@property (strong, nonatomic) IBOutlet UITextField *TextFieldpetName;
 @property (strong, nonatomic) IBOutlet UILabel *LabelWelcome;
 @property (strong, nonatomic) IBOutlet UILabel *labelPetName;
 @property (strong, nonatomic) IBOutlet UIButton *buttonToElej;
@@ -19,7 +21,8 @@
 
 @implementation ViewController2
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
@@ -29,16 +32,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)Page2:(id)sender
-{
-    //self.TextFieldpet.text
-}
-
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self.view endEditing:YES];
 }
 
+- (IBAction)Page2:(id)sender
+{
+    ViewController3 *myView = [[ViewController3 alloc] initWithNibName:@"ViewController3" bundle:[NSBundle mainBundle] andPetNombre:self.TextFieldpetName.text];
+    [self.navigationController pushViewController:myView animated:YES];
+}
 
 /*
 #pragma mark - Navigation

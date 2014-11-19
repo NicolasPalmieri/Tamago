@@ -7,6 +7,7 @@
 //
 
 #import "ViewController3.h"
+#import "ViewControllerEnergia.h"
 
 @interface ViewController3 ()
 
@@ -22,11 +23,22 @@
 
 @implementation ViewController3
 
+-(instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andPetNombre:(NSString *)PetName
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if(self)
+    {
+        self.labelPetName.text = PetName;
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self.ScrollGroupbox1 setContentSize:CGSizeMake(600, 150)]; //scrolleo
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,33 +47,32 @@
     // Dispose of any resources that can be recreated.
 }
 
+//switchPics
 - (IBAction)chooseCiervo:(id)sender
 {
-    /*[self.labelPetName setText: @"DASDAS"]; dado el nombre*/
-    [self.labelPetName setText:@"CIERVO?"];
     self.ImageViewPerfilPicture.image = [UIImage imageNamed:@"ciervo_comiendo_1"];
-    //self.scrollbut1.imageView.image = [UIImage imageNamed: @"AS1"];
 }
 
-//switchPics
 - (IBAction)chooseGato:(id)sender
 {
-    [self.labelPetName setText:@"GATO?"];
     self.ImageViewPerfilPicture.image = [UIImage imageNamed: @"gato_comiendo_1"];
 }
 
 - (IBAction)chooseJirafa:(id)sender
 {
-    [self.labelPetName setText:@"JIRAFA?"];
     self.ImageViewPerfilPicture.image = [UIImage imageNamed: @"jirafa_comiendo_1"];
 }
 
 - (IBAction)chooseLeon:(id)sender
 {
-    [self.labelPetName setText:@"LEON"];
     self.ImageViewPerfilPicture.image = [UIImage imageNamed: @"leon_comiendo_1"];
 }
 
+- (IBAction)buttonVIEW3:(id)sender
+{
+    ViewControllerEnergia *myView = [[ViewControllerEnergia alloc] initWithNibName:@"ViewControllerEnergia" bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:myView animated:YES];
+}
 
 
 
