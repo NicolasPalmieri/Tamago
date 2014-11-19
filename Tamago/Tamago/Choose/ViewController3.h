@@ -11,5 +11,6 @@
 @interface ViewController3 : UIViewController
 
 -(instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andPetNombre: (NSString *) PetName;
+@property (strong, nonatomic) NSString *variableName;
 
 @end

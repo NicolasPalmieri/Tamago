@@ -28,7 +28,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if(self)
     {
-        self.labelPetName.text = PetName;
+        self.variableName = PetName; //almaceno parametro en variable
     }
     return self;
 }
@@ -38,7 +38,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [self.ScrollGroupbox1 setContentSize:CGSizeMake(600, 150)]; //scrolleo
+    [self.ScrollGroupbox1 setContentSize:CGSizeMake(580, 150)]; //scrolleo
+     self.labelPetName.text = self.variableName; //asigno string de la variable
+     
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,7 +72,7 @@
 
 - (IBAction)buttonVIEW3:(id)sender
 {
-    ViewControllerEnergia *myView = [[ViewControllerEnergia alloc] initWithNibName:@"ViewControllerEnergia" bundle:[NSBundle mainBundle]];
+    ViewControllerEnergia *myView = [[ViewControllerEnergia alloc] initWithNibName:@"ViewControllerEnergia" bundle:[NSBundle mainBundle] andPetNombre:self.labelPetName.text];
     [self.navigationController pushViewController:myView animated:YES];
 }
 

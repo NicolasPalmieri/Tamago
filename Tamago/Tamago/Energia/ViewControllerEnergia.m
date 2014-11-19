@@ -23,7 +23,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if(self)
     {
-        self.labelNameENergy.text = PetName;
+        self.variableName = PetName; //almaceno parametro en variable
     }
     return self;
 }
@@ -32,9 +32,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.labelNameENergy.text = self.variableName; //asigno string de la variable=label
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
