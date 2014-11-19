@@ -17,6 +17,7 @@
 		3743D9361A1BE4DA00BE6B15 /* ViewController3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3743D9341A1BE4DA00BE6B15 /* ViewController3.xib */; };
 		3743D93B1A1BE4F500BE6B15 /* ViewControllerEnergia.m in Sources */ = {isa = PBXBuildFile; fileRef = 3743D9391A1BE4F500BE6B15 /* ViewControllerEnergia.m */; };
 		3743D93C1A1BE4F500BE6B15 /* ViewControllerEnergia.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3743D93A1A1BE4F500BE6B15 /* ViewControllerEnergia.xib */; };
+		377F7CE81A1CBF340031F6A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 377F7CE71A1CBF340031F6A2 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		3743D9381A1BE4F500BE6B15 /* ViewControllerEnergia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerEnergia.h; sourceTree = "<group>"; };
 		3743D9391A1BE4F500BE6B15 /* ViewControllerEnergia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerEnergia.m; sourceTree = "<group>"; };
 		3743D93A1A1BE4F500BE6B15 /* ViewControllerEnergia.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerEnergia.xib; sourceTree = "<group>"; };
+		377F7CE71A1CBF340031F6A2 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Tamago/main.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				3743D9371A1BE4F500BE6B15 /* Energia */,
 				3743D7F11A1BCA3B00BE6B15 /* Images.xcassets */,
 				3743D7F31A1BCA3B00BE6B15 /* LaunchScreen.xib */,
+				377F7CE71A1CBF340031F6A2 /* main.m */,
 			);
 			path = Tamago;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				377F7CE81A1CBF340031F6A2 /* main.m in Sources */,
 				3743D93B1A1BE4F500BE6B15 /* ViewControllerEnergia.m in Sources */,
 				3743D92E1A1BE4A700BE6B15 /* AppDelegate.m in Sources */,
 				3743D92F1A1BE4A700BE6B15 /* ViewController2.m in Sources */,
@@ -442,6 +446,7 @@
 				3743D8061A1BCA3B00BE6B15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3743D8071A1BCA3B00BE6B15 /* Build configuration list for PBXNativeTarget "TamagoTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +455,7 @@
 				3743D8091A1BCA3B00BE6B15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

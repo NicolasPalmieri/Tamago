@@ -38,6 +38,7 @@
 - (IBAction)chooseCiervo:(id)sender
 {
     /*[self.labelPetName setText: @"DASDAS"]; dado el nombre*/
+    [self.labelPetName setText:@"CIERVO?"];
     self.ImageViewPerfilPicture.image = [UIImage imageNamed:@"ciervo_comiendo_1"];
     //self.scrollbut1.imageView.image = [UIImage imageNamed: @"AS1"];
 }
@@ -45,16 +46,19 @@
 //switchPics
 - (IBAction)chooseGato:(id)sender
 {
+    [self.labelPetName setText:@"GATO?"];
     self.ImageViewPerfilPicture.image = [UIImage imageNamed: @"gato_comiendo_1"];
 }
 
 - (IBAction)chooseJirafa:(id)sender
 {
+    [self.labelPetName setText:@"JIRAFA?"];
     self.ImageViewPerfilPicture.image = [UIImage imageNamed: @"jirafa_comiendo_1"];
 }
 
 - (IBAction)chooseLeon:(id)sender
 {
+    [self.labelPetName setText:@"LEON"];
     self.ImageViewPerfilPicture.image = [UIImage imageNamed: @"leon_comiendo_1"];
 }
 
