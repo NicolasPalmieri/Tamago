@@ -9,6 +9,7 @@
 #import "ViewControllerEnergia.h"
 #import "ComidaViewController.h"
 
+
 @interface ViewControllerEnergia ()
 
 #pragma mark - Propiedades
@@ -24,7 +25,6 @@
 @implementation ViewControllerEnergia
 
 #pragma mark - Instancias
-
 -(instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andPetNombre:(NSString *)PetName andPetPicture:(NSString *) imagen;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -34,6 +34,11 @@
         self.variablePic = imagen; //almaceno imagen en variable
     }
     return self;
+}
+
+-(void)DidSelectedMeal:(Meal *)imag
+{
+    self.varPicturePop = imag.imagen;
 }
 
 #pragma mark - Load
@@ -49,7 +54,6 @@
    
 }
 
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -59,15 +63,17 @@
 #pragma mark - Will
 - (void) viewWillAppear:(BOOL)animated
 {
-    self DidSelectedMeal:<#(Meal *)#>
+     self.imgBringFood.image = [UIImage imageNamed:self.varPicturePop];
 }
 
 #pragma mark - Botones
 - (IBAction)btnFeed:(id)sender
 {
     ComidaViewController *myView = [[ComidaViewController alloc] initWithNibName:@"ComidaViewController" bundle:[NSBundle mainBundle]];
+    [myView setDelegate:self];
     [self.navigationController pushViewController:myView animated:YES];
 }
+
 
 /*
 #pragma mark - Navigation

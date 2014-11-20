@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FoodProtocol.h"
 
 @interface ComidaViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 #pragma mark - Propiedades
 @property(strong, nonatomic) NSMutableArray *arreglo;
+
+#pragma mark - Delegate/Prot
+@property (nonatomic, weak) id <FoodProtocol> delegate;
 
 @end

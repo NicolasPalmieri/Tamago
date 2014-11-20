@@ -95,8 +95,8 @@
 #pragma mark - DELEGATE//metodos
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ViewControllerEnergia *myView = [[ViewControllerEnergia alloc] initWithNibName:@"ViewControllerEnergia" bundle:[NSBundle mainBundle] andPetPicture:((Meal *)self.arreglo[indexPath.row]).imagen];
-    [self.navigationController popToViewController:myView animated:YES];
+    [self.delegate DidSelectedMeal:self.arreglo[indexPath.row]];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

@@ -14,7 +14,7 @@
 
 @required
 
-- (void)DidSelectedMeal: (Meal *) food;
+- (void)DidSelectedMeal: (Meal *) imag;
 
 @end
 
