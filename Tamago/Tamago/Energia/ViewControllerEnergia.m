@@ -7,6 +7,7 @@
 //
 
 #import "ViewControllerEnergia.h"
+#import "ComidaViewController.h"
 
 @interface ViewControllerEnergia ()
 
@@ -16,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UIProgressView *progressEnergia;
 @property (strong, nonatomic) IBOutlet UILabel *labelNameENergy;
 @property (strong, nonatomic) IBOutlet UIButton *btnFeed;
+@property (strong, nonatomic) IBOutlet UIImageView *imgBringFood;
 
 @end
 
@@ -54,9 +56,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Will
+- (void) viewWillAppear:(BOOL)animated
+{
+    self DidSelectedMeal:<#(Meal *)#>
+}
+
 #pragma mark - Botones
 - (IBAction)btnFeed:(id)sender
 {
+    ComidaViewController *myView = [[ComidaViewController alloc] initWithNibName:@"ComidaViewController" bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:myView animated:YES];
 }
 
 /*

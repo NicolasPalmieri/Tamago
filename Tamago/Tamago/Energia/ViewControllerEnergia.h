@@ -7,11 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FoodProtocol.h"
 
-@interface ViewControllerEnergia : UIViewController
+@interface ViewControllerEnergia : UIViewController <FoodProtocol>
 
--(instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andPetNombre: (NSString *) PetName andPetPicture: (NSString *) imagen;
+#pragma mark - Intancias
+-(instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andPetNombre: (NSString *)PetName andPetPicture: (NSString *)imagen;
+-(instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andPetPicture: (NSString *)imagen;
+
+#pragma mark - Propiedades
 @property (strong, nonatomic) NSString *variableName;
 @property (strong, nonatomic) NSString *variablePic;
+
+#pragma mark - Delegate/Prot
+@property (nonatomic, weak) id <FoodProtocol> delegate;
 
 @end

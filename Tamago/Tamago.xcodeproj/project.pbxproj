@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		371B4A601A1E5AEC007C0252 /* ComidaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371B4A5E1A1E5AEC007C0252 /* ComidaViewController.m */; };
+		371B4A611A1E5AEC007C0252 /* ComidaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 371B4A5F1A1E5AEC007C0252 /* ComidaViewController.xib */; };
+		371B4A651A1E5B95007C0252 /* Meal.m in Sources */ = {isa = PBXBuildFile; fileRef = 371B4A641A1E5B95007C0252 /* Meal.m */; };
+		371B4A6A1A1E6D21007C0252 /* CellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 371B4A681A1E6D21007C0252 /* CellTableViewCell.m */; };
+		371B4A6B1A1E6D21007C0252 /* CellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 371B4A691A1E6D21007C0252 /* CellTableViewCell.xib */; };
 		3743D7F21A1BCA3B00BE6B15 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3743D7F11A1BCA3B00BE6B15 /* Images.xcassets */; };
 		3743D7F51A1BCA3B00BE6B15 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3743D7F31A1BCA3B00BE6B15 /* LaunchScreen.xib */; };
 		3743D8011A1BCA3B00BE6B15 /* TamagoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3743D8001A1BCA3B00BE6B15 /* TamagoTests.m */; };
@@ -31,6 +36,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		371B4A5D1A1E5AEC007C0252 /* ComidaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComidaViewController.h; path = Clase4/ComidaViewController.h; sourceTree = "<group>"; };
+		371B4A5E1A1E5AEC007C0252 /* ComidaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComidaViewController.m; path = Clase4/ComidaViewController.m; sourceTree = "<group>"; };
+		371B4A5F1A1E5AEC007C0252 /* ComidaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ComidaViewController.xib; path = Clase4/ComidaViewController.xib; sourceTree = "<group>"; };
+		371B4A631A1E5B95007C0252 /* Meal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Meal.h; path = "Comida Class/Meal.h"; sourceTree = "<group>"; };
+		371B4A641A1E5B95007C0252 /* Meal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Meal.m; path = "Comida Class/Meal.m"; sourceTree = "<group>"; };
+		371B4A671A1E6D21007C0252 /* CellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellTableViewCell.h; path = "Cell Class/CellTableViewCell.h"; sourceTree = "<group>"; };
+		371B4A681A1E6D21007C0252 /* CellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellTableViewCell.m; path = "Cell Class/CellTableViewCell.m"; sourceTree = "<group>"; };
+		371B4A691A1E6D21007C0252 /* CellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CellTableViewCell.xib; path = "Cell Class/CellTableViewCell.xib"; sourceTree = "<group>"; };
+		371B4A6C1A1E79AE007C0252 /* FoodProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FoodProtocol.h; path = Clase4/FoodProtocol.h; sourceTree = "<group>"; };
 		3743D7E11A1BCA3B00BE6B15 /* Tamago.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tamago.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3743D7F11A1BCA3B00BE6B15 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3743D7F41A1BCA3B00BE6B15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -69,6 +83,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		371B4A5C1A1E5A8F007C0252 /* Comida */ = {
+			isa = PBXGroup;
+			children = (
+				371B4A6C1A1E79AE007C0252 /* FoodProtocol.h */,
+				371B4A5D1A1E5AEC007C0252 /* ComidaViewController.h */,
+				371B4A5E1A1E5AEC007C0252 /* ComidaViewController.m */,
+				371B4A5F1A1E5AEC007C0252 /* ComidaViewController.xib */,
+				371B4A621A1E5B6C007C0252 /* Clase Meal */,
+				371B4A661A1E6CBA007C0252 /* Clase Cell */,
+			);
+			name = Comida;
+			sourceTree = "<group>";
+		};
+		371B4A621A1E5B6C007C0252 /* Clase Meal */ = {
+			isa = PBXGroup;
+			children = (
+				371B4A631A1E5B95007C0252 /* Meal.h */,
+				371B4A641A1E5B95007C0252 /* Meal.m */,
+			);
+			name = "Clase Meal";
+			sourceTree = "<group>";
+		};
+		371B4A661A1E6CBA007C0252 /* Clase Cell */ = {
+			isa = PBXGroup;
+			children = (
+				371B4A671A1E6D21007C0252 /* CellTableViewCell.h */,
+				371B4A681A1E6D21007C0252 /* CellTableViewCell.m */,
+				371B4A691A1E6D21007C0252 /* CellTableViewCell.xib */,
+			);
+			name = "Clase Cell";
+			sourceTree = "<group>";
+		};
 		3743D7D81A1BCA3B00BE6B15 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +139,7 @@
 				3743D9281A1BE4A700BE6B15 /* Home */,
 				3743D9311A1BE4DA00BE6B15 /* Choose */,
 				3743D9371A1BE4F500BE6B15 /* Energia */,
+				371B4A5C1A1E5A8F007C0252 /* Comida */,
 				3743D7F11A1BCA3B00BE6B15 /* Images.xcassets */,
 				3743D7F31A1BCA3B00BE6B15 /* LaunchScreen.xib */,
 				377F7CE71A1CBF340031F6A2 /* main.m */,
@@ -242,6 +289,8 @@
 				3743D7F51A1BCA3B00BE6B15 /* LaunchScreen.xib in Resources */,
 				3743D9361A1BE4DA00BE6B15 /* ViewController3.xib in Resources */,
 				3743D7F21A1BCA3B00BE6B15 /* Images.xcassets in Resources */,
+				371B4A6B1A1E6D21007C0252 /* CellTableViewCell.xib in Resources */,
+				371B4A611A1E5AEC007C0252 /* ComidaViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,10 +309,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				377F7CE81A1CBF340031F6A2 /* main.m in Sources */,
+				371B4A6A1A1E6D21007C0252 /* CellTableViewCell.m in Sources */,
 				3743D93B1A1BE4F500BE6B15 /* ViewControllerEnergia.m in Sources */,
 				3743D92E1A1BE4A700BE6B15 /* AppDelegate.m in Sources */,
 				3743D92F1A1BE4A700BE6B15 /* ViewController2.m in Sources */,
+				371B4A651A1E5B95007C0252 /* Meal.m in Sources */,
 				3743D9351A1BE4DA00BE6B15 /* ViewController3.m in Sources */,
+				371B4A601A1E5AEC007C0252 /* ComidaViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
