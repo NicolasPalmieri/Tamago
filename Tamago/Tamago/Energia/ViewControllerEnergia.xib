@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewControllerEnergia">
             <connections>
                 <outlet property="ImageViewProfileEnergia" destination="NDJ-Qx-N9Y" id="iQv-kf-pSA"/>
+                <outlet property="btnFeed" destination="BqQ-L8-EFn" id="T0j-ix-tZk"/>
                 <outlet property="labelNameENergy" destination="gpo-43-Aeo" id="vWR-zJ-Mtj"/>
                 <outlet property="progressEnergia" destination="HSb-zu-2kJ" id="tJR-At-eBx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -31,6 +32,15 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BqQ-L8-EFn">
+                    <rect key="frame" x="243" y="53" width="46" height="30"/>
+                    <state key="normal" title="Feed">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnFeed:" destination="-1" eventType="touchUpInside" id="xor-oH-GL1"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <point key="canvasLocation" x="774" y="161"/>

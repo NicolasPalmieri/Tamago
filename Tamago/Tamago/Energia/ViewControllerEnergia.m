@@ -10,13 +10,18 @@
 
 @interface ViewControllerEnergia ()
 
+#pragma mark - Propiedades
+
 @property (strong, nonatomic) IBOutlet UIImageView *ImageViewProfileEnergia;
 @property (strong, nonatomic) IBOutlet UIProgressView *progressEnergia;
 @property (strong, nonatomic) IBOutlet UILabel *labelNameENergy;
+@property (strong, nonatomic) IBOutlet UIButton *btnFeed;
 
 @end
 
 @implementation ViewControllerEnergia
+
+#pragma mark - Instancias
 
 -(instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andPetNombre:(NSString *)PetName andPetPicture:(NSString *) imagen;
 {
@@ -29,6 +34,7 @@
     return self;
 }
 
+#pragma mark - Load
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -46,6 +52,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Botones
+- (IBAction)btnFeed:(id)sender
+{
 }
 
 /*

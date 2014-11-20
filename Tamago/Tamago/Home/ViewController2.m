@@ -11,6 +11,7 @@
 
 @interface ViewController2 ()
 
+#pragma mark - Propiedades
 @property (strong, nonatomic) IBOutlet UITextField *TextFieldpetName;
 @property (strong, nonatomic) IBOutlet UILabel *LabelWelcome;
 @property (strong, nonatomic) IBOutlet UILabel *labelPetName;
@@ -21,6 +22,7 @@
 
 @implementation ViewController2
 
+#pragma mark - Load
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -36,11 +38,13 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+#pragma mark - Self
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self.view endEditing:YES];
 }
 
+#pragma mark - Botones
 - (IBAction)Page2:(id)sender
 {
     self.val = self.TextFieldpetName.text; //asigno valor al parametro
@@ -71,12 +75,9 @@
     [self.TextFieldpetName setText:@""];//empty textfield
 }
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [self.view endEditing:YES];
-    return YES;
-}
-        
+
+#pragma mark - Validaciones
+
 -(BOOL)validarLength:(NSString *) nombre
 {
     BOOL val = NO;
@@ -90,7 +91,7 @@
 }
 
 // Valida los caracterres del TextField
-- (BOOL) textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     if([string rangeOfCharacterFromSet:[NSCharacterSet letterCharacterSet]].length)
     {
@@ -101,6 +102,12 @@
         return YES;
     }
     return NO;
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.view endEditing:YES];
+    return YES;
 }
 
 

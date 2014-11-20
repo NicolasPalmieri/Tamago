@@ -11,6 +11,7 @@
 
 @interface ViewController3 ()
 
+#pragma mark - Propiedades
 @property (strong, nonatomic) IBOutlet UILabel *labelPetName;
 @property (strong, nonatomic) IBOutlet UIImageView *ImageViewPerfilPicture;
 @property (strong, nonatomic) IBOutlet UIScrollView *ScrollGroupbox1;
@@ -24,6 +25,7 @@
 
 @implementation ViewController3
 
+#pragma mark - Instancia
 -(instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andPetNombre:(NSString *)PetName
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -34,6 +36,7 @@
     return self;
 }
 
+#pragma mark - Load
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -54,6 +57,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Botones
 //switchPics
 - (IBAction)chooseCiervo:(id)sender
 {
