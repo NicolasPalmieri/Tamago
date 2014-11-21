@@ -12,5 +12,6 @@
 
 -(instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andPetNombre: (NSString *) PetName;
 @property (strong, nonatomic) NSString *variableName;
+@property (assign, nonatomic) int var;
 
 @end

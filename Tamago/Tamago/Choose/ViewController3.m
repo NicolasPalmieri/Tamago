@@ -63,31 +63,35 @@
 {
     self.ImageViewPerfilPicture.image = [UIImage imageNamed:@"ciervo_comiendo_1"];
     self.image =@"ciervo_comiendo_1";
+    self.var = 1;
 }
 
 - (IBAction)chooseGato:(id)sender
 {
     self.ImageViewPerfilPicture.image = [UIImage imageNamed: @"gato_comiendo_1"];
     self.image =@"gato_comiendo_1";
+    self.var = 2;
 }
 
 - (IBAction)chooseJirafa:(id)sender
 {
     self.ImageViewPerfilPicture.image = [UIImage imageNamed: @"jirafa_comiendo_1"];
     self.image =@"jirafa_comiendo_1";
+    self.var = 3;
 }
 
 - (IBAction)chooseLeon:(id)sender
 {
     self.ImageViewPerfilPicture.image = [UIImage imageNamed: @"leon_comiendo_1"];
     self.image =@"leon_comiendo_1";
+    self.var = 4;
 }
 
 - (IBAction)buttonVIEW3:(id)sender
 {
     if(self.image) //validar selection
     {
-    ViewControllerEnergia *myView = [[ViewControllerEnergia alloc] initWithNibName:@"ViewControllerEnergia" bundle:[NSBundle mainBundle] andPetNombre:self.labelPetName.text andPetPicture:self.image];
+    ViewControllerEnergia *myView = [[ViewControllerEnergia alloc] initWithNibName:@"ViewControllerEnergia" bundle:[NSBundle mainBundle] andPetNombre:self.labelPetName.text andPetPicture:self.image andVarArray:self.var];
     [self.navigationController pushViewController:myView animated:YES];
     }
     else
@@ -100,9 +104,6 @@
         [alert show];
     }
 }
-
-
-
 
 
 

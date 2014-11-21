@@ -23,6 +23,7 @@
 		3743D93B1A1BE4F500BE6B15 /* ViewControllerEnergia.m in Sources */ = {isa = PBXBuildFile; fileRef = 3743D9391A1BE4F500BE6B15 /* ViewControllerEnergia.m */; };
 		3743D93C1A1BE4F500BE6B15 /* ViewControllerEnergia.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3743D93A1A1BE4F500BE6B15 /* ViewControllerEnergia.xib */; };
 		377F7CE81A1CBF340031F6A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 377F7CE71A1CBF340031F6A2 /* main.m */; };
+		378576251A1FCC7600A14A10 /* ArrayConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 378576241A1FCC7600A14A10 /* ArrayConst.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		3743D9391A1BE4F500BE6B15 /* ViewControllerEnergia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerEnergia.m; sourceTree = "<group>"; };
 		3743D93A1A1BE4F500BE6B15 /* ViewControllerEnergia.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerEnergia.xib; sourceTree = "<group>"; };
 		377F7CE71A1CBF340031F6A2 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Tamago/main.m; sourceTree = SOURCE_ROOT; };
+		378576231A1FCC7600A14A10 /* ArrayConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArrayConst.h; path = Tamago/ArrayConst/ArrayConst.h; sourceTree = SOURCE_ROOT; };
+		378576241A1FCC7600A14A10 /* ArrayConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArrayConst.m; path = Tamago/ArrayConst/ArrayConst.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,8 +203,18 @@
 				3743D9381A1BE4F500BE6B15 /* ViewControllerEnergia.h */,
 				3743D9391A1BE4F500BE6B15 /* ViewControllerEnergia.m */,
 				3743D93A1A1BE4F500BE6B15 /* ViewControllerEnergia.xib */,
+				378576221A1FCC0700A14A10 /* New Group */,
 			);
 			path = Energia;
+			sourceTree = "<group>";
+		};
+		378576221A1FCC0700A14A10 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				378576231A1FCC7600A14A10 /* ArrayConst.h */,
+				378576241A1FCC7600A14A10 /* ArrayConst.m */,
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +327,7 @@
 				3743D92E1A1BE4A700BE6B15 /* AppDelegate.m in Sources */,
 				3743D92F1A1BE4A700BE6B15 /* ViewController2.m in Sources */,
 				371B4A651A1E5B95007C0252 /* Meal.m in Sources */,
+				378576251A1FCC7600A14A10 /* ArrayConst.m in Sources */,
 				3743D9351A1BE4DA00BE6B15 /* ViewController3.m in Sources */,
 				371B4A601A1E5AEC007C0252 /* ComidaViewController.m in Sources */,
 			);
