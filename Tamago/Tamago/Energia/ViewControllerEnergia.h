@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "FoodProtocol.h"
+#import <MessageUI/MessageUI.h>
 
-@interface ViewControllerEnergia : UIViewController <FoodProtocol>
+@interface ViewControllerEnergia : UIViewController <FoodProtocol, MFMailComposeViewControllerDelegate>
 
 #pragma mark - Intancias
 -(instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andPetNombre: (NSString *)PetName andPetPicture: (NSString *)imagen andVarArray: (int) var;
