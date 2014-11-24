@@ -200,21 +200,21 @@
 		3743D9371A1BE4F500BE6B15 /* Energia */ = {
 			isa = PBXGroup;
 			children = (
+				378576221A1FCC0700A14A10 /* ArrayConstructor//gif */,
 				3743D9381A1BE4F500BE6B15 /* ViewControllerEnergia.h */,
 				3743D9391A1BE4F500BE6B15 /* ViewControllerEnergia.m */,
 				3743D93A1A1BE4F500BE6B15 /* ViewControllerEnergia.xib */,
-				378576221A1FCC0700A14A10 /* New Group */,
 			);
 			path = Energia;
 			sourceTree = "<group>";
 		};
-		378576221A1FCC0700A14A10 /* New Group */ = {
+		378576221A1FCC0700A14A10 /* ArrayConstructor//gif */ = {
 			isa = PBXGroup;
 			children = (
 				378576231A1FCC7600A14A10 /* ArrayConst.h */,
 				378576241A1FCC7600A14A10 /* ArrayConst.m */,
 			);
-			name = "New Group";
+			name = "ArrayConstructor//gif";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
