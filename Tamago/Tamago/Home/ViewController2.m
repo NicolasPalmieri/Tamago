@@ -8,6 +8,7 @@
 
 #import "ViewController2.h"
 #import "ViewController3.h"
+#import "Pet.h"
 
 @interface ViewController2 ()
 
@@ -47,17 +48,17 @@
 #pragma mark - Botones
 - (IBAction)Page2:(id)sender
 {
-    self.val = self.TextFieldpetName.text; //asigno valor al parametro
+    [[Pet sharedInstance] setName:self.TextFieldpetName.text]; //asigno nombre
 
-    if ((![self.nick containsObject:self.TextFieldpetName.text])&&([self validarLength:self.val]))
+    if ((![self.nick containsObject:[Pet sharedInstance].name])&&([self validarLength:[Pet sharedInstance].name]))
     {
         NSLog(@"Nick accepted");
-        [self.nick addObject:self.TextFieldpetName.text];//lo agrego al array
+        [self.nick addObject:[Pet sharedInstance]];//lo agrego al array
         
         ViewController3 *myView = [[ViewController3 alloc]
                                    initWithNibName:@"ViewController3"
                                    bundle:[NSBundle mainBundle]
-                                   andPetNombre:self.TextFieldpetName.text];
+                                   andPetNombre:[Pet sharedInstance].name];
         
         [self.navigationController pushViewController:myView animated:YES];
     }

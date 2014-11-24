@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self FIllArray];
+    [self llenarTablaArray];
     
     //registro cell
     [self.tableViewFood registerNib:[UINib nibWithNibName:@"CellTableViewCell" bundle:[NSBundle mainBundle]]
@@ -47,7 +47,7 @@
 }
 
 #pragma mark - Metodos
-- (void)FIllArray
+- (void)llenarTablaArray
 {
     Meal *comida0 = [[Meal alloc] initWithDESC:@"Pastel" andImagen:@"comida_0"];
     Meal *comida1 = [[Meal alloc] initWithDESC:@"Cake" andImagen:@"comida_1"];

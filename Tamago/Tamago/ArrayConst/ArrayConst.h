@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Pet.h"
 
 @interface ArrayConst : NSObject
 
-@property (strong, nonatomic) NSArray *array;
+@property (strong, nonatomic) NSArray *arrayEat;
+@property (strong, nonatomic) NSArray *arrayTrain;
 
--(void)FILLarray:(int) var;
+-(void)FILLarray:(Pet*) mascota;
 
 @end

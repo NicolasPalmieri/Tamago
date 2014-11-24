@@ -10,25 +10,30 @@
 
 @implementation ArrayConst
 
--(void)FILLarray:(int) var
+-(void)FILLarray:(Pet*) mascota
 {
-    NSArray *auxiliar;
-    switch(var)
+    switch(mascota.type)
         {
-            case 1:
-                auxiliar = @[@"ciervo_comiendo_1",@"ciervo_comiendo_2",@"ciervo_comiendo_3",@"ciervo_comiendo_4"];
+            case TYPE_CIERVO:
+                self.arrayEat = @[@"ciervo_comiendo_1",@"ciervo_comiendo_2",@"ciervo_comiendo_3",@"ciervo_comiendo_4"];
+                self.arrayTrain = @[@"ciervo_ejercicio_1",@"ciervo_ejercicio_2",@"ciervo_ejercicio_3",@"ciervo_ejercicio_4",@"ciervo_ejercicio_5"];
                 break;
-            case 2:
-                auxiliar = @[@"gato_comiendo_1",@"gato_comiendo_2",@"gato_comiendo_3",@"gato_comiendo_4"];
+            case TYPE_GATO:
+                self.arrayEat = @[@"gato_comiendo_1",@"gato_comiendo_2",@"gato_comiendo_3",@"gato_comiendo_4"];
+                self.arrayTrain = @[@"gato_ejercicio_1",@"gato_ejercicio_2",@"gato_ejercicio_3",@"gato_ejercicio_4",@"gato_ejercicio_5"];
                 break;
-            case 3:
-                auxiliar = @[@"jirafa_comiendo_1",@"jirafa_comiendo_2",@"jirafa_comiendo_3",@"jirafa_comiendo_4"];
+            case TYPE_JIRAFA:
+                self.arrayEat = @[@"jirafa_comiendo_1",@"jirafa_comiendo_2",@"jirafa_comiendo_3",@"jirafa_comiendo_4"];
+                self.arrayTrain = @[@"jirafa_ejercicio_1",@"jirafa_ejercicio_2",@"jirafa_ejercicio_3",@"jirafa_ejercicio_4",@"jirafa_ejercicio_5"];
                 break;
-            case 4:
-                auxiliar = @[@"leon_comiendo_1",@"leon_comiendo_2",@"leon_comiendo_3",@"leon_comiendo_4"];
+            case TYPE_LEON:
+                self.arrayEat = @[@"leon_comiendo_1",@"leon_comiendo_2",@"leon_comiendo_3",@"leon_comiendo_4"];
+                self.arrayTrain = @[@"leon_ejercicio_1",@"leon_ejercicio_2",@"leon_ejercicio_3",@"leon_ejercicio_4",@"leon_ejercicio_5"];
                 break;
         }
-    self.array = [NSArray arrayWithArray:auxiliar];
+    self.arrayEat = [NSArray arrayWithArray:self.arrayEat];
+    self.arrayTrain = [NSArray arrayWithArray:self.arrayTrain];
 }
+
 
 @end

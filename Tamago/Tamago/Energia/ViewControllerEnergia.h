@@ -16,10 +16,7 @@
 -(instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andPetNombre: (NSString *)PetName andPetPicture: (NSString *)imagen andVarArray: (int) var;
 
 #pragma mark - Propiedades
-@property (strong, nonatomic) NSString *variableName;
-@property (strong, nonatomic) NSString *variablePic;
 @property (strong, nonatomic) NSString *varPicturePop;
-@property (assign, nonatomic) int varArray;
 @property (assign, nonatomic) CGPoint posOriginalImagen;
 @property (assign, nonatomic) CGRect posViewJirafa;
 

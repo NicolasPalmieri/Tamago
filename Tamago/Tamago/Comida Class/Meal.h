@@ -16,4 +16,6 @@
 
 -(instancetype) initWithDESC: (NSString *) desc andImagen: (NSString *) imagen;
 
++(instancetype) sharedInstance;
+
 @end
