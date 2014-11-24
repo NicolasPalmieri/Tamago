@@ -198,12 +198,12 @@
     correo.mailComposeDelegate = self;
     
     //Subject
-    NSString *mailBody = [[NSString alloc] initWithFormat:MAIL_BODY_MSG, self.labelNameENergy.text];
-    [correo setSubject:mailBody];
+    NSString *mailSubj = [[NSString alloc] initWithFormat:@"Que app flipante"];
+    [correo setSubject:mailSubj];
     
     //BodyText
-    NSString *emailBody = [[NSString alloc] initWithFormat:@"Que app flipante"];
-    [correo setMessageBody:emailBody isHTML:NO];
+    NSString *mailBody = [[NSString alloc] initWithFormat:MAIL_BODY_MSG, self.labelNameENergy.text];
+    [correo setMessageBody:mailBody isHTML:NO];
 
     //Interface
     [self presentViewController:correo animated:YES completion:nil];
