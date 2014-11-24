@@ -9,11 +9,12 @@
 #import "ViewControllerEnergia.h"
 #import "ComidaViewController.h"
 #import "ArrayConst.h"
+#import "Pet.h"
+#import "Meal.h"
 
 @interface ViewControllerEnergia ()
 
 #pragma mark - Propiedades
-
 @property (strong, nonatomic) IBOutlet UIImageView *ImageViewProfileEnergia;
 @property (strong, nonatomic) IBOutlet UIProgressView *progressEnergia;
 @property (strong, nonatomic) IBOutlet UILabel *labelNameENergy;
@@ -21,6 +22,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imgBringFood;
 @property (strong, nonatomic) IBOutlet UIView *ViewRango;
 @property (strong, nonatomic) ArrayConst *gif;
+@property (strong, nonatomic) ArrayConst *train;
+@property (weak, nonatomic) NSTimer *timer;
 
 @end
 
@@ -32,16 +35,16 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if(self)
     {
-        self.variableName = PetName; //almaceno nombre en variable
-        self.variablePic = imagen; //almaceno imagen en variable
-        self.varArray = var;
+        [[Pet sharedInstance] setName: PetName]; //almaceno nombre
+        [[Pet sharedInstance] setImagen: imagen]; //almaceno imagen
+        [[Pet sharedInstance] setType: var]; //almaceno tipo
     }
     return self;
 }
 
 -(void)DidSelectedMeal:(Meal *)imag
 {
-    self.varPicturePop = imag.imagen;
+    [Meal sharedInstance].imagen = imag.imagen;
 }
 
 #pragma mark - Load
@@ -50,9 +53,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 
+    //Titulo UIViewEnergia
     [self setTitle:@"Energy"];
     
-    self.posViewJirafa = [self.ViewRango frame]; //asigno posicion original del view, para editar jirafa luego
+    //pos original del view, para editar jirafa luego
+    self.posViewJirafa = [self.ViewRango frame];
     
     /*if([self.ImageViewProfileEnergia //:@"%jirafa%"])
     {
@@ -61,21 +66,30 @@
         [self.ViewRango setAlpha:1];
     }*/
     
-    self.labelNameENergy.text = self.variableName; //asigno string de la variable=label
-    self.ImageViewProfileEnergia.image = [UIImage imageNamed: self.variablePic]; //parametro
+    //asigno nombre e imagen de mascota
+    [self.labelNameENergy setText: [Pet sharedInstance].name];
+    self.ImageViewProfileEnergia.image = [UIImage imageNamed: [Pet sharedInstance].imagen];
     
-    [self.ViewRango setAlpha:0]; //hidden magico del rango/boca
+    //hidden magico del rango/boca
+    [self.ViewRango setAlpha:0];
     
-    self.posOriginalImagen = CGPointMake(self.imgBringFood.frame.origin.x, self.imgBringFood.frame.origin.y); //posicion orig
-                                                                                                            //responde al change_comida
+    //posicion orig que responde al change_comida
+    self.posOriginalImagen = CGPointMake(self.imgBringFood.frame.origin.x, self.imgBringFood.frame.origin.y);
     
+    //fill gifEat-Train
     self.gif = [[ArrayConst alloc] init];
-    [self.gif FILLarray:self.varArray];
+    [self.gif FILLarray:[Pet sharedInstance]];
+    
+    //fill2
+    self.train = [[ArrayConst alloc] init];
+    [self.train FILLarray:[Pet sharedInstance]];
+    
+
 }
 
 - (void) viewWillAppear:(BOOL)animated
 {
-    self.imgBringFood.image = [UIImage imageNamed:self.varPicturePop];
+    self.imgBringFood.image = [UIImage imageNamed:[Meal sharedInstance].imagen];
 }
 
 - (void)didReceiveMemoryWarning
@@ -92,7 +106,13 @@
 
 - (void) viewDidDisappear:(BOOL)animated
 {
-    [self.imgBringFood setHidden:NO]; //en caso de REalimentar
+   [self.imgBringFood setHidden:NO]; //en caso de REalimentar
+    
+   if(self.timer && [self.timer isValid])
+   {
+       [self.timer invalidate];
+        self.timer = nil;
+   }
 }
 
 #pragma mark - Botones
@@ -101,6 +121,12 @@
     ComidaViewController *myView = [[ComidaViewController alloc] initWithNibName:@"ComidaViewController" bundle:[NSBundle mainBundle]];
     [myView setDelegate:self];
     [self.navigationController pushViewController:myView animated:YES];
+}
+
+- (IBAction)btnTrain:(id)sender
+{
+    [self trainGif];
+    //[self entrenarPet];
 }
 
 #pragma mark - Animaciones
@@ -125,8 +151,8 @@
                                             {
                                                 NSLog(@"Fed!");
                                                 [self.imgBringFood setHidden:YES];
-                                                [self EatGift]; //itero_gif
-                                                [self ProgressLIVE]; //creceProgressHP
+                                                [self eatGift]; //itero_gif
+                                                [self progressLive]; //creceProgressHP
                                             }
                                         else
                                             {
@@ -137,12 +163,12 @@
     }
 }
 
--(void) EatGift
+-(void) eatGift
 {
-    NSArray *imagenesArray = @[[UIImage imageNamed:self.gif.array[0]],
-                             [UIImage imageNamed:self.gif.array[1]],
-                             [UIImage imageNamed:self.gif.array[2]],
-                             [UIImage imageNamed:self.gif.array[3]]];
+    NSArray *imagenesArray = @[[UIImage imageNamed:self.gif.arrayEat[0]],
+                             [UIImage imageNamed:self.gif.arrayEat[1]],
+                             [UIImage imageNamed:self.gif.arrayEat[2]],
+                             [UIImage imageNamed:self.gif.arrayEat[3]]];
     
     [self.ImageViewProfileEnergia setAnimationImages:imagenesArray];
     [self.ImageViewProfileEnergia setAnimationDuration:0.7f];
@@ -150,12 +176,39 @@
     [self.ImageViewProfileEnergia startAnimating];
 }
 
--(void) ProgressLIVE
+-(void) trainGif
+{
+    NSArray *imagenesArrayAux = @[[UIImage imageNamed:self.train.arrayTrain[0]],
+                               [UIImage imageNamed:self.train.arrayTrain[1]],
+                               [UIImage imageNamed:self.train.arrayTrain[2]],
+                               [UIImage imageNamed:self.train.arrayTrain[3]]];
+    
+    [self.ImageViewProfileEnergia setAnimationImages:imagenesArrayAux];
+    [self.ImageViewProfileEnergia setAnimationDuration:0.5f];
+    [self.ImageViewProfileEnergia setAnimationRepeatCount:4.0f];
+    [self.ImageViewProfileEnergia startAnimating];
+}
+
+-(void) progressLive
 {
     [UIView animateWithDuration:1.4f animations:^(void)
                                                   {
                                                       [self.progressEnergia setProgress:1 animated:YES];
                                                   }];
+}
+
+-(void) entrenarPet
+{
+     self.timer = [NSTimer scheduledTimerWithTimeInterval: 4.0f
+                                                   target: self
+                                                 selector: @selector(entrenarPet)
+                                                 userInfo: nil
+                                                  repeats: YES];
+    
+     [UIView animateWithDuration:1.4f animations:^(void)
+     {
+         [self.progressEnergia setProgress:0 animated:YES];
+     }];
 }
 
 

@@ -24,6 +24,7 @@
 		3743D93C1A1BE4F500BE6B15 /* ViewControllerEnergia.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3743D93A1A1BE4F500BE6B15 /* ViewControllerEnergia.xib */; };
 		377F7CE81A1CBF340031F6A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 377F7CE71A1CBF340031F6A2 /* main.m */; };
 		378576251A1FCC7600A14A10 /* ArrayConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 378576241A1FCC7600A14A10 /* ArrayConst.m */; };
+		37EFCB731A237D760075FAC4 /* Pet.m in Sources */ = {isa = PBXBuildFile; fileRef = 37EFCB721A237D760075FAC4 /* Pet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		377F7CE71A1CBF340031F6A2 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Tamago/main.m; sourceTree = SOURCE_ROOT; };
 		378576231A1FCC7600A14A10 /* ArrayConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArrayConst.h; path = Tamago/ArrayConst/ArrayConst.h; sourceTree = SOURCE_ROOT; };
 		378576241A1FCC7600A14A10 /* ArrayConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArrayConst.m; path = Tamago/ArrayConst/ArrayConst.m; sourceTree = SOURCE_ROOT; };
+		37EFCB711A237D760075FAC4 /* Pet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pet.h; path = "Tamago/Pet Class/Pet.h"; sourceTree = SOURCE_ROOT; };
+		37EFCB721A237D760075FAC4 /* Pet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pet.m; path = "Tamago/Pet Class/Pet.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +193,7 @@
 		3743D9311A1BE4DA00BE6B15 /* Choose */ = {
 			isa = PBXGroup;
 			children = (
+				37EFCB701A237AF10075FAC4 /* Pet */,
 				3743D9321A1BE4DA00BE6B15 /* ViewController3.h */,
 				3743D9331A1BE4DA00BE6B15 /* ViewController3.m */,
 				3743D9341A1BE4DA00BE6B15 /* ViewController3.xib */,
@@ -203,18 +207,27 @@
 				3743D9381A1BE4F500BE6B15 /* ViewControllerEnergia.h */,
 				3743D9391A1BE4F500BE6B15 /* ViewControllerEnergia.m */,
 				3743D93A1A1BE4F500BE6B15 /* ViewControllerEnergia.xib */,
-				378576221A1FCC0700A14A10 /* New Group */,
+				378576221A1FCC0700A14A10 /* ArrayConst */,
 			);
 			path = Energia;
 			sourceTree = "<group>";
 		};
-		378576221A1FCC0700A14A10 /* New Group */ = {
+		378576221A1FCC0700A14A10 /* ArrayConst */ = {
 			isa = PBXGroup;
 			children = (
 				378576231A1FCC7600A14A10 /* ArrayConst.h */,
 				378576241A1FCC7600A14A10 /* ArrayConst.m */,
 			);
-			name = "New Group";
+			name = ArrayConst;
+			sourceTree = "<group>";
+		};
+		37EFCB701A237AF10075FAC4 /* Pet */ = {
+			isa = PBXGroup;
+			children = (
+				37EFCB711A237D760075FAC4 /* Pet.h */,
+				37EFCB721A237D760075FAC4 /* Pet.m */,
+			);
+			name = Pet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +343,7 @@
 				378576251A1FCC7600A14A10 /* ArrayConst.m in Sources */,
 				3743D9351A1BE4DA00BE6B15 /* ViewController3.m in Sources */,
 				371B4A601A1E5AEC007C0252 /* ComidaViewController.m in Sources */,
+				37EFCB731A237D760075FAC4 /* Pet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

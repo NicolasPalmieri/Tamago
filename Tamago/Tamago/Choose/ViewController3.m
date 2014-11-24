@@ -8,6 +8,7 @@
 
 #import "ViewController3.h"
 #import "ViewControllerEnergia.h"
+#import "Pet.h"
 
 @interface ViewController3 ()
 
@@ -15,11 +16,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *labelPetName;
 @property (strong, nonatomic) IBOutlet UIImageView *ImageViewPerfilPicture;
 @property (strong, nonatomic) IBOutlet UIScrollView *ScrollGroupbox1;
-@property (strong, nonatomic) IBOutlet UIButton *scrollbut1;
-@property (strong, nonatomic) IBOutlet UIButton *scrollbut2;
-@property (strong, nonatomic) IBOutlet UIButton *scrollbut3;
-@property (strong, nonatomic) IBOutlet UIButton *scrollbut4;
-@property (strong, nonatomic) NSString *image;
+@property (assign, nonatomic) mascotaTypes petType;
+
 
 @end
 
@@ -31,7 +29,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if(self)
     {
-        self.variableName = PetName; //almaceno parametro en variable
+        [[Pet sharedInstance] setName:PetName]; //almaceno parametro en variable
     }
     return self;
 }
@@ -46,9 +44,8 @@
     
     [self.ScrollGroupbox1 setContentSize:CGSizeMake(580, 150)]; //scrolleo
     
-    self.labelPetName.text = self.variableName; //asigno string de la variable
-    
-   
+    //asigno string de la variable
+    self.labelPetName.text = [Pet sharedInstance].name;
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,39 +56,41 @@
 
 #pragma mark - Botones
 //switchPics
-- (IBAction)chooseCiervo:(id)sender
+
+- (IBAction)choosePetType:(UIButton* )sender
 {
-    self.ImageViewPerfilPicture.image = [UIImage imageNamed:@"ciervo_comiendo_1"];
-    self.image =@"ciervo_comiendo_1";
-    self.var = 1;
+    self.petType = sender.tag;
+    switch (self.petType)
+    {
+        case TYPE_CIERVO:
+            self.ImageViewPerfilPicture.image = [UIImage imageNamed:@"ciervo_comiendo_1"];
+            [[Pet sharedInstance] setImagen:@"ciervo_comiendo_1"];
+            [[Pet sharedInstance] setType:TYPE_CIERVO];
+            break;
+        case TYPE_GATO:
+            self.ImageViewPerfilPicture.image = [UIImage imageNamed: @"gato_comiendo_1"];
+            [[Pet sharedInstance] setImagen:@"gato_comiendo_1"];
+            [[Pet sharedInstance] setType:TYPE_GATO];
+            break;
+        case TYPE_JIRAFA:
+            self.ImageViewPerfilPicture.image = [UIImage imageNamed: @"jirafa_comiendo_1"];
+            [[Pet sharedInstance] setImagen:@"jirafa_comiendo_1"];
+            [[Pet sharedInstance] setType:TYPE_JIRAFA];
+            break;
+        case TYPE_LEON:
+            self.ImageViewPerfilPicture.image = [UIImage imageNamed: @"leon_comiendo_1"];
+            [[Pet sharedInstance] setImagen:@"leon_comiendo_1"];
+            [[Pet sharedInstance] setType:TYPE_LEON];
+            break;
+    }
 }
 
-- (IBAction)chooseGato:(id)sender
-{
-    self.ImageViewPerfilPicture.image = [UIImage imageNamed: @"gato_comiendo_1"];
-    self.image =@"gato_comiendo_1";
-    self.var = 2;
-}
-
-- (IBAction)chooseJirafa:(id)sender
-{
-    self.ImageViewPerfilPicture.image = [UIImage imageNamed: @"jirafa_comiendo_1"];
-    self.image =@"jirafa_comiendo_1";
-    self.var = 3;
-}
-
-- (IBAction)chooseLeon:(id)sender
-{
-    self.ImageViewPerfilPicture.image = [UIImage imageNamed: @"leon_comiendo_1"];
-    self.image =@"leon_comiendo_1";
-    self.var = 4;
-}
 
 - (IBAction)buttonVIEW3:(id)sender
 {
-    if(self.image) //validar selection
+    if([Pet sharedInstance].imagen) //validar selection
     {
-    ViewControllerEnergia *myView = [[ViewControllerEnergia alloc] initWithNibName:@"ViewControllerEnergia" bundle:[NSBundle mainBundle] andPetNombre:self.labelPetName.text andPetPicture:self.image andVarArray:self.var];
+        ViewControllerEnergia *myView = [[ViewControllerEnergia alloc] initWithNibName:@"ViewControllerEnergia" bundle:[NSBundle mainBundle] andPetNombre:self.labelPetName.text andPetPicture:[Pet sharedInstance].imagen andVarArray:[Pet sharedInstance].type];
     [self.navigationController pushViewController:myView animated:YES];
     }
     else
