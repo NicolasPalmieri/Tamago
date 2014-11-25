@@ -11,8 +11,14 @@
 @interface Pet ()
 
 @property (nonatomic) int energy;
+@property (nonatomic) int level;
+@property (nonatomic) int exp;
 
 @end
+
+
+NSString *const MSG_EMPTY =@"No_food";
+NSString *const MSG_EXHAUST =@"Alobestia";
 
 
 @implementation Pet
@@ -29,7 +35,7 @@
 
 -(void) timeToEat
 {
-    self.energy = 100;
+    self.energy +=50;
     [self.delegate moreProgress:self.energy];
 }
 
@@ -38,8 +44,22 @@
     if(self.energy > 0)
     {
         self.energy -= 10;
+        self.exp += 15;
+        NSLog(@"-10 +15exp");
+        if(self.energy <=0)
+        {
+            [[NSNotificationCenter defaultCenter] postNotificationName:MSG_EXHAUST object:nil];
+            NSLog(@"observer");
+        }
     }
     [self.delegate lessProgress:self.energy];
 }
+
+-(BOOL) valEjercitar
+{
+    return self.energy > 0;
+}
+
+
 
 @end

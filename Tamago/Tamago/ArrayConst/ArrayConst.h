@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) NSArray *arrayEat;
 @property (strong, nonatomic) NSArray *arrayTrain;
+@property (strong, nonatomic) NSArray *arrayExhaust;
 
 -(void)FILLarray:(Pet*) mascota;
 

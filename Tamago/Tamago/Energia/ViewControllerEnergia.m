@@ -21,12 +21,15 @@
 @property (strong, nonatomic) IBOutlet UIProgressView *progressEnergia;
 @property (strong, nonatomic) IBOutlet UILabel *labelNameENergy;
 @property (strong, nonatomic) IBOutlet UIButton *btnFeed;
+@property (strong, nonatomic) IBOutlet UIButton *btnTrain;
 @property (strong, nonatomic) IBOutlet UIImageView *imgBringFood;
 @property (strong, nonatomic) IBOutlet UIView *ViewRango;
-@property (strong, nonatomic) ArrayConst *gif;
 @property (strong, nonatomic) MFMailComposeViewController *correo;
+@property (strong, nonatomic) ArrayConst *gif;
 @property (strong, nonatomic) ArrayConst *train;
+@property (strong, nonatomic) ArrayConst *cansado;
 @property (weak, nonatomic) NSTimer *timer;
+@property (assign, nonatomic) int flag;
 
 @end
 
@@ -98,30 +101,32 @@
     UIBarButtonItem *mail =[[UIBarButtonItem alloc] initWithCustomView:buttonREF];
     self.navigationItem.rightBarButtonItem = mail; // >
 
-    //fill gifEat-Train
+    //fillEat
     self.gif = [[ArrayConst alloc] init];
     [self.gif FILLarray:[Pet sharedInstance]];
     
-    //fill2
+    //fillTrain
     self.train = [[ArrayConst alloc] init];
     [self.train FILLarray:[Pet sharedInstance]];
+    
+    //fillExhaust
+    self.cansado = [[ArrayConst alloc] init];
+    [self.cansado FILLarray:[Pet sharedInstance]];
     
     //delegate
     [Pet sharedInstance].delegate = self;
     
     //progressCustom?
     [self.progressEnergia setTransform:CGAffineTransformMakeScale(1.0, 7.0)];
-    
-    UIImage *track = [[UIImage imageNamed:@"trackImage"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 1, 0, 1)];
-    [self.progressEnergia setTrackImage:track]; //nofunca :C
-    
-    UIImage *prog = [[UIImage imageNamed:@"progressImage"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 1, 0, 1)];
-    [self.progressEnergia setTrackImage:prog]; //nofunca :C
 }
 
 - (void) viewWillAppear:(BOOL)animated
 {
     self.imgBringFood.image = [UIImage imageNamed:[Meal sharedInstance].imagen];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(exhaustGif)
+                                                 name:MSG_EXHAUST
+                                               object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -134,6 +139,8 @@
 - (void) viewWillDisappear:(BOOL)animated
 {
     [self.imgBringFood setCenter:self.posOriginalImagen]; //asigno pos original
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self]; //release observer
 }
 
 - (void) viewDidDisappear:(BOOL)animated
@@ -153,6 +160,33 @@
     ComidaViewController *myView = [[ComidaViewController alloc] initWithNibName:@"ComidaViewController" bundle:[NSBundle mainBundle]];
     [myView setDelegate:self];
     [self.navigationController pushViewController:myView animated:YES];
+}
+
+- (IBAction)btnTrain:(id)sender
+{
+    if(self.flag==0)
+    {
+    [self trainGif];
+    [self.btnTrain setTitle:@"STOP!" forState:UIControlStateNormal];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval: 1.0
+                                                  target: [Pet sharedInstance]
+                                                selector: @selector(timeToExercise)
+                                                userInfo: nil
+                                                 repeats: YES];
+    self.flag=1;
+    }
+    else
+    {
+        
+        self.flag=0;
+    }
+    
+}
+
+-(void) callMeth
+{
+    [[Pet sharedInstance] timeToExercise];
+
 }
 
 - (void)goback
@@ -194,27 +228,6 @@
     }
 }
 
--(void) callMeth
-{
-    [[Pet sharedInstance] timeToExercise];
-}
-
-- (IBAction)btnTrain:(id)sender
-{
-    //[self trainGif];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval: 1.0
-                                                  target: self
-                                                selector: @selector(callMeth)
-                                                userInfo: nil
-                                                 repeats: YES];
-    
-    self.timer = [NSTimer scheduledTimerWithTimeInterval: 1.0
-                                                  target: self
-                                                selector: @selector(trainGif)
-                                                userInfo: nil
-                                                 repeats: YES];
-    
-}
 
 -(void) eatGift
 {
@@ -224,7 +237,7 @@
                              [UIImage imageNamed:self.gif.arrayEat[3]]];
     
     [self.ImageViewProfileEnergia setAnimationImages:imagenesArray];
-    [self.ImageViewProfileEnergia setAnimationDuration:0.7f];
+    [self.ImageViewProfileEnergia setAnimationDuration:0.5f];
     [self.ImageViewProfileEnergia setAnimationRepeatCount:2.0f];
     [self.ImageViewProfileEnergia startAnimating];
 }
@@ -234,11 +247,29 @@
     NSArray *imagenesArrayAux = @[[UIImage imageNamed:self.train.arrayTrain[0]],
                                [UIImage imageNamed:self.train.arrayTrain[1]],
                                [UIImage imageNamed:self.train.arrayTrain[2]],
-                               [UIImage imageNamed:self.train.arrayTrain[3]]];
+                               [UIImage imageNamed:self.train.arrayTrain[3]],
+                            [UIImage imageNamed:self.train.arrayTrain[4]]];
     
     [self.ImageViewProfileEnergia setAnimationImages:imagenesArrayAux];
     [self.ImageViewProfileEnergia setAnimationDuration:0.5f];
-    [self.ImageViewProfileEnergia setAnimationRepeatCount:4.0f];
+    [self.ImageViewProfileEnergia setAnimationRepeatCount:20.0f];
+    [self.ImageViewProfileEnergia startAnimating];
+}
+
+-(void) exhaustGif
+{
+    [self.timer invalidate];
+    [self.ImageViewProfileEnergia stopAnimating];
+    NSLog(@"Animacion");
+    NSArray *imagenesArrayAux2 = @[[UIImage imageNamed:self.cansado.arrayExhaust[0]],
+                                   [UIImage imageNamed:self.cansado.arrayExhaust[1]],
+                                   [UIImage imageNamed:self.cansado.arrayExhaust[2]],
+                                   [UIImage imageNamed:self.cansado.arrayExhaust[3]]];
+    
+    [self.ImageViewProfileEnergia setAnimationImages:imagenesArrayAux2];
+    [self.ImageViewProfileEnergia setAnimationDuration:0.7f];
+    [self.ImageViewProfileEnergia setAnimationRepeatCount:1.0f];
+    [self.ImageViewProfileEnergia setImage:imagenesArrayAux2.lastObject];
     [self.ImageViewProfileEnergia startAnimating];
 }
 
@@ -247,32 +278,31 @@
 {
     float valor = value;
     valor = valor/100;
-    [UIView animateWithDuration:1.4f animations:^(void)
+    [UIView animateWithDuration:0.5f animations:^(void)
      {
          [self.progressEnergia setProgress:valor animated:YES];
          if (self.progressEnergia.progress ==1)
          {
              NSLog(@"Full!");
              [self.timer invalidate];
-             //self.trainbutton enabled??
-             //self.feedbutton disabled??
+             //[self.btnFeed setEnabled:NO];
+             //self.trainbutton enabled?? highlight??
          }
      }];
 }
 
 -(void) lessProgress:(int) value
 {
-    [UIView animateWithDuration:1.4f animations:^(void)
+    [UIView animateWithDuration:0.5f animations:^(void)
     {
         self.progressEnergia.progress -=0.1;
-        if (self.progressEnergia.progress ==0)
+        if (self.progressEnergia.progress <=0.1)
         {
             NSLog(@"Empty!");
             [self.timer invalidate];
-            //self.trainbutton disabled?
-            //self.feedbutton enabled??
+            //[self.btnTrain setEnabled:NO];
+            //[self.btnFeed setEnabled:YES];
         }
-
     }];
 }
 
@@ -355,20 +385,6 @@
             break;
     }
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
--(void) entrenarPet
-{
-     self.timer = [NSTimer scheduledTimerWithTimeInterval: 4.0f
-                                                   target: self
-                                                 selector: @selector(entrenarPet)
-                                                 userInfo: nil
-                                                  repeats: YES];
-    
-     [UIView animateWithDuration:1.4f animations:^(void)
-     {
-         [self.progressEnergia setProgress:0 animated:YES];
-     }];
 }
 
 

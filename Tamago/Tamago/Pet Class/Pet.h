@@ -17,6 +17,11 @@
 
 @end
 
+
+extern NSString *const MSG_EMPTY;
+extern NSString *const MSG_EXHAUST;
+
+
 @interface Pet : NSObject
 
 typedef enum
@@ -38,5 +43,6 @@ typedef enum
 
 -(void) timeToEat;
 -(void) timeToExercise;
+-(BOOL) valEjercitar;
 
 @end
