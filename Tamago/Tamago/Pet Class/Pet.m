@@ -8,6 +8,13 @@
 
 #import "Pet.h"
 
+@interface Pet ()
+
+@property (nonatomic) int energy;
+
+@end
+
+
 @implementation Pet
 
 + (instancetype) sharedInstance
@@ -20,6 +27,19 @@
     return _sharedObject;
 }
 
+-(void) timeToEat
+{
+    self.energy = 100;
+    [self.delegate moreProgress:self.energy];
+}
 
+-(void) timeToExercise
+{
+    if(self.energy > 0)
+    {
+        self.energy -= 10;
+    }
+    [self.delegate lessProgress:self.energy];
+}
 
 @end

@@ -9,7 +9,6 @@
 #import "ViewControllerEnergia.h"
 #import "ComidaViewController.h"
 #import "ArrayConst.h"
-#import "Pet.h"
 #import "Meal.h"
 
 @interface ViewControllerEnergia ()
@@ -80,9 +79,6 @@
     //posicion orig que responde al change_comida
     self.posOriginalImagen = CGPointMake(self.imgBringFood.frame.origin.x, self.imgBringFood.frame.origin.y);
     
-    //fill gifEat-Train
-    self.gif = [[ArrayConst alloc] init];
-    
     //customBackBtn _color _< button
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *backBtnImage = [UIImage imageNamed:@"back"];
@@ -102,11 +98,25 @@
     UIBarButtonItem *mail =[[UIBarButtonItem alloc] initWithCustomView:buttonREF];
     self.navigationItem.rightBarButtonItem = mail; // >
 
+    //fill gifEat-Train
+    self.gif = [[ArrayConst alloc] init];
     [self.gif FILLarray:[Pet sharedInstance]];
     
     //fill2
     self.train = [[ArrayConst alloc] init];
     [self.train FILLarray:[Pet sharedInstance]];
+    
+    //delegate
+    [Pet sharedInstance].delegate = self;
+    
+    //progressCustom?
+    [self.progressEnergia setTransform:CGAffineTransformMakeScale(1.0, 7.0)];
+    
+    UIImage *track = [[UIImage imageNamed:@"trackImage"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 1, 0, 1)];
+    [self.progressEnergia setTrackImage:track]; //nofunca :C
+    
+    UIImage *prog = [[UIImage imageNamed:@"progressImage"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 1, 0, 1)];
+    [self.progressEnergia setTrackImage:prog]; //nofunca :C
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -150,12 +160,6 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)btnTrain:(id)sender
-{
-    [self trainGif];
-    //[self entrenarPet];
-}
-
 #pragma mark - Animaciones
 - (IBAction)viewTouchScreen:(id)sender
 {
@@ -179,7 +183,7 @@
                                                 NSLog(@"Fed!");
                                                 [self.imgBringFood setHidden:YES];
                                                 [self eatGift]; //itero_gif
-                                                [self progressLive]; //creceProgressHP
+                                                [[Pet sharedInstance] timeToEat]; //creceProgressHP
                                             }
                                         else
                                             {
@@ -188,6 +192,28 @@
                                             }
                                     }];
     }
+}
+
+-(void) callMeth
+{
+    [[Pet sharedInstance] timeToExercise];
+}
+
+- (IBAction)btnTrain:(id)sender
+{
+    //[self trainGif];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval: 1.0
+                                                  target: self
+                                                selector: @selector(callMeth)
+                                                userInfo: nil
+                                                 repeats: YES];
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval: 1.0
+                                                  target: self
+                                                selector: @selector(trainGif)
+                                                userInfo: nil
+                                                 repeats: YES];
+    
 }
 
 -(void) eatGift
@@ -216,12 +242,38 @@
     [self.ImageViewProfileEnergia startAnimating];
 }
 
--(void) progressLive
+
+-(void) moreProgress:(int) value
+{
+    float valor = value;
+    valor = valor/100;
+    [UIView animateWithDuration:1.4f animations:^(void)
+     {
+         [self.progressEnergia setProgress:valor animated:YES];
+         if (self.progressEnergia.progress ==1)
+         {
+             NSLog(@"Full!");
+             [self.timer invalidate];
+             //self.trainbutton enabled??
+             //self.feedbutton disabled??
+         }
+     }];
+}
+
+-(void) lessProgress:(int) value
 {
     [UIView animateWithDuration:1.4f animations:^(void)
-                                                  {
-                                                      [self.progressEnergia setProgress:1 animated:YES];
-                                                  }];
+    {
+        self.progressEnergia.progress -=0.1;
+        if (self.progressEnergia.progress ==0)
+        {
+            NSLog(@"Empty!");
+            [self.timer invalidate];
+            //self.trainbutton disabled?
+            //self.feedbutton enabled??
+        }
+
+    }];
 }
 
 #pragma mark - Mail

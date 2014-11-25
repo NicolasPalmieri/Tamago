@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol Petdelegate <NSObject>
+
+@required
+
+-(void) moreProgress:(int) value;
+-(void) lessProgress:(int) value;
+
+@end
+
 @interface Pet : NSObject
 
 typedef enum
@@ -24,5 +33,10 @@ typedef enum
 @property (nonatomic) mascotaTypes type;
 
 +(instancetype) sharedInstance;
+
+@property (weak, nonatomic) id <Petdelegate> delegate;
+
+-(void) timeToEat;
+-(void) timeToExercise;
 
 @end
