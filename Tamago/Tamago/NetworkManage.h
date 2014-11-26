@@ -8,7 +8,7 @@
 
 #import "AFHTTPSessionManager.h"
 
-@interface TestAFNetworking : AFHTTPSessionManager
+@interface NetworkManage : AFHTTPSessionManager
 
 + (instancetype)sharedInstance;
 

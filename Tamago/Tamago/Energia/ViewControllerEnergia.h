@@ -11,6 +11,9 @@
 #import <MessageUI/MessageUI.h>
 #import "Pet.h"
 
+typedef void (^Success)(NSURLSessionDataTask*,id);
+typedef void (^Failure)(NSURLSessionDataTask*, NSError*);
+
 @interface ViewControllerEnergia : UIViewController <FoodProtocol, MFMailComposeViewControllerDelegate, Petdelegate>
 
 #pragma mark - Intancias

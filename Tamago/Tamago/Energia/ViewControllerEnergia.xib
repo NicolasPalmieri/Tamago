@@ -59,6 +59,16 @@
                     <color key="progressTintColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="trackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </progressView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Owf-6a-Ohr">
+                    <rect key="frame" x="160" y="84" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Save">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnSaveData:" destination="-1" eventType="touchUpInside" id="0gt-dr-7b2"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BqQ-L8-EFn">
                     <rect key="frame" x="214" y="84" width="46" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -75,7 +85,7 @@
             <connections>
                 <outletCollection property="gestureRecognizers" destination="t6w-Cx-e3Z" appends="YES" id="dN4-eq-buF"/>
             </connections>
-            <point key="canvasLocation" x="739" y="21"/>
+            <point key="canvasLocation" x="851" y="-24"/>
         </view>
         <tapGestureRecognizer id="t6w-Cx-e3Z">
             <connections>

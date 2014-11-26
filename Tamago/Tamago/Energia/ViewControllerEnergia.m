@@ -10,6 +10,7 @@
 #import "ComidaViewController.h"
 #import "ArrayConst.h"
 #import "Meal.h"
+#import "NetworkManage.h"
 
 @interface ViewControllerEnergia ()
 
@@ -31,6 +32,8 @@
 @property (weak, nonatomic) NSTimer *timer;
 @property (assign, nonatomic) int flag;
 @property (assign, nonatomic) int Current;
+@property (copy, nonatomic) Success successBlockSavePet;
+@property (copy, nonatomic) Failure failureBlockSavePet;
 
 @end
 
@@ -191,6 +194,38 @@
     }    
 }
 
+- (IBAction)btnSaveData:(id)sender
+{
+    [self saveGochi_POST];
+}
+
+-(void) saveGochi_POST
+{
+    NSDictionary *parameters = [[Pet sharedInstance] fillDictionary];
+    [[NetworkManage sharedInstance] POST:@"/pet"
+                              parameters:parameters
+                                 success:[self successBlockSavePet]
+                                 failure:[self failureBlockSavePet]
+     ];
+}
+
+-(Success) successBlockSavePet
+{
+    return ^(NSURLSessionDataTask *task, id responseObject)
+    {
+        NSLog(@"%@",responseObject);
+    };
+}
+
+-(Failure) failureBlockSavePet
+{
+    return ^(NSURLSessionDataTask *task, NSError *error)
+    {
+        NSLog(@"%@",error);
+    };
+}
+
+
 - (void)goback
 {
     [self.navigationController popViewControllerAnimated:YES];
@@ -309,7 +344,6 @@
 }
 
 #pragma mark - Show
-
 -(void)showLvlUp
 {
     self.Current = [[Pet sharedInstance] showLvl];

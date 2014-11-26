@@ -20,7 +20,7 @@
 
 extern NSString *const MSG_LVLUP;
 extern NSString *const MSG_EXHAUST;
-
+extern NSString *const MSG_COD_PET;
 
 @interface Pet : NSObject
 
@@ -47,5 +47,6 @@ typedef enum
 -(void) calcularExpLvl;
 -(void) getLvl1;
 -(int) showLvl;
+-(NSDictionary*)fillDictionary;
 
 @end

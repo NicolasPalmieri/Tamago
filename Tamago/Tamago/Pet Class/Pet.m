@@ -14,12 +14,14 @@
 @property (nonatomic) int level;
 @property (nonatomic) int exp;
 @property (nonatomic) int exprequired;
+@property (strong, nonatomic) NSDictionary *POST;
 
 @end
 
 
 NSString *const MSG_LVLUP =@"Alocaverna";
 NSString *const MSG_EXHAUST =@"Alobestia";
+NSString *const MSG_COD_PET =@"np0114";
 
 
 @implementation Pet
@@ -86,6 +88,17 @@ NSString *const MSG_EXHAUST =@"Alobestia";
     return self.level;
 }
 
-
+-(NSDictionary*)fillDictionary
+{
+    self.POST = [NSDictionary dictionaryWithObjectsAndKeys:
+                [NSString stringWithString: MSG_COD_PET], @"code",
+                [NSString stringWithString: self.name], @"name",
+                [NSNumber numberWithInt:self.energy], @"energy",
+                [NSNumber numberWithInt:self.level], @"level",
+                [NSNumber numberWithInt:self.exp], @"experience",
+                nil];
+    
+    return self.POST;
+}
 
 @end

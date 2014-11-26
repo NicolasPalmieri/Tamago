@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 Nicolas. All rights reserved.
 //
 
-#import "TestAFNetworking.h"
+#import "NetworkManage.h"
 #import "AFNetworking.h"
 #import "AFNetworkActivityIndicatorManager.h"
 
-@implementation TestAFNetworking
+@implementation NetworkManage
 
 + (instancetype)sharedInstance
 {
-    static TestAFNetworking *_sharedInstance = nil;
+    static NetworkManage *_sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken,^{
         // Network activity indicator manager setup
@@ -28,7 +28,7 @@
         sessionConfiguration.requestCachePolicy = NSURLRequestUseProtocolCachePolicy;
         sessionConfiguration.timeoutIntervalForRequest = 20;
         // Initialize the session
-        _sharedInstance = [[TestAFNetworking alloc] initWithBaseURL: [NSURL URLWithString:@"http://echo.jsontest.com"]sessionConfiguration:sessionConfiguration];
+        _sharedInstance = [[NetworkManage alloc] initWithBaseURL: [NSURL URLWithString:@"http://tamagotchi.herokuapp.com/pet"]sessionConfiguration:sessionConfiguration];
         //Setup a default JSONSerializer for all request/responses.
         _sharedInstance.requestSerializer = [AFJSONRequestSerializer serializer]; });
     return _sharedInstance;

@@ -9,7 +9,7 @@
 #import "ViewController2.h"
 #import "ViewController3.h"
 #import "Pet.h"
-#import "TestAFNetworking.h"
+#import "NetworkManage.h"
 
 @interface ViewController2 ()
 
@@ -80,7 +80,7 @@
 }
 
 
-#pragma mark - btnTestAFNET // Bloques
+#pragma mark - btnTestAFNET // Bloques -REFABORRAR
 - (IBAction)testAFNetworking:(id)sender
 {
     [self getEvents];
@@ -88,7 +88,7 @@
 
 -(void) getEvents
 {
-   [[TestAFNetworking sharedInstance] GET:@"/key/value/one/two"
+   [[NetworkManage sharedInstance] GET:@"/key/value/one/two"
                                parameters:nil
                                   success:[self successBlock]
                                   failure:[self failureBlock]];
