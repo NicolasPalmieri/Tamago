@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^Success)(NSURLSessionDataTask*,id);
+typedef void (^Failure)(NSURLSessionDataTask*, NSError*);
+
 @interface ViewController2 : UIViewController <UITextFieldDelegate>
 
 @property (strong, nonatomic) NSMutableArray *nick;
+
+- (void) getEvents:(Success) success failure:(Failure) failure;
 
 @end

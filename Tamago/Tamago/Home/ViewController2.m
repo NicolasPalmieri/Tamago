@@ -9,6 +9,7 @@
 #import "ViewController2.h"
 #import "ViewController3.h"
 #import "Pet.h"
+#import "TestAFNetworking.h"
 
 @interface ViewController2 ()
 
@@ -18,6 +19,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *labelPetName;
 @property (strong, nonatomic) IBOutlet UIButton *buttonToElej;
 @property (strong, nonatomic) NSString *val;
+@property (copy, nonatomic) Success successBlock;
+@property (copy, nonatomic) Failure failureBlock;
 
 @end
 
@@ -77,8 +80,37 @@
 }
 
 
-#pragma mark - Validaciones
+#pragma mark - btnTestAFNET // Bloques
+- (IBAction)testAFNetworking:(id)sender
+{
+    [self getEvents];
+}
 
+-(void) getEvents
+{
+   [[TestAFNetworking sharedInstance] GET:@"/key/value/one/two"
+                               parameters:nil
+                                  success:[self successBlock]
+                                  failure:[self failureBlock]];
+}
+
+-(Success)successBlock
+{
+    return ^(NSURLSessionDataTask *task, id responseObject)
+    {
+        NSLog(@"%@",responseObject);
+    };
+}
+
+-(Failure)failureBlock
+{
+    return ^(NSURLSessionDataTask *task, NSError *error)
+    {
+        NSLog(@"%@",error);
+    };
+}
+
+#pragma mark - Validaciones
 -(BOOL)validarLength:(NSString *) nombre
 {
     BOOL val = NO;
