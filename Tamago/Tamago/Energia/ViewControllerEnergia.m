@@ -30,6 +30,7 @@
 @property (strong, nonatomic) ArrayConst *cansado;
 @property (weak, nonatomic) NSTimer *timer;
 @property (assign, nonatomic) int flag;
+@property (assign, nonatomic) int Current;
 
 @end
 
@@ -116,6 +117,9 @@
     //delegate
     [Pet sharedInstance].delegate = self;
     
+    //lvl
+    [[Pet sharedInstance] getLvl1];
+    
     //progressCustom?
     [self.progressEnergia setTransform:CGAffineTransformMakeScale(1.0, 7.0)];
 }
@@ -126,6 +130,11 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(exhaustGif)
                                                  name:MSG_EXHAUST
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(showLvlUp)
+                                                 name:MSG_LVLUP
                                                object:nil];
 }
 
@@ -140,7 +149,7 @@
 {
     [self.imgBringFood setCenter:self.posOriginalImagen]; //asigno pos original
     
-    [[NSNotificationCenter defaultCenter] removeObserver:self]; //release observer
+    [[NSNotificationCenter defaultCenter] removeObserver:self]; //release observers
 }
 
 - (void) viewDidDisappear:(BOOL)animated
@@ -177,16 +186,9 @@
     }
     else
     {
-        
+        [self.ImageViewProfileEnergia stopAnimating];
         self.flag=0;
-    }
-    
-}
-
--(void) callMeth
-{
-    [[Pet sharedInstance] timeToExercise];
-
+    }    
 }
 
 - (void)goback
@@ -296,7 +298,7 @@
     [UIView animateWithDuration:0.5f animations:^(void)
     {
         self.progressEnergia.progress -=0.1;
-        if (self.progressEnergia.progress <=0.1)
+        if (self.progressEnergia.progress <=0)
         {
             NSLog(@"Empty!");
             [self.timer invalidate];
@@ -304,6 +306,22 @@
             //[self.btnFeed setEnabled:YES];
         }
     }];
+}
+
+#pragma mark - Show
+
+-(void)showLvlUp
+{
+    self.Current = [[Pet sharedInstance] showLvl];
+    
+    UIAlertView *message;
+    message = [[UIAlertView alloc] initWithTitle:@"LVLUP!"
+                                         message:[NSString stringWithFormat:@"%d to %d",self.Current-1,self.Current]
+                                        delegate:nil
+                               cancelButtonTitle:@"YAY!"
+                               otherButtonTitles:nil];
+   [message show];
+
 }
 
 #pragma mark - Mail

@@ -18,7 +18,7 @@
 @end
 
 
-extern NSString *const MSG_EMPTY;
+extern NSString *const MSG_LVLUP;
 extern NSString *const MSG_EXHAUST;
 
 
@@ -44,5 +44,8 @@ typedef enum
 -(void) timeToEat;
 -(void) timeToExercise;
 -(BOOL) valEjercitar;
+-(void) calcularExpLvl;
+-(void) getLvl1;
+-(int) showLvl;
 
 @end

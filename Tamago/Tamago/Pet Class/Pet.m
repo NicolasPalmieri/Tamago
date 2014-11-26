@@ -13,11 +13,12 @@
 @property (nonatomic) int energy;
 @property (nonatomic) int level;
 @property (nonatomic) int exp;
+@property (nonatomic) int exprequired;
 
 @end
 
 
-NSString *const MSG_EMPTY =@"No_food";
+NSString *const MSG_LVLUP =@"Alocaverna";
 NSString *const MSG_EXHAUST =@"Alobestia";
 
 
@@ -41,23 +42,48 @@ NSString *const MSG_EXHAUST =@"Alobestia";
 
 -(void) timeToExercise
 {
+    [self calcularExpLvl];
     if(self.energy > 0)
     {
         self.energy -= 10;
         self.exp += 15;
-        NSLog(@"-10 +15exp");
+        NSLog(@"-10+15//%d,%d",self.energy,self.exp);
+        
+        if(self.exp >= self.exprequired)
+        {
+            self.level +=1;
+            [[NSNotificationCenter defaultCenter] postNotificationName:MSG_LVLUP object:nil];
+            NSLog(@"%d", self.level);
+        }
+        
         if(self.energy <=0)
         {
             [[NSNotificationCenter defaultCenter] postNotificationName:MSG_EXHAUST object:nil];
-            NSLog(@"observer");
+            NSLog(@"observerSend");
         }
+        [self.delegate lessProgress:self.energy];
     }
-    [self.delegate lessProgress:self.energy];
 }
 
 -(BOOL) valEjercitar
 {
     return self.energy > 0;
+}
+
+-(void) calcularExpLvl
+{
+    self.exprequired = 100*(int)pow(self.level,2);
+    NSLog(@"req: %d",self.exprequired);
+}
+
+-(void) getLvl1
+{
+    self.level =1;
+}
+
+-(int) showLvl
+{
+    return self.level;
 }
 
 
