@@ -19,8 +19,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *labelPetName;
 @property (strong, nonatomic) IBOutlet UIButton *buttonToElej;
 @property (strong, nonatomic) NSString *val;
-@property (copy, nonatomic) Success successBlock;
-@property (copy, nonatomic) Failure failureBlock;
 
 @end
 
@@ -79,36 +77,6 @@
     [self.TextFieldpetName setText:@""];//empty textfield
 }
 
-
-#pragma mark - btnTestAFNET // Bloques -REFABORRAR
-- (IBAction)testAFNetworking:(id)sender
-{
-    [self getEvents];
-}
-
--(void) getEvents
-{
-   [[NetworkManage sharedInstance] GET:@"/key/value/one/two"
-                               parameters:nil
-                                  success:[self successBlock]
-                                  failure:[self failureBlock]];
-}
-
--(Success)successBlock
-{
-    return ^(NSURLSessionDataTask *task, id responseObject)
-    {
-        NSLog(@"%@",responseObject);
-    };
-}
-
--(Failure)failureBlock
-{
-    return ^(NSURLSessionDataTask *task, NSError *error)
-    {
-        NSLog(@"%@",error);
-    };
-}
 
 #pragma mark - Validaciones
 -(BOOL)validarLength:(NSString *) nombre

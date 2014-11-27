@@ -48,5 +48,8 @@ typedef enum
 -(void) getLvl1;
 -(int) showLvl;
 -(NSDictionary*)fillDictionary;
+-(void)fillPet: (NSDictionary*) dic;
+-(int) showEnergy;
+-(int) showExp;
 
 @end

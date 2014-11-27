@@ -25,6 +25,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *btnTrain;
 @property (strong, nonatomic) IBOutlet UIImageView *imgBringFood;
 @property (strong, nonatomic) IBOutlet UIView *ViewRango;
+@property (strong, nonatomic) IBOutlet UILabel *labelNivel;
+@property (strong, nonatomic) IBOutlet UILabel *labelExp;
 @property (strong, nonatomic) MFMailComposeViewController *correo;
 @property (strong, nonatomic) ArrayConst *gif;
 @property (strong, nonatomic) ArrayConst *train;
@@ -32,8 +34,11 @@
 @property (weak, nonatomic) NSTimer *timer;
 @property (assign, nonatomic) int flag;
 @property (assign, nonatomic) int Current;
+@property (copy, nonatomic) Success successBlock;
+@property (copy, nonatomic) Failure failureBlock;
 @property (copy, nonatomic) Success successBlockSavePet;
 @property (copy, nonatomic) Failure failureBlockSavePet;
+@property (strong, nonatomic) NSDictionary *diccGet;
 
 @end
 
@@ -69,12 +74,10 @@
     //pos original del view, para editar jirafa luego
     self.posViewJirafa = [self.ViewRango frame];
     
-    /*if([self.ImageViewProfileEnergia //:@"%jirafa%"])
-    {
-            //reposiciono rango/boca jirafa
-        [self.ViewRango setFrame:CGRectMake(154.50, 250.50, self.posViewJirafa.size.width, self.posViewJirafa.size.height)];
-        [self.ViewRango setAlpha:1];
-    }*/
+    //resetCampos
+    self.labelNameENergy.text =@"";
+    self.labelExp.text =@"";
+    self.labelNivel.text =@"";
     
     //asigno nombre e imagen de mascota
     [self.labelNameENergy setText: [Pet sharedInstance].name];
@@ -124,7 +127,7 @@
     [[Pet sharedInstance] getLvl1];
     
     //progressCustom?
-    [self.progressEnergia setTransform:CGAffineTransformMakeScale(1.0, 7.0)];
+    [self.progressEnergia setTransform:CGAffineTransformMakeScale(1.0, 7.0)]; //dejó de hacer magia..
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -194,11 +197,12 @@
     }    
 }
 
-- (IBAction)btnSaveData:(id)sender
+- (void)goback
 {
-    [self saveGochi_POST];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
+#pragma mark - Servicio__SaveData
 -(void) saveGochi_POST
 {
     NSDictionary *parameters = [[Pet sharedInstance] fillDictionary];
@@ -225,10 +229,44 @@
     };
 }
 
-
-- (void)goback
+#pragma mark - Boton__LOADdata
+- (IBAction)loadData:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self getEvents];
+}
+
+-(void) getEvents
+{
+    [[NetworkManage sharedInstance] GET:/*@"/pet/np0114"*/[NSString stringWithFormat:@"/pet/%@",MSG_COD_PET]
+                             parameters:nil
+                                success:[self successBlock]
+                                failure:[self failureBlock]];
+}
+
+-(Success)successBlock
+{
+    __weak typeof(self) weakerSelf = self;
+    
+    return ^(NSURLSessionDataTask *task, id responseObject)
+    {
+        NSLog(@"%@",responseObject);
+        [[Pet sharedInstance] fillPet:responseObject];
+        //actualizacion view //weakerSelf.
+        weakerSelf.labelNameENergy.text = [Pet sharedInstance].name;
+        NSString *auxlvl = [NSString stringWithFormat:@"%d", [[Pet sharedInstance] showLvl]];
+        weakerSelf.labelNivel.text = auxlvl;
+        NSString *auxexp = [NSString stringWithFormat:@"%d", [[Pet sharedInstance] showExp]];
+        weakerSelf.labelExp.text = auxexp;
+        weakerSelf.progressEnergia.progress = [[Pet sharedInstance] showEnergy];
+    };
+}
+
+-(Failure)failureBlock
+{
+    return ^(NSURLSessionDataTask *task, NSError *error)
+    {
+        NSLog(@"%@",error);
+    };
 }
 
 #pragma mark - Animaciones
@@ -355,7 +393,9 @@
                                cancelButtonTitle:@"YAY!"
                                otherButtonTitles:nil];
    [message show];
-
+    
+    //SAVEDATA_FUNC
+    [self saveGochi_POST];
 }
 
 #pragma mark - Mail

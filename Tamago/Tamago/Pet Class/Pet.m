@@ -15,6 +15,7 @@
 @property (nonatomic) int exp;
 @property (nonatomic) int exprequired;
 @property (strong, nonatomic) NSDictionary *POST;
+@property (strong, nonatomic) NSDictionary *GET;
 
 @end
 
@@ -88,6 +89,16 @@ NSString *const MSG_COD_PET =@"np0114";
     return self.level;
 }
 
+-(int) showEnergy
+{
+    return self.energy;
+}
+
+-(int) showExp
+{
+    return self.exp;
+}
+
 -(NSDictionary*)fillDictionary
 {
     self.POST = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -99,6 +110,14 @@ NSString *const MSG_COD_PET =@"np0114";
                 nil];
     
     return self.POST;
+}
+
+-(void)fillPet: (NSDictionary*) dictionaryGet
+{
+    self.name = [dictionaryGet objectForKey:@"name"];
+    self.energy = ((NSNumber*)[dictionaryGet objectForKey:@"energy"]).intValue;
+    self.exp = ((NSNumber*)[dictionaryGet objectForKey:@"experience"]).intValue;
+    self.level = ((NSNumber*)[dictionaryGet objectForKey:@"level"]).intValue;
 }
 
 @end

@@ -54,18 +54,9 @@
                         <outlet property="delegate" destination="-1" id="b4y-zd-nzb"/>
                     </connections>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugC-xt-HiO">
-                    <rect key="frame" x="90" y="410" width="68" height="41"/>
-                    <state key="normal" title="AFNet">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="testAFNetworking:" destination="-1" eventType="touchUpInside" id="nc3-7f-TO4"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="103" y="143"/>
+            <point key="canvasLocation" x="-249" y="-119"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
