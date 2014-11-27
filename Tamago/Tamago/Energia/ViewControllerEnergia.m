@@ -215,6 +215,7 @@
 
 -(Success) successBlockSavePet
 {
+    //__weak typeof(self) weakerSelf = self;
     return ^(NSURLSessionDataTask *task, id responseObject)
     {
         NSLog(@"%@",responseObject);
@@ -237,7 +238,7 @@
 
 -(void) getEvents
 {
-    [[NetworkManage sharedInstance] GET:/*@"/pet/np0114"*/[NSString stringWithFormat:@"/pet/%@",MSG_COD_PET]
+    [[NetworkManage sharedInstance] GET:[NSString stringWithFormat:@"/pet/%@",MSG_COD_PET]
                              parameters:nil
                                 success:[self successBlock]
                                 failure:[self failureBlock]];
@@ -396,6 +397,10 @@
     
     //SAVEDATA_FUNC
     [self saveGochi_POST];
+    //UPGRADE_VIEW
+    self.labelNivel.text = [NSString stringWithFormat:@"%d",[[Pet sharedInstance] showLvl]];
+    self.labelExp.text = [NSString stringWithFormat:@"%d",[[Pet sharedInstance] showExp]];
+    
 }
 
 #pragma mark - Mail
