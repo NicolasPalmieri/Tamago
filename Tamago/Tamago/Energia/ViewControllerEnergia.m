@@ -265,7 +265,6 @@
         weakerSelf.progressEnergia.progress = [[Pet sharedInstance] showEnergy];
         //imagen
         [weakerSelf asignoImagenLoad_type];
-        
     };
 }
 
