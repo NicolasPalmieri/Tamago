@@ -41,8 +41,8 @@
     //send a notification to all devices subscribed.
                            
     NSDictionary *data =@{@"code":MSG_COD_PET,
-                         @"name":[Pet sharedInstance].name,
-                         @"level":[NSNumber numberWithInt:[Pet sharedInstance].showLvl]
+                          @"name":[Pet sharedInstance].name,
+                          @"level":[NSNumber numberWithInt:[Pet sharedInstance].showLvl]
                         };
     
     PFPush *push = [[PFPush alloc] init];
@@ -57,7 +57,7 @@
     UILocalNotification *localNotification =[[UILocalNotification alloc]init];
     
     //Detalles
-    localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:10];
+    localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:20];
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
     localNotification.repeatCalendar = [NSCalendar currentCalendar];
     localNotification.alertBody = @"Here goes ur 1st advice";

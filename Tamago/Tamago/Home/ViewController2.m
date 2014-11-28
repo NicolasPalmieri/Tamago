@@ -37,10 +37,10 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-     //PUSH_NOTIF_REMOTE_SUBSCRIBE
+    //PUSH_NOTIF_REMOTE_SUBSCRIBE
     [PushManager subscribe_To_Channel];
     
-    //TEST_LOCAL_NOT
+    //TEST_LOCAL_NOTIF
     [PushManager sendPush_Local];
 }
 

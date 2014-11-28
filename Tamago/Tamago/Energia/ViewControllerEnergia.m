@@ -43,6 +43,7 @@
 @property (copy, nonatomic) Success successBlockSavePet;
 @property (copy, nonatomic) Failure failureBlockSavePet;
 @property (strong, nonatomic) NSDictionary *diccGet;
+@property (nonatomic) mascotaTypes type;
 
 @end
 
@@ -233,7 +234,7 @@
     };
 }
 
-#pragma mark - Boton__LOADdata
+#pragma mark - Servicio__LoadData
 - (IBAction)loadData:(id)sender
 {
     [self getEvents];
@@ -262,6 +263,9 @@
         NSString *auxexp = [NSString stringWithFormat:@"%d", [[Pet sharedInstance] showExp]];
         weakerSelf.labelExp.text = auxexp;
         weakerSelf.progressEnergia.progress = [[Pet sharedInstance] showEnergy];
+        //imagen
+        [weakerSelf asignoImagenLoad_type];
+        
     };
 }
 
@@ -271,6 +275,33 @@
     {
         NSLog(@"%@",error);
     };
+}
+
+-(void) asignoImagenLoad_type
+{
+    switch (self.type)
+    {
+        case TYPE_CIERVO:
+            self.ImageViewProfileEnergia.image = [UIImage imageNamed:@"ciervo_comiendo_1"];
+            [[Pet sharedInstance] setImagen:@"ciervo_comiendo_1"];
+            [[Pet sharedInstance] setType:TYPE_CIERVO];
+            break;
+        case TYPE_GATO:
+            self.ImageViewProfileEnergia.image = [UIImage imageNamed: @"gato_comiendo_1"];
+            [[Pet sharedInstance] setImagen:@"gato_comiendo_1"];
+            [[Pet sharedInstance] setType:TYPE_GATO];
+            break;
+        case TYPE_JIRAFA:
+            self.ImageViewProfileEnergia.image = [UIImage imageNamed: @"jirafa_comiendo_1"];
+            [[Pet sharedInstance] setImagen:@"jirafa_comiendo_1"];
+            [[Pet sharedInstance] setType:TYPE_JIRAFA];
+            break;
+        case TYPE_LEON:
+            self.ImageViewProfileEnergia.image = [UIImage imageNamed: @"leon_comiendo_1"];
+            [[Pet sharedInstance] setImagen:@"leon_comiendo_1"];
+            [[Pet sharedInstance] setType:TYPE_LEON];
+            break;
+    }
 }
 
 #pragma mark - Animaciones

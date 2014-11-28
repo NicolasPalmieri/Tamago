@@ -50,6 +50,31 @@
     return YES;
 }
 
+#pragma mark - Parse Register /SuccessFailure
+//Parse meths
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    //Store deviceToken 4 Parse
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
+    //NSLog Success :B
+    NSLog(@"Successfully got a push token: %@", deviceToken);
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    //NSLog Failure :B
+    NSLog(@"Failed to register for push notifications! Error was: %@", [error localizedDescription]);
+}
+
+#pragma mark - Parse Remote
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    [PFPush handlePush:userInfo];
+    //RECIBIR USERINFO = DICTIONARy.
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -73,23 +98,6 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-#pragma mark - Parse Register
-//Parse meths
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
-{
-    //Store deviceToken 4 Parse
-    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-    [currentInstallation setDeviceTokenFromData:deviceToken];
-    [currentInstallation saveInBackground];
-    //NSLog Success :B
-    NSLog(@"Successfully got a push token: %@", deviceToken);
-}
-
-- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
-{
-    //NSLog Failure :B
-    NSLog(@"Failed to register for push notifications! Error was: %@", [error localizedDescription]);
-}
 
 #pragma mark - Parse Local
 /*- (void)application:(UIApplication *)app didReceiveLocalNotification:(UILocalNotification *)notif 
@@ -100,10 +108,5 @@
     app.applicationIconBadgeNumber = notification.applicationIconBadgeNumber - 1;
 }*/
 
-#pragma mark - Parse Remote
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
-{
-    [PFPush handlePush:userInfo];
-}
 
 @end
