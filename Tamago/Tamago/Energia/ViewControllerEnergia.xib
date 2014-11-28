@@ -10,6 +10,7 @@
                 <outlet property="ImageViewProfileEnergia" destination="NDJ-Qx-N9Y" id="iQv-kf-pSA"/>
                 <outlet property="ViewRango" destination="oI9-0y-4jO" id="hVK-2z-r8x"/>
                 <outlet property="btnFeed" destination="BqQ-L8-EFn" id="T0j-ix-tZk"/>
+                <outlet property="btnNotification" destination="Tc6-aT-5wK" id="PCs-xT-fbc"/>
                 <outlet property="btnTrain" destination="mJw-MC-BYv" id="22c-DW-LI8"/>
                 <outlet property="imgBringFood" destination="bcL-If-vp0" id="fbw-ln-5im"/>
                 <outlet property="labelExp" destination="mPJ-86-ZY0" id="wRy-Sc-bRx"/>
@@ -116,13 +117,23 @@
                     <color key="progressTintColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="trackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </progressView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Tc6-aT-5wK">
+                    <rect key="frame" x="129" y="453" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Notif">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="NotifLocal:" destination="-1" eventType="touchUpInside" id="2aS-eG-cha"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <gestureRecognizers/>
             <connections>
                 <outletCollection property="gestureRecognizers" destination="t6w-Cx-e3Z" appends="YES" id="dN4-eq-buF"/>
             </connections>
-            <point key="canvasLocation" x="1106" y="-11"/>
+            <point key="canvasLocation" x="1327" y="30"/>
         </view>
         <tapGestureRecognizer id="t6w-Cx-e3Z">
             <connections>

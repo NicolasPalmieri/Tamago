@@ -9,7 +9,7 @@
 #import "ViewController2.h"
 #import "ViewController3.h"
 #import "Pet.h"
-#import "NetworkManage.h"
+#import "PushManager.h"
 
 @interface ViewController2 ()
 
@@ -32,7 +32,16 @@
     
     [self setTitle:@"Home"];
     
-    self.nick = [NSMutableArray arrayWithObjects:@"Pedro",@"Marce",nil]; //valoresArray
+    self.nick = [NSMutableArray arrayWithObjects:@"Pablo",@"Marmol",nil]; //valoresArray
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+     //PUSH_NOTIF_REMOTE_SUBSCRIBE
+    [PushManager subscribe_To_Channel];
+    
+    //TEST_LOCAL_NOT
+    [PushManager sendPush_Local];
 }
 
 - (void)didReceiveMemoryWarning {

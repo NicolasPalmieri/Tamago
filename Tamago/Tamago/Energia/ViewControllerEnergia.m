@@ -11,13 +11,14 @@
 #import "ArrayConst.h"
 #import "Meal.h"
 #import "NetworkManage.h"
+#import "PushManager.h"
 
 @interface ViewControllerEnergia ()
 
 #pragma mark - localDef
 #define MAIL_BODY_MSG @"Buenas! Soy %@, qué tal? Quería comentarte que estuve usando la App Tamago para comerme todo y está genial. Bajatela YA!! Saludos!"
 
-#pragma mark - Propiedades
+#pragma mark - IBOutlet
 @property (strong, nonatomic) IBOutlet UIImageView *ImageViewProfileEnergia;
 @property (strong, nonatomic) IBOutlet UIProgressView *progressEnergia;
 @property (strong, nonatomic) IBOutlet UILabel *labelNameENergy;
@@ -27,6 +28,9 @@
 @property (strong, nonatomic) IBOutlet UIView *ViewRango;
 @property (strong, nonatomic) IBOutlet UILabel *labelNivel;
 @property (strong, nonatomic) IBOutlet UILabel *labelExp;
+@property (strong, nonatomic) IBOutlet UIButton *btnNotification;
+
+#pragma mark - Properties
 @property (strong, nonatomic) MFMailComposeViewController *correo;
 @property (strong, nonatomic) ArrayConst *gif;
 @property (strong, nonatomic) ArrayConst *train;
@@ -125,9 +129,6 @@
     
     //lvl
     [[Pet sharedInstance] getLvl1];
-    
-    //progressCustom?
-    [self.progressEnergia setTransform:CGAffineTransformMakeScale(1.0, 7.0)]; //dejó de hacer magia..
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -142,6 +143,8 @@
                                              selector:@selector(showLvlUp)
                                                  name:MSG_LVLUP
                                                object:nil];
+    //progressCustom?
+    [self.progressEnergia setTransform:CGAffineTransformMakeScale(1.0, 7.0)]; //dejó de hacer magia..
 }
 
 - (void)didReceiveMemoryWarning
@@ -400,6 +403,8 @@
     //UPGRADE_VIEW
     self.labelNivel.text = [NSString stringWithFormat:@"%d",[[Pet sharedInstance] showLvl]];
     self.labelExp.text = [NSString stringWithFormat:@"%d",[[Pet sharedInstance] showExp]];
+    //PUSH_NOTIF_REMOTE
+    [PushManager sendPush_toEntire_channel];
     
 }
 
