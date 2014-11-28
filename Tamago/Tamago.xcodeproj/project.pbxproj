@@ -465,6 +465,7 @@
 				TargetAttributes = {
 					3743D7E01A1BCA3B00BE6B15 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 332N44E879;
 					};
 					3743D7F91A1BCA3B00BE6B15 = {
 						CreatedOnToolsVersion = 6.1;
@@ -662,6 +663,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/nicolas/Desktop/parse-library-1",
@@ -671,6 +674,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "90c0352d-cc00-4e2e-8c07-54975964de9a";
 			};
 			name = Debug;
 		};
@@ -678,6 +682,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/nicolas/Desktop/parse-library-1",
@@ -687,6 +693,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "90c0352d-cc00-4e2e-8c07-54975964de9a";
 			};
 			name = Release;
 		};

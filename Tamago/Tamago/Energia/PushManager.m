@@ -46,7 +46,7 @@
                         };
     
     PFPush *push = [[PFPush alloc] init];
-    [push setChannels:[NSArray arrayWithObjects:@"PeleaDeMascotas", nil]];
+    [push setChannel:@"PeleaDeMascotas"];
     [push setData:data];
     [push sendPushInBackground];
 }
