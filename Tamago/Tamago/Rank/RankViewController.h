@@ -11,5 +11,6 @@
 @interface RankViewController : UIViewController <UITableViewDataSource>
 
 @property(strong, nonatomic) NSMutableArray *arregloRank;
+@property(strong, nonatomic) NSArray *arregloSorteado;
 
 @end

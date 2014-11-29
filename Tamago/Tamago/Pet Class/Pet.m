@@ -37,11 +37,12 @@ NSString *const MSG_COD_PET =@"np0114";
     return _sharedObject;
 }
 
--(instancetype) initWIthNAME:(NSString *)name andType:(mascotaTypes) tipo andLevel:(int) nivel
+-(instancetype) initWIthNAME:(NSString *)name andType:(mascotaTypes) tipo andLevel:(int) nivel andCode: (NSString*) codigo
 {
     self = [super init];
     if(self)
     {
+        self.code = codigo;
         self.name = name;
         self.type = tipo;
         self.level = nivel;

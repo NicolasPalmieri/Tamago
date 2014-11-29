@@ -64,18 +64,20 @@
     return ^(NSURLSessionDataTask *task, id responseObject)
     {
         NSLog(@"%@",responseObject);
-        
         NSArray* answerArray = (NSArray*)responseObject;
         for (NSDictionary* dictionary in answerArray)
         {
             NSString* nombre = [dictionary objectForKey:@"name"];
             int level = ((NSNumber*)[dictionary objectForKey:@"level"]).intValue;
             mascotaTypes type = ((NSNumber*)[dictionary objectForKey:@"pet_type"]).intValue;
+            NSString* code = [dictionary objectForKey:@"code"];
             
             //fillArrayRank with eachPet
-            Pet *auxPet = [[Pet alloc] initWIthNAME:nombre andType:type andLevel:level];
+            Pet *auxPet = [[Pet alloc] initWIthNAME:nombre andType:type andLevel:level andCode:code];
             [weakerSelf.arregloRank addObject:auxPet];
         }
+        //sort b4 refresh
+        self.arregloSorteado = [self sortArray];
         //fillTable
         [weakerSelf.tableRank reloadData];
     };
@@ -89,11 +91,24 @@
     };
 }
 
+#pragma mark - Sort
+-(NSArray*) sortArray
+{
+    NSArray *sortedArray;
+    sortedArray = [self.arregloRank sortedArrayUsingComparator:^NSComparisonResult(id a, id b)
+    {
+        NSNumber *first = [NSNumber numberWithInt:((Pet*)a).showLvl];
+        NSNumber *second = [NSNumber numberWithInt:((Pet*)b).showLvl];
+        return [second compare:first];
+    }];
+    return sortedArray;
+}
+
 #pragma mark - DATASOURCE//metodos
 //cantidad de filas
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.arregloRank.count;
+    return self.arregloSorteado.count;
 }
 
 //celdas
@@ -107,17 +122,26 @@
         cell = [[RankTableViewCell alloc] init];
     }
     
-    [cell.imgRankCell setImage:[UIImage imageNamed:((Pet*)self.arregloRank[indexPath.row]).imagen]];
-    [cell.lblRankName setText:((Pet *)self.arregloRank[indexPath.row]).name];
-    [cell.lblRankLevel setText:[NSString stringWithFormat:@"%d",((Pet *)self.arregloRank[indexPath.row]).showLvl]];
-     
+    [cell.imgRankCell setImage:[UIImage imageNamed:((Pet*)self.arregloSorteado[indexPath.row]).imagen]];
+    [cell.lblRankName setText:((Pet *)self.arregloSorteado[indexPath.row]).name];
+    [cell.lblRankLevel setText:[NSString stringWithFormat:@"%d",((Pet *)self.arregloSorteado[indexPath.row]).showLvl]];
+    
+    if([((Pet *)self.arregloSorteado[indexPath.row]).code isEqualToString:MSG_COD_PET])
+    {
+        [cell setBackgroundColor:[UIColor greenColor]];
+    }
+    else
+    {
+        [cell setBackgroundColor:[UIColor whiteColor]];
+    }
+    
     return cell;
 }
 
 //TituloHeader
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return @"TOP15!";
+    return @"                               TOP15!";
 }
 
 
