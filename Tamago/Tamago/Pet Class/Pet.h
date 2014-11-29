@@ -37,6 +37,8 @@ typedef enum
 @property (strong, nonatomic) NSString *imagen;
 @property (nonatomic) mascotaTypes type;
 
+-(instancetype) initWIthNAME:(NSString *)name andType:(mascotaTypes) tipo andLevel:(int) nivel;
+
 +(instancetype) sharedInstance;
 
 @property (weak, nonatomic) id <Petdelegate> delegate;

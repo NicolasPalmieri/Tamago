@@ -69,16 +69,21 @@
 }
 
 #pragma mark - Parse Remote
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
     [PFPush handlePush:userInfo];
-    //RECIBIR USERINFO = DICTIONARy.
-}
-
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     
-    [PFPush handlePush:userInfo];
     //RECIBIR USERINFO = DICTIONARy.
+    NSString *codeaux = [userInfo objectForKey:@"code"];
+    NSString *nameaux = [userInfo objectForKey:@"name"];
+    NSString *levelaux = [userInfo objectForKey: @"level"];
+
+    UIAlertView *message;
+    message = [[UIAlertView alloc] initWithTitle:@"FOREIGN-LVLUP!"
+                                         message:[NSString stringWithFormat:@"%@ GROWUP,%@ upto %@!",codeaux,nameaux,levelaux]
+                                        delegate:nil
+                               cancelButtonTitle:@"F*CK!"
+                               otherButtonTitles:nil];
 }
 
 

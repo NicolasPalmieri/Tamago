@@ -37,6 +37,33 @@ NSString *const MSG_COD_PET =@"np0114";
     return _sharedObject;
 }
 
+-(instancetype) initWIthNAME:(NSString *)name andType:(mascotaTypes) tipo andLevel:(int) nivel
+{
+    self = [super init];
+    if(self)
+    {
+        self.name = name;
+        self.type = tipo;
+        self.level = nivel;
+        switch (tipo)
+        {
+            case TYPE_CIERVO:
+                [self setImagen:@"ciervo_comiendo_1"];
+                break;
+            case TYPE_GATO:
+                [self setImagen:@"gato_comiendo_1"];
+                break;
+            case TYPE_JIRAFA:
+                [self setImagen:@"jirafa_comiendo_1"];
+                break;
+            case TYPE_LEON:
+                [self setImagen:@"leon_comiendo_1"];
+                break;
+        }
+    }
+    return self;
+}
+
 -(void) timeToEat
 {
     self.energy +=50;
