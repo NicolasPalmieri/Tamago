@@ -30,6 +30,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    //fillTabla
     [self llenarTablaArray];
     
     //registro cell

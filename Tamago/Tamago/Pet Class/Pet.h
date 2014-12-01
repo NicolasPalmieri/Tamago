@@ -35,7 +35,11 @@ typedef enum
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *imagen;
+@property (strong, nonatomic) NSString *code;
 @property (nonatomic) mascotaTypes type;
+
+
+-(instancetype) initWIthNAME:(NSString *)name andType:(mascotaTypes) tipo andLevel:(int) nivel andCode: (NSString*) codigo;
 
 +(instancetype) sharedInstance;
 

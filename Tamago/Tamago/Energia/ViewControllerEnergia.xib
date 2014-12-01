@@ -116,13 +116,23 @@
                     <color key="progressTintColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="trackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </progressView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OBr-u9-9qt">
+                    <rect key="frame" x="58" y="467" width="81" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="worldRANK">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnRanking:" destination="-1" eventType="touchUpInside" id="jfQ-Ho-S4d"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <gestureRecognizers/>
             <connections>
                 <outletCollection property="gestureRecognizers" destination="t6w-Cx-e3Z" appends="YES" id="dN4-eq-buF"/>
             </connections>
-            <point key="canvasLocation" x="1327" y="30"/>
+            <point key="canvasLocation" x="1528" y="4"/>
         </view>
         <tapGestureRecognizer id="t6w-Cx-e3Z">
             <connections>

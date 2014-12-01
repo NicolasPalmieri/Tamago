@@ -12,6 +12,7 @@
 #import "Meal.h"
 #import "NetworkManage.h"
 #import "PushManager.h"
+#import "RankViewController.h"
 
 @interface ViewControllerEnergia ()
 
@@ -38,12 +39,13 @@
 @property (weak, nonatomic) NSTimer *timer;
 @property (assign, nonatomic) int flag;
 @property (assign, nonatomic) int Current;
-@property (copy, nonatomic) Success successBlock;
+@property (copy, nonatomic) Success successBlockLoadPet;
 @property (copy, nonatomic) Failure failureBlock;
 @property (copy, nonatomic) Success successBlockSavePet;
-@property (copy, nonatomic) Failure failureBlockSavePet;
+@property (copy, nonatomic) Success successBlockLoadALL;
 @property (strong, nonatomic) NSDictionary *diccGet;
 @property (nonatomic) mascotaTypes type;
+@property (strong, nonatomic) NSMutableArray *rankArray;
 
 @end
 
@@ -201,19 +203,26 @@
     }    
 }
 
+- (IBAction)btnRanking:(id)sender
+{
+    //push RankingView
+    RankViewController *myVista = [[RankViewController alloc] initWithNibName:@"RankViewController" bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:myVista animated:YES];
+}
+
 - (void)goback
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-#pragma mark - Servicio__SaveData
+#pragma mark - Servicio__SAVEData
 -(void) saveGochi_POST
 {
     NSDictionary *parameters = [[Pet sharedInstance] fillDictionary];
     [[NetworkManage sharedInstance] POST:@"/pet"
                               parameters:parameters
                                  success:[self successBlockSavePet]
-                                 failure:[self failureBlockSavePet]
+                                 failure:[self failureBlock]
      ];
 }
 
@@ -226,15 +235,7 @@
     };
 }
 
--(Failure) failureBlockSavePet
-{
-    return ^(NSURLSessionDataTask *task, NSError *error)
-    {
-        NSLog(@"%@",error);
-    };
-}
-
-#pragma mark - Servicio__LoadData
+#pragma mark - Servicio__LOADData
 - (IBAction)loadData:(id)sender
 {
     [self getEvents];
@@ -244,11 +245,11 @@
 {
     [[NetworkManage sharedInstance] GET:[NSString stringWithFormat:@"/pet/%@",MSG_COD_PET]
                              parameters:nil
-                                success:[self successBlock]
+                                success:[self successBlockLoadPet]
                                 failure:[self failureBlock]];
 }
 
--(Success)successBlock
+-(Success)successBlockLoadPet
 {
     __weak typeof(self) weakerSelf = self;
     
@@ -278,7 +279,7 @@
 
 -(void) asignoImagenLoad_type
 {
-    switch (self.type)
+    switch ([Pet sharedInstance].type)
     {
         case TYPE_CIERVO:
             self.ImageViewProfileEnergia.image = [UIImage imageNamed:@"ciervo_comiendo_1"];
