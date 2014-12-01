@@ -41,10 +41,10 @@ see Using the Standard Annotation Views.*/
     view.enabled = YES;
     view.canShowCallout = YES;
     UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.image]];
-    imageView.frame = CGRectMake(0, 0, 40, 40);
+    imageView.frame = CGRectMake(0, 0, 50, 50);
     view.leftCalloutAccessoryView = imageView;
     view.image = [UIImage imageNamed:self.image];
-    view.bounds = CGRectMake(0, 0, 40, 40);
+    view.bounds = CGRectMake(0, 0, 50, 50);
     return view;
 }
 

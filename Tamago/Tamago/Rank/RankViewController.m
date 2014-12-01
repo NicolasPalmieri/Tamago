@@ -38,10 +38,7 @@
     
     //DATArefresh
     [self.tableRank reloadData];
-}
-
-- (void) viewWillAppear:(BOOL)animated
-{
+    
     //callGETALL
     [self loadDataALL];
 }
