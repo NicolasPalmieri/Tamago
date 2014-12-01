@@ -37,7 +37,7 @@ NSString *const MSG_COD_PET =@"np0114";
     return _sharedObject;
 }
 
--(instancetype) initWIthNAME:(NSString *)name andType:(mascotaTypes) tipo andLevel:(int) nivel andCode: (NSString*) codigo
+-(instancetype) initWIthNAME:(NSString *)name andType:(mascotaTypes) tipo andLevel:(int) nivel andCode: (NSString*) codigo andLat:(float) latitud andLon:(float)longitud
 {
     self = [super init];
     if(self)
@@ -46,6 +46,8 @@ NSString *const MSG_COD_PET =@"np0114";
         self.name = name;
         self.type = tipo;
         self.level = nivel;
+        self.latitud = latitud;
+        self.longitud = longitud;
         switch (tipo)
         {
             case TYPE_CIERVO:

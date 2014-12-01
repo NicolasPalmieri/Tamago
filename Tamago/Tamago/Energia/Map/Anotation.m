@@ -19,19 +19,33 @@
 create an instance of the MKAnnotationView class and assign the image to its image property;
 see Using the Standard Annotation Views.*/
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+-(instancetype) initWithPet:(Pet*)pet;
 {
-    if (![annotation isKindOfClass:[Anotation class]]) return nil;
-    static NSString *dqref = @"MyAnnotation";
-    id av = [mapView dequeueReusableAnnotationViewWithIdentifier:dqref]; if (nil == av)
+    self = [super init];
+    if (self)
     {
-        av = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:dqref];
-        [av setPinColor:MKPinAnnotationColorRed];
-        [av setAnimatesDrop:YES];
-        [av setCanShowCallout:YES];  //Permitimos que se muestre una vista al hacer tap sobre el pin (por
-        //defecto tienen título y subtítulo (fijarse las properties del objeto SpotAnnotation).
+        _image = pet.imagen;
+        _title = pet.name;
+        _subtitle = [NSString stringWithFormat:@"LEVEL: %d",[pet showLvl]];
+        _coordinate.latitude = pet.latitud;
+        _coordinate.longitude = pet.longitud;
     }
-    return av;
+    return self;
+}
+
+
+-(MKAnnotationView*) getAnnotationView
+
+{
+    MKAnnotationView* view = [[MKAnnotationView alloc] initWithAnnotation:self reuseIdentifier:@"MegaAnnotation"];
+    view.enabled = YES;
+    view.canShowCallout = YES;
+    UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.image]];
+    imageView.frame = CGRectMake(0, 0, 40, 40);
+    view.leftCalloutAccessoryView = imageView;
+    view.image = [UIImage imageNamed:self.image];
+    view.bounds = CGRectMake(0, 0, 40, 40);
+    return view;
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
+#import "Pet.h"
 
 @interface Anotation : NSObject <MKAnnotation>
 
@@ -15,5 +16,8 @@
 @property(nonatomic, readonly, copy) NSString *title;
 @property(nonatomic, readonly, copy) NSString *subtitle;
 @property(nonatomic, readonly, copy) NSString *image;
+
+-(instancetype) initWithPet:(Pet*)pet;
+-(MKAnnotationView*) getAnnotationView;
 
 @end

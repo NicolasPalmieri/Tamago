@@ -7,11 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Pet.h"
+
+@protocol RankTableViewCelldelegate <NSObject>
+
+@required
+
+- (void)DidSelectedPetMap: (Pet*) mascota;
+
+@end
 
 @interface RankTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *imgRankCell;
 @property (strong, nonatomic) IBOutlet UILabel *lblRankName;
 @property (strong, nonatomic) IBOutlet UILabel *lblRankLevel;
+@property (strong, nonatomic) Pet *mascota;
+
+#pragma mark - Delegates
+@property (weak, nonatomic) id <RankTableViewCelldelegate> delegateMap;
 
 @end

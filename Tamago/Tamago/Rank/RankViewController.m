@@ -74,9 +74,12 @@
             int level = ((NSNumber*)[dictionary objectForKey:@"level"]).intValue;
             mascotaTypes type = ((NSNumber*)[dictionary objectForKey:@"pet_type"]).intValue;
             NSString* code = [dictionary objectForKey:@"code"];
+            float lat = ((NSNumber*)[dictionary objectForKey:@"position_lat"]).floatValue;
+            float longi = ((NSNumber*)[dictionary objectForKey:@"position_lon"]).floatValue;
             
             //fillArrayRank with eachPet
-            Pet *auxPet = [[Pet alloc] initWIthNAME:nombre andType:type andLevel:level andCode:code];
+            Pet *auxPet = [[Pet alloc] initWIthNAME:nombre andType:type andLevel:level
+                                            andCode:code andLat:lat andLon:longi];
             [weakerSelf.arregloRank addObject:auxPet];
         }
         //sort b4 refresh
@@ -125,6 +128,8 @@
         cell = [[RankTableViewCell alloc] init];
         
     }
+    //SaveMascota_Cell
+    cell.mascota =(Pet*)self.arregloSorteado[indexPath.row];
     
     [cell.imgRankCell setImage:[UIImage imageNamed:((Pet*)self.arregloSorteado[indexPath.row]).imagen]];
     [cell.lblRankName setText:((Pet *)self.arregloSorteado[indexPath.row]).name];
@@ -139,6 +144,8 @@
         [cell setBackgroundColor:[UIColor whiteColor]];
     }
     
+    cell.delegateMap = self;
+    
     return cell;
 }
 
@@ -148,20 +155,13 @@
     return @"                               TOP15!";
 }
 
-#pragma mark - Botones
+#pragma mark - DelegateImp
 
--(IBAction) btnMap:(id) sender
+-(void) DidSelectedPetMap:(Pet *)mascota
 {
-    NSIndexPath *indexPath = [self.tableRank indexPathForCell:(UITableViewCell *)
-                             [[sender superview] superview]];
-    NSLog(@"The row id is %d", indexPath.row);
-    
-    
-    
-    
     MapViewController *myView = [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:[NSBundle mainBundle]];
+    myView.mascota = mascota;
     [self.navigationController pushViewController:myView animated:YES];
 }
-
 
 @end

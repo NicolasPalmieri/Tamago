@@ -48,13 +48,35 @@
 
 -(void)mapViewDidFinishLoadingMap:(MKMapView *)mapView
 {
+    //SETANNOTATION
+    Anotation *anotacion = [[Anotation alloc] initWithPet:self.mascota];
+    [self.mapView addAnnotation:anotacion];
+    
     //CHANGES
     MKCoordinateRegion region;
-    region.center.latitude = [Pet sharedInstance].latitud;
-    region.center.longitude = [Pet sharedInstance].longitud;
+    region.center.latitude = self.mascota.latitud;
+    region.center.longitude = self.mascota.longitud;
     region.span.latitudeDelta = 0.02;
     region.span.longitudeDelta = 0.02;
     [mapView setRegion:region animated:YES];
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    if (![annotation isKindOfClass:[Anotation class]]) return nil;
+    static NSString *dqref = @"MegaAnnotation";
+    Anotation *myAnot = (Anotation *) annotation;
+    MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:dqref];
+  
+    if (nil == annotationView)
+    {
+        annotationView = [myAnot getAnnotationView];
+    }
+    else
+    {
+        annotationView.annotation = annotation;
+    }
+    return annotationView;
 }
 
 

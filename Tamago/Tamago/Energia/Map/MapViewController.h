@@ -14,7 +14,8 @@
 @interface MapViewController : UIViewController <MKMapViewDelegate>
 
 @property (strong, nonatomic) CLLocation *cordinate;
+@property (strong, nonatomic) Pet *mascota;
 
-- (instancetype)initWithLocation:(CLLocation*)cord;
+- (instancetype)initWithPet:(Pet*)Pet;
 
 @end

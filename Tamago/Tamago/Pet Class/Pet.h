@@ -43,7 +43,7 @@ typedef enum
 @property (nonatomic) mascotaTypes type;
 
 
--(instancetype) initWIthNAME:(NSString *)name andType:(mascotaTypes) tipo andLevel:(int) nivel andCode: (NSString*) codigo;
+-(instancetype) initWIthNAME:(NSString *)name andType:(mascotaTypes) tipo andLevel:(int) nivel andCode: (NSString*) codigo andLat:(float) latitud andLon:(float)longitud;
 
 +(instancetype) sharedInstance;
 

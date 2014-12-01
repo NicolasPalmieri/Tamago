@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RankTableViewCell.h"
+#import "Pet.h"
 
-@interface RankViewController : UIViewController <UITableViewDataSource>
+@interface RankViewController : UIViewController <UITableViewDataSource, RankTableViewCelldelegate>
 
 @property(strong, nonatomic) NSMutableArray *arregloRank;
 @property(strong, nonatomic) NSArray *arregloSorteado;
+@property(strong, nonatomic) Pet *masc;
 
 @end
