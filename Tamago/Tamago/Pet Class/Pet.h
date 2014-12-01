@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @protocol Petdelegate <NSObject>
 
@@ -36,6 +38,8 @@ typedef enum
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *imagen;
 @property (strong, nonatomic) NSString *code;
+@property (assign, nonatomic) float latitud;
+@property (assign, nonatomic) float longitud;
 @property (nonatomic) mascotaTypes type;
 
 

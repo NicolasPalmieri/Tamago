@@ -136,6 +136,8 @@ NSString *const MSG_COD_PET =@"np0114";
                 [NSNumber numberWithInt:self.level], @"level",
                 [NSNumber numberWithInt:self.exp], @"experience",
                 [NSNumber numberWithInt:self.type], @"pet_type",
+                [NSNumber numberWithFloat:self.latitud], @"position_lat",
+                [NSNumber numberWithFloat:self.longitud], @"position_lon",
                 nil];
     
     return self.POST;
@@ -148,6 +150,8 @@ NSString *const MSG_COD_PET =@"np0114";
     self.exp = ((NSNumber*)[dictionaryGet objectForKey:@"experience"]).intValue;
     self.level = ((NSNumber*)[dictionaryGet objectForKey:@"level"]).intValue;
     self.type = ((NSNumber*)[dictionaryGet objectForKey:@"pet_type"]).intValue;
+    self.latitud = ((NSNumber*)[dictionaryGet objectForKey:@"position_lat"]).floatValue;
+    self.longitud = ((NSNumber*)[dictionaryGet objectForKey:@"position_lon"]).floatValue;
 }
 
 @end

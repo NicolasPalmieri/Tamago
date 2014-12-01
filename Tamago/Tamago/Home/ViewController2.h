@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 typedef void (^Success)(NSURLSessionDataTask*,id);
 typedef void (^Failure)(NSURLSessionDataTask*, NSError*);

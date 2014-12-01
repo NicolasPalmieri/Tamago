@@ -15,23 +15,33 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ehb-oc-fa5">
-                        <rect key="frame" x="104" y="12" width="110" height="21"/>
+                        <rect key="frame" x="70" y="11" width="110" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yBS-L7-mSW">
-                        <rect key="frame" x="242" y="11" width="42" height="21"/>
+                        <rect key="frame" x="202" y="11" width="42" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="dFk-DX-vOp">
-                        <rect key="frame" x="25" y="0.0" width="49" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="49" height="44"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="U3l-6c-Abx">
+                        <rect key="frame" x="276" y="-1" width="44" height="45"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="Button" image="map">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="btnMap:" destination="-2" eventType="touchUpInside" id="zBS-3f-8y1"/>
+                        </connections>
+                    </button>
                 </subviews>
             </tableViewCellContentView>
             <connections>
@@ -39,9 +49,12 @@
                 <outlet property="lblRankLevel" destination="yBS-L7-mSW" id="950-IQ-P5H"/>
                 <outlet property="lblRankName" destination="ehb-oc-fa5" id="KUo-8W-VyU"/>
             </connections>
-            <point key="canvasLocation" x="-185" y="110"/>
+            <point key="canvasLocation" x="-175" y="128"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="map" width="179" height="179"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

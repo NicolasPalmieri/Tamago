@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import "Pet.h"
 
 @interface MapViewController : UIViewController <MKMapViewDelegate>
+
+@property (strong, nonatomic) CLLocation *cordinate;
+
+- (instancetype)initWithLocation:(CLLocation*)cord;
 
 @end

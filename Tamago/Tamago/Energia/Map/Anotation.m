@@ -12,15 +12,8 @@
 
 @end
 
-@implementation Anotation
 
-#pragma mark - Metodos Anotation
-+(void)addAnotation
-{
-    SpotAnnotation *ann = [[SpotAnnotation alloc] init];
-    [ann setCoordinate:[mapParking userLocation].location.coordinate];
-    [mapParking addAnnotation:ann];
-}
+@implementation Anotation
 
 /*If the annotation can be represented by a custom static image,
 create an instance of the MKAnnotationView class and assign the image to its image property;
@@ -28,9 +21,10 @@ see Using the Standard Annotation Views.*/
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
-    if (![annotation isKindOfClass:[SpotAnnotation class]]) return nil;
+    if (![annotation isKindOfClass:[Anotation class]]) return nil;
     static NSString *dqref = @"MyAnnotation";
-    id av = [mapView dequeueReusableAnnotationViewWithIdentifier:dqref]; if (nil == av) {
+    id av = [mapView dequeueReusableAnnotationViewWithIdentifier:dqref]; if (nil == av)
+    {
         av = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:dqref];
         [av setPinColor:MKPinAnnotationColorRed];
         [av setAnimatesDrop:YES];

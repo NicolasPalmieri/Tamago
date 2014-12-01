@@ -10,6 +10,7 @@
 #import "ViewController3.h"
 #import "Pet.h"
 #import "PushManager.h"
+#import "LocationManager.h"
 
 @interface ViewController2 ()
 

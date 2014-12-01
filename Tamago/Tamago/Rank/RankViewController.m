@@ -11,10 +11,13 @@
 #import "Pet.h"
 #import "ViewControllerEnergia.h"
 #import "NetworkManage.h"
+#import "MapViewController.h"
+#import "LocationManager.h"
 
 @interface RankViewController ()
 
 @property (strong, nonatomic) IBOutlet UITableView *tableRank;
+@property (strong, nonatomic) LocationManager *manager;
 
 @end
 
@@ -120,6 +123,7 @@
     if (!cell)
     {
         cell = [[RankTableViewCell alloc] init];
+        
     }
     
     [cell.imgRankCell setImage:[UIImage imageNamed:((Pet*)self.arregloSorteado[indexPath.row]).imagen]];
@@ -128,7 +132,7 @@
     
     if([((Pet *)self.arregloSorteado[indexPath.row]).code isEqualToString:MSG_COD_PET])
     {
-        [cell setBackgroundColor:[UIColor greenColor]];
+        [cell setBackgroundColor:[UIColor grayColor]];
     }
     else
     {
@@ -142,6 +146,21 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     return @"                               TOP15!";
+}
+
+#pragma mark - Botones
+
+-(IBAction) btnMap:(id) sender
+{
+    NSIndexPath *indexPath = [self.tableRank indexPathForCell:(UITableViewCell *)
+                             [[sender superview] superview]];
+    NSLog(@"The row id is %d", indexPath.row);
+    
+    
+    
+    
+    MapViewController *myView = [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:myView animated:YES];
 }
 
 

@@ -11,7 +11,7 @@
 		3708E79D1A2CB6C800A6EB55 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3708E79B1A2CB6C800A6EB55 /* MapViewController.m */; };
 		3708E79E1A2CB6C800A6EB55 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3708E79C1A2CB6C800A6EB55 /* MapViewController.xib */; };
 		3708E7A21A2CBBC800A6EB55 /* Anotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3708E7A11A2CBBC800A6EB55 /* Anotation.m */; };
-		3708E7A61A2CC17B00A6EB55 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 3708E7A51A2CC17B00A6EB55 /* Location.m */; };
+		370CA09A1A2CE26900F5730F /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 370CA0991A2CE26900F5730F /* LocationManager.m */; };
 		371B4A601A1E5AEC007C0252 /* ComidaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371B4A5E1A1E5AEC007C0252 /* ComidaViewController.m */; };
 		371B4A611A1E5AEC007C0252 /* ComidaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 371B4A5F1A1E5AEC007C0252 /* ComidaViewController.xib */; };
 		371B4A651A1E5B95007C0252 /* Meal.m in Sources */ = {isa = PBXBuildFile; fileRef = 371B4A641A1E5B95007C0252 /* Meal.m */; };
@@ -84,8 +84,8 @@
 		3708E79C1A2CB6C800A6EB55 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapViewController.xib; path = Map/MapViewController.xib; sourceTree = "<group>"; };
 		3708E7A01A2CBBC800A6EB55 /* Anotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Anotation.h; path = Map/Anotation.h; sourceTree = "<group>"; };
 		3708E7A11A2CBBC800A6EB55 /* Anotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Anotation.m; path = Map/Anotation.m; sourceTree = "<group>"; };
-		3708E7A41A2CC17B00A6EB55 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = Map/Location.h; sourceTree = "<group>"; };
-		3708E7A51A2CC17B00A6EB55 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = Map/Location.m; sourceTree = "<group>"; };
+		370CA0981A2CE26900F5730F /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationManager.h; path = Map/LocationManager.h; sourceTree = "<group>"; };
+		370CA0991A2CE26900F5730F /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationManager.m; path = Map/LocationManager.m; sourceTree = "<group>"; };
 		371B4A5D1A1E5AEC007C0252 /* ComidaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComidaViewController.h; path = Clase4/ComidaViewController.h; sourceTree = "<group>"; };
 		371B4A5E1A1E5AEC007C0252 /* ComidaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComidaViewController.m; path = Clase4/ComidaViewController.m; sourceTree = "<group>"; };
 		371B4A5F1A1E5AEC007C0252 /* ComidaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ComidaViewController.xib; path = Clase4/ComidaViewController.xib; sourceTree = "<group>"; };
@@ -231,13 +231,15 @@
 		3708E7991A2CB5F000A6EB55 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				3708E7A31A2CC15800A6EB55 /* Location */,
 				3708E79F1A2CB89A00A6EB55 /* Anotation */,
 				3708E79A1A2CB6C800A6EB55 /* MapViewController.h */,
 				3708E79B1A2CB6C800A6EB55 /* MapViewController.m */,
 				3708E79C1A2CB6C800A6EB55 /* MapViewController.xib */,
+				370CA0981A2CE26900F5730F /* LocationManager.h */,
+				370CA0991A2CE26900F5730F /* LocationManager.m */,
 			);
 			name = Map;
+			path = Energia;
 			sourceTree = "<group>";
 		};
 		3708E79F1A2CB89A00A6EB55 /* Anotation */ = {
@@ -247,15 +249,6 @@
 				3708E7A11A2CBBC800A6EB55 /* Anotation.m */,
 			);
 			name = Anotation;
-			sourceTree = "<group>";
-		};
-		3708E7A31A2CC15800A6EB55 /* Location */ = {
-			isa = PBXGroup;
-			children = (
-				3708E7A41A2CC17B00A6EB55 /* Location.h */,
-				3708E7A51A2CC17B00A6EB55 /* Location.m */,
-			);
-			name = Location;
 			sourceTree = "<group>";
 		};
 		371B4A5C1A1E5A8F007C0252 /* Comida */ = {
@@ -312,10 +305,12 @@
 		3743D7E31A1BCA3B00BE6B15 /* Tamago */ = {
 			isa = PBXGroup;
 			children = (
+				37EFCB701A237AF10075FAC4 /* Pet */,
+				3708E7991A2CB5F000A6EB55 /* Map */,
 				37BFA73E1A2A038F00C3540A /* Rank */,
-				3743D9281A1BE4A700BE6B15 /* Home */,
+				3743D9281A1BE4A700BE6B15 /* Intro */,
 				3743D9311A1BE4DA00BE6B15 /* Choose */,
-				3743D9371A1BE4F500BE6B15 /* Energia */,
+				3743D9371A1BE4F500BE6B15 /* Home */,
 				371B4A5C1A1E5A8F007C0252 /* Comida */,
 				3743D7F11A1BCA3B00BE6B15 /* Images.xcassets */,
 				3743D7F31A1BCA3B00BE6B15 /* LaunchScreen.xib */,
@@ -349,7 +344,7 @@
 			name = TamagoAPP;
 			sourceTree = "<group>";
 		};
-		3743D9281A1BE4A700BE6B15 /* Home */ = {
+		3743D9281A1BE4A700BE6B15 /* Intro */ = {
 			isa = PBXGroup;
 			children = (
 				3743D9291A1BE4A700BE6B15 /* AppDelegate.h */,
@@ -358,13 +353,13 @@
 				3743D92C1A1BE4A700BE6B15 /* ViewController2.m */,
 				3743D92D1A1BE4A700BE6B15 /* ViewController2.xib */,
 			);
+			name = Intro;
 			path = Home;
 			sourceTree = "<group>";
 		};
 		3743D9311A1BE4DA00BE6B15 /* Choose */ = {
 			isa = PBXGroup;
 			children = (
-				37EFCB701A237AF10075FAC4 /* Pet */,
 				3743D9321A1BE4DA00BE6B15 /* ViewController3.h */,
 				3743D9331A1BE4DA00BE6B15 /* ViewController3.m */,
 				3743D9341A1BE4DA00BE6B15 /* ViewController3.xib */,
@@ -372,10 +367,9 @@
 			path = Choose;
 			sourceTree = "<group>";
 		};
-		3743D9371A1BE4F500BE6B15 /* Energia */ = {
+		3743D9371A1BE4F500BE6B15 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				3708E7991A2CB5F000A6EB55 /* Map */,
 				377BCAF71A26589A0049B94E /* AFNetworking */,
 				378576221A1FCC0700A14A10 /* ArrayConst */,
 				37E360931A28EEDA0089F470 /* PushNotifications */,
@@ -383,6 +377,7 @@
 				3743D9391A1BE4F500BE6B15 /* ViewControllerEnergia.m */,
 				3743D93A1A1BE4F500BE6B15 /* ViewControllerEnergia.xib */,
 			);
+			name = Home;
 			path = Energia;
 			sourceTree = "<group>";
 		};
@@ -496,6 +491,7 @@
 				37EFCB721A237D760075FAC4 /* Pet.m */,
 			);
 			name = Pet;
+			path = Choose;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -619,6 +615,7 @@
 				377BCB2C1A26593B0049B94E /* UIProgressView+AFNetworking.m in Sources */,
 				377BCB291A26593B0049B94E /* UIAlertView+AFNetworking.m in Sources */,
 				377BCB271A26593B0049B94E /* AFNetworkActivityIndicatorManager.m in Sources */,
+				370CA09A1A2CE26900F5730F /* LocationManager.m in Sources */,
 				377BCB1F1A26593B0049B94E /* AFHTTPRequestOperationManager.m in Sources */,
 				377BCB2A1A26593B0049B94E /* UIButton+AFNetworking.m in Sources */,
 				377BCB281A26593B0049B94E /* UIActivityIndicatorView+AFNetworking.m in Sources */,
@@ -643,7 +640,6 @@
 				37E360921A28EE610089F470 /* PushManager.m in Sources */,
 				3708E79D1A2CB6C800A6EB55 /* MapViewController.m in Sources */,
 				377BCB1E1A26593B0049B94E /* AFHTTPRequestOperation.m in Sources */,
-				3708E7A61A2CC17B00A6EB55 /* Location.m in Sources */,
 				377BCB201A26593B0049B94E /* AFHTTPSessionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

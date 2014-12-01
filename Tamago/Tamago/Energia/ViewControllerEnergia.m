@@ -13,6 +13,8 @@
 #import "NetworkManage.h"
 #import "PushManager.h"
 #import "RankViewController.h"
+#import "LocationManager.h"
+#import "MapViewController.h"
 
 @interface ViewControllerEnergia ()
 
@@ -46,6 +48,7 @@
 @property (strong, nonatomic) NSDictionary *diccGet;
 @property (nonatomic) mascotaTypes type;
 @property (strong, nonatomic) NSMutableArray *rankArray;
+@property (strong, nonatomic) LocationManager *manager;
 
 @end
 
@@ -132,6 +135,10 @@
     
     //lvl
     [[Pet sharedInstance] getLvl1];
+    
+    //Location_pet
+    self.manager = [[LocationManager alloc] init];
+    [self.manager startUpdate];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -215,7 +222,8 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-#pragma mark - Servicio__SAVEData
+
+#pragma mark - ServicioSAVEData
 -(void) saveGochi_POST
 {
     NSDictionary *parameters = [[Pet sharedInstance] fillDictionary];
@@ -235,7 +243,7 @@
     };
 }
 
-#pragma mark - Servicio__LOADData
+#pragma mark - ServicioLOADData
 - (IBAction)loadData:(id)sender
 {
     [self getEvents];

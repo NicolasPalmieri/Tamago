@@ -11,12 +11,9 @@
 
 @interface Anotation : NSObject <MKAnnotation>
 
-@property(assign, nonatomic) CLLocationCoordinate2D cord;
-@property(strong, nonatomic) NSString *title;
-@property(strong, nonatomic) NSString *subtitle;
-@property(strong, nonatomic) NSString *image;
-
-#pragma mark - Adds
-+(void)addAnotation;
+@property(nonatomic, readonly) CLLocationCoordinate2D coordinate;
+@property(nonatomic, readonly, copy) NSString *title;
+@property(nonatomic, readonly, copy) NSString *subtitle;
+@property(nonatomic, readonly, copy) NSString *image;
 
 @end
