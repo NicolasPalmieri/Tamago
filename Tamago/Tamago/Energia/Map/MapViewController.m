@@ -36,16 +36,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (instancetype)initWithLocation:(CLLocation*)cord;
-{
-    self = [super init];
-    if (self)
-    {
-        self.cordinate = cord;
-    }
-    return self;
-}
-
 -(void)mapViewDidFinishLoadingMap:(MKMapView *)mapView
 {
     //SETANNOTATION
