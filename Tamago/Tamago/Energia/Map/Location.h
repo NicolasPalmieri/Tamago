@@ -11,6 +11,8 @@
 
 @interface Location : NSObject <CLLocationManagerDelegate>
 
+@property (strong, nonatomic) CLLocation *spot;
+
 + (void)startUpdates;
 
 @end

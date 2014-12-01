@@ -14,6 +14,7 @@
 @property(assign, nonatomic) CLLocationCoordinate2D cord;
 @property(strong, nonatomic) NSString *title;
 @property(strong, nonatomic) NSString *subtitle;
+@property(strong, nonatomic) NSString *image;
 
 #pragma mark - Adds
 +(void)addAnotation;

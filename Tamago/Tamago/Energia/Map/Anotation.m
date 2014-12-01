@@ -15,12 +15,12 @@
 @implementation Anotation
 
 #pragma mark - Metodos Anotation
-/*+(void)addAnotation
++(void)addAnotation
 {
     SpotAnnotation *ann = [[SpotAnnotation alloc] init];
     [ann setCoordinate:[mapParking userLocation].location.coordinate];
     [mapParking addAnnotation:ann];
-}*/
+}
 
 /*If the annotation can be represented by a custom static image,
 create an instance of the MKAnnotationView class and assign the image to its image property;
