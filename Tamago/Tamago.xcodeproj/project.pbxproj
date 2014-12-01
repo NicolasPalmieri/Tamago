@@ -58,6 +58,10 @@
 		377BCB311A265A720049B94E /* NetworkManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 377BCB301A265A720049B94E /* NetworkManage.m */; };
 		377F7CE81A1CBF340031F6A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 377F7CE71A1CBF340031F6A2 /* main.m */; };
 		378576251A1FCC7600A14A10 /* ArrayConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 378576241A1FCC7600A14A10 /* ArrayConst.m */; };
+		37BFA7421A2A03CA00C3540A /* RankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BFA7401A2A03CA00C3540A /* RankViewController.m */; };
+		37BFA7431A2A03CA00C3540A /* RankViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37BFA7411A2A03CA00C3540A /* RankViewController.xib */; };
+		37BFA7481A2A051700C3540A /* RankTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BFA7461A2A051700C3540A /* RankTableViewCell.m */; };
+		37BFA7491A2A051700C3540A /* RankTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37BFA7471A2A051700C3540A /* RankTableViewCell.xib */; };
 		37E3608F1A28EB930089F470 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E3608E1A28EB930089F470 /* MessageUI.framework */; };
 		37E360921A28EE610089F470 /* PushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E360911A28EE610089F470 /* PushManager.m */; };
 		37EFCB731A237D760075FAC4 /* Pet.m in Sources */ = {isa = PBXBuildFile; fileRef = 37EFCB721A237D760075FAC4 /* Pet.m */; };
@@ -160,6 +164,12 @@
 		377F7CE71A1CBF340031F6A2 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Tamago/main.m; sourceTree = SOURCE_ROOT; };
 		378576231A1FCC7600A14A10 /* ArrayConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArrayConst.h; path = Tamago/ArrayConst/ArrayConst.h; sourceTree = SOURCE_ROOT; };
 		378576241A1FCC7600A14A10 /* ArrayConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArrayConst.m; path = Tamago/ArrayConst/ArrayConst.m; sourceTree = SOURCE_ROOT; };
+		37BFA73F1A2A03CA00C3540A /* RankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RankViewController.h; path = Rank/RankViewController.h; sourceTree = "<group>"; };
+		37BFA7401A2A03CA00C3540A /* RankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RankViewController.m; path = Rank/RankViewController.m; sourceTree = "<group>"; };
+		37BFA7411A2A03CA00C3540A /* RankViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RankViewController.xib; path = Rank/RankViewController.xib; sourceTree = "<group>"; };
+		37BFA7451A2A051700C3540A /* RankTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RankTableViewCell.h; path = Rank/RankCell/RankTableViewCell.h; sourceTree = "<group>"; };
+		37BFA7461A2A051700C3540A /* RankTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RankTableViewCell.m; path = Rank/RankCell/RankTableViewCell.m; sourceTree = "<group>"; };
+		37BFA7471A2A051700C3540A /* RankTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RankTableViewCell.xib; path = Rank/RankCell/RankTableViewCell.xib; sourceTree = "<group>"; };
 		37E3608E1A28EB930089F470 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		37E360901A28EE610089F470 /* PushManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushManager.h; sourceTree = "<group>"; };
 		37E360911A28EE610089F470 /* PushManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushManager.m; sourceTree = "<group>"; };
@@ -302,6 +312,7 @@
 		3743D7E31A1BCA3B00BE6B15 /* Tamago */ = {
 			isa = PBXGroup;
 			children = (
+				37BFA73E1A2A038F00C3540A /* Rank */,
 				3743D9281A1BE4A700BE6B15 /* Home */,
 				3743D9311A1BE4DA00BE6B15 /* Choose */,
 				3743D9371A1BE4F500BE6B15 /* Energia */,
@@ -448,6 +459,27 @@
 			name = ArrayConst;
 			sourceTree = "<group>";
 		};
+		37BFA73E1A2A038F00C3540A /* Rank */ = {
+			isa = PBXGroup;
+			children = (
+				37BFA73F1A2A03CA00C3540A /* RankViewController.h */,
+				37BFA7401A2A03CA00C3540A /* RankViewController.m */,
+				37BFA7411A2A03CA00C3540A /* RankViewController.xib */,
+				37BFA7441A2A04E800C3540A /* Cell Custom */,
+			);
+			name = Rank;
+			sourceTree = "<group>";
+		};
+		37BFA7441A2A04E800C3540A /* Cell Custom */ = {
+			isa = PBXGroup;
+			children = (
+				37BFA7451A2A051700C3540A /* RankTableViewCell.h */,
+				37BFA7461A2A051700C3540A /* RankTableViewCell.m */,
+				37BFA7471A2A051700C3540A /* RankTableViewCell.xib */,
+			);
+			name = "Cell Custom";
+			sourceTree = "<group>";
+		};
 		37E360931A28EEDA0089F470 /* PushNotifications */ = {
 			isa = PBXGroup;
 			children = (
@@ -553,7 +585,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3743D93C1A1BE4F500BE6B15 /* ViewControllerEnergia.xib in Resources */,
+				37BFA7491A2A051700C3540A /* RankTableViewCell.xib in Resources */,
 				3743D9301A1BE4A700BE6B15 /* ViewController2.xib in Resources */,
+				37BFA7431A2A03CA00C3540A /* RankViewController.xib in Resources */,
 				3743D7F51A1BCA3B00BE6B15 /* LaunchScreen.xib in Resources */,
 				3708E79E1A2CB6C800A6EB55 /* MapViewController.xib in Resources */,
 				3743D9361A1BE4DA00BE6B15 /* ViewController3.xib in Resources */,
@@ -592,6 +626,8 @@
 				377BCB2E1A26593B0049B94E /* UIWebView+AFNetworking.m in Sources */,
 				3743D92E1A1BE4A700BE6B15 /* AppDelegate.m in Sources */,
 				3743D92F1A1BE4A700BE6B15 /* ViewController2.m in Sources */,
+				37BFA7481A2A051700C3540A /* RankTableViewCell.m in Sources */,
+				37BFA7421A2A03CA00C3540A /* RankViewController.m in Sources */,
 				371B4A651A1E5B95007C0252 /* Meal.m in Sources */,
 				378576251A1FCC7600A14A10 /* ArrayConst.m in Sources */,
 				377BCB311A265A720049B94E /* NetworkManage.m in Sources */,
