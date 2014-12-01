@@ -42,7 +42,9 @@
 
     [self setTitle:@"Selection"];
     
-    [self.ScrollGroupbox1 setContentSize:CGSizeMake(580, 150)]; //scrolleo
+    //scrolleo
+    [self.ScrollGroupbox1 setContentSize:CGSizeMake(self.ScrollGroupbox1.frame.size.width
+                                                    + 70, self.ScrollGroupbox1.frame.size.height)];
     
     //asigno string de la variable
     self.labelPetName.text = [Pet sharedInstance].name;
@@ -72,15 +74,15 @@
             [[Pet sharedInstance] setImagen:@"gato_comiendo_1"];
             [[Pet sharedInstance] setType:TYPE_GATO];
             break;
-        case TYPE_JIRAFA:
-            self.ImageViewPerfilPicture.image = [UIImage imageNamed: @"jirafa_comiendo_1"];
-            [[Pet sharedInstance] setImagen:@"jirafa_comiendo_1"];
-            [[Pet sharedInstance] setType:TYPE_JIRAFA];
-            break;
         case TYPE_LEON:
             self.ImageViewPerfilPicture.image = [UIImage imageNamed: @"leon_comiendo_1"];
             [[Pet sharedInstance] setImagen:@"leon_comiendo_1"];
             [[Pet sharedInstance] setType:TYPE_LEON];
+            break;
+        case TYPE_JIRAFA:
+            self.ImageViewPerfilPicture.image = [UIImage imageNamed: @"jirafa_comiendo_1"];
+            [[Pet sharedInstance] setImagen:@"jirafa_comiendo_1"];
+            [[Pet sharedInstance] setType:TYPE_JIRAFA];
             break;
     }
 }

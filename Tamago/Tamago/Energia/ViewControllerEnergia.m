@@ -278,7 +278,7 @@
 
 -(void) asignoImagenLoad_type
 {
-    switch (self.type)
+    switch ([Pet sharedInstance].type)
     {
         case TYPE_CIERVO:
             self.ImageViewProfileEnergia.image = [UIImage imageNamed:@"ciervo_comiendo_1"];
@@ -290,15 +290,15 @@
             [[Pet sharedInstance] setImagen:@"gato_comiendo_1"];
             [[Pet sharedInstance] setType:TYPE_GATO];
             break;
-        case TYPE_JIRAFA:
-            self.ImageViewProfileEnergia.image = [UIImage imageNamed: @"jirafa_comiendo_1"];
-            [[Pet sharedInstance] setImagen:@"jirafa_comiendo_1"];
-            [[Pet sharedInstance] setType:TYPE_JIRAFA];
-            break;
         case TYPE_LEON:
             self.ImageViewProfileEnergia.image = [UIImage imageNamed: @"leon_comiendo_1"];
             [[Pet sharedInstance] setImagen:@"leon_comiendo_1"];
             [[Pet sharedInstance] setType:TYPE_LEON];
+             break;
+        case TYPE_JIRAFA:
+            self.ImageViewProfileEnergia.image = [UIImage imageNamed: @"jirafa_comiendo_1"];
+            [[Pet sharedInstance] setImagen:@"jirafa_comiendo_1"];
+            [[Pet sharedInstance] setType:TYPE_JIRAFA];
             break;
     }
 }

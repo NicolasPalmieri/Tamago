@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3708E7971A2CB49A00A6EB55 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3708E7961A2CB49A00A6EB55 /* MapKit.framework */; };
+		3708E79D1A2CB6C800A6EB55 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3708E79B1A2CB6C800A6EB55 /* MapViewController.m */; };
+		3708E79E1A2CB6C800A6EB55 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3708E79C1A2CB6C800A6EB55 /* MapViewController.xib */; };
+		3708E7A21A2CBBC800A6EB55 /* Anotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3708E7A11A2CBBC800A6EB55 /* Anotation.m */; };
+		3708E7A61A2CC17B00A6EB55 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 3708E7A51A2CC17B00A6EB55 /* Location.m */; };
 		371B4A601A1E5AEC007C0252 /* ComidaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371B4A5E1A1E5AEC007C0252 /* ComidaViewController.m */; };
 		371B4A611A1E5AEC007C0252 /* ComidaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 371B4A5F1A1E5AEC007C0252 /* ComidaViewController.xib */; };
 		371B4A651A1E5B95007C0252 /* Meal.m in Sources */ = {isa = PBXBuildFile; fileRef = 371B4A641A1E5B95007C0252 /* Meal.m */; };
@@ -30,7 +35,6 @@
 		3773F1C61A28C18E00501644 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3773F1C51A28C18E00501644 /* MobileCoreServices.framework */; };
 		3773F1C81A28C1A500501644 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3773F1C71A28C1A500501644 /* QuartzCore.framework */; };
 		3773F1CA1A28C1F000501644 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3773F1C91A28C1F000501644 /* Security.framework */; };
-		3773F1CC1A28C1F600501644 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3773F1CB1A28C1F600501644 /* StoreKit.framework */; };
 		3773F1CE1A28C20000501644 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3773F1CD1A28C20000501644 /* SystemConfiguration.framework */; };
 		3773F1CF1A28C9B400501644 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3773F1B11A28C02B00501644 /* Bolts.framework */; };
 		3773F1D01A28C9B400501644 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3773F1B21A28C02B00501644 /* Parse.framework */; };
@@ -70,6 +74,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3708E7961A2CB49A00A6EB55 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3708E79A1A2CB6C800A6EB55 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = Map/MapViewController.h; sourceTree = "<group>"; };
+		3708E79B1A2CB6C800A6EB55 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = Map/MapViewController.m; sourceTree = "<group>"; };
+		3708E79C1A2CB6C800A6EB55 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapViewController.xib; path = Map/MapViewController.xib; sourceTree = "<group>"; };
+		3708E7A01A2CBBC800A6EB55 /* Anotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Anotation.h; path = Map/Anotation.h; sourceTree = "<group>"; };
+		3708E7A11A2CBBC800A6EB55 /* Anotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Anotation.m; path = Map/Anotation.m; sourceTree = "<group>"; };
+		3708E7A41A2CC17B00A6EB55 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = Map/Location.h; sourceTree = "<group>"; };
+		3708E7A51A2CC17B00A6EB55 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = Map/Location.m; sourceTree = "<group>"; };
 		371B4A5D1A1E5AEC007C0252 /* ComidaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComidaViewController.h; path = Clase4/ComidaViewController.h; sourceTree = "<group>"; };
 		371B4A5E1A1E5AEC007C0252 /* ComidaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComidaViewController.m; path = Clase4/ComidaViewController.m; sourceTree = "<group>"; };
 		371B4A5F1A1E5AEC007C0252 /* ComidaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ComidaViewController.xib; path = Clase4/ComidaViewController.xib; sourceTree = "<group>"; };
@@ -106,7 +118,6 @@
 		3773F1C51A28C18E00501644 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		3773F1C71A28C1A500501644 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3773F1C91A28C1F000501644 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		3773F1CB1A28C1F600501644 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		3773F1CD1A28C20000501644 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		377BCAF91A26593B0049B94E /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		377BCAFA1A26593B0049B94E /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
@@ -161,11 +172,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3708E7971A2CB49A00A6EB55 /* MapKit.framework in Frameworks */,
 				37E3608F1A28EB930089F470 /* MessageUI.framework in Frameworks */,
 				3773F1CF1A28C9B400501644 /* Bolts.framework in Frameworks */,
 				3773F1D01A28C9B400501644 /* Parse.framework in Frameworks */,
 				3773F1CE1A28C20000501644 /* SystemConfiguration.framework in Frameworks */,
-				3773F1CC1A28C1F600501644 /* StoreKit.framework in Frameworks */,
 				3773F1CA1A28C1F000501644 /* Security.framework in Frameworks */,
 				3773F1C81A28C1A500501644 /* QuartzCore.framework in Frameworks */,
 				3773F1C61A28C18E00501644 /* MobileCoreServices.framework in Frameworks */,
@@ -187,6 +198,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3708E7981A2CB4D900A6EB55 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3708E7961A2CB49A00A6EB55 /* MapKit.framework */,
+				37E3608E1A28EB930089F470 /* MessageUI.framework */,
+				3773F1CD1A28C20000501644 /* SystemConfiguration.framework */,
+				3773F1C91A28C1F000501644 /* Security.framework */,
+				3773F1B11A28C02B00501644 /* Bolts.framework */,
+				3773F1B21A28C02B00501644 /* Parse.framework */,
+				3773F1C71A28C1A500501644 /* QuartzCore.framework */,
+				3773F1C51A28C18E00501644 /* MobileCoreServices.framework */,
+				3773F1C31A28C18200501644 /* libz.dylib */,
+				3773F1C11A28C17100501644 /* CoreLocation.framework */,
+				3773F1BF1A28C16800501644 /* CoreGraphics.framework */,
+				3773F1BD1A28C15D00501644 /* CFNetwork.framework */,
+				3773F1BB1A28C15300501644 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3708E7991A2CB5F000A6EB55 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				3708E7A31A2CC15800A6EB55 /* Location */,
+				3708E79F1A2CB89A00A6EB55 /* Anotation */,
+				3708E79A1A2CB6C800A6EB55 /* MapViewController.h */,
+				3708E79B1A2CB6C800A6EB55 /* MapViewController.m */,
+				3708E79C1A2CB6C800A6EB55 /* MapViewController.xib */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		3708E79F1A2CB89A00A6EB55 /* Anotation */ = {
+			isa = PBXGroup;
+			children = (
+				3708E7A01A2CBBC800A6EB55 /* Anotation.h */,
+				3708E7A11A2CBBC800A6EB55 /* Anotation.m */,
+			);
+			name = Anotation;
+			sourceTree = "<group>";
+		};
+		3708E7A31A2CC15800A6EB55 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				3708E7A41A2CC17B00A6EB55 /* Location.h */,
+				3708E7A51A2CC17B00A6EB55 /* Location.m */,
+			);
+			name = Location;
+			sourceTree = "<group>";
+		};
 		371B4A5C1A1E5A8F007C0252 /* Comida */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,20 +283,8 @@
 		3743D7D81A1BCA3B00BE6B15 = {
 			isa = PBXGroup;
 			children = (
-				37E3608E1A28EB930089F470 /* MessageUI.framework */,
-				3773F1CD1A28C20000501644 /* SystemConfiguration.framework */,
-				3773F1CB1A28C1F600501644 /* StoreKit.framework */,
-				3773F1C91A28C1F000501644 /* Security.framework */,
-				3773F1B11A28C02B00501644 /* Bolts.framework */,
-				3773F1B21A28C02B00501644 /* Parse.framework */,
-				3773F1C71A28C1A500501644 /* QuartzCore.framework */,
-				3773F1C51A28C18E00501644 /* MobileCoreServices.framework */,
-				3773F1C31A28C18200501644 /* libz.dylib */,
-				3773F1C11A28C17100501644 /* CoreLocation.framework */,
-				3773F1BF1A28C16800501644 /* CoreGraphics.framework */,
-				3773F1BD1A28C15D00501644 /* CFNetwork.framework */,
-				3773F1BB1A28C15300501644 /* AudioToolbox.framework */,
-				3743D9271A1BE44600BE6B15 /* New Group */,
+				3708E7981A2CB4D900A6EB55 /* Frameworks */,
+				3743D9271A1BE44600BE6B15 /* TamagoAPP */,
 				3743D7FD1A1BCA3B00BE6B15 /* TamagoTests */,
 				3743D7E21A1BCA3B00BE6B15 /* Products */,
 			);
@@ -281,12 +330,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3743D9271A1BE44600BE6B15 /* New Group */ = {
+		3743D9271A1BE44600BE6B15 /* TamagoAPP */ = {
 			isa = PBXGroup;
 			children = (
 				3743D7E31A1BCA3B00BE6B15 /* Tamago */,
 			);
-			name = "New Group";
+			name = TamagoAPP;
 			sourceTree = "<group>";
 		};
 		3743D9281A1BE4A700BE6B15 /* Home */ = {
@@ -315,6 +364,7 @@
 		3743D9371A1BE4F500BE6B15 /* Energia */ = {
 			isa = PBXGroup;
 			children = (
+				3708E7991A2CB5F000A6EB55 /* Map */,
 				377BCAF71A26589A0049B94E /* AFNetworking */,
 				378576221A1FCC0700A14A10 /* ArrayConst */,
 				37E360931A28EEDA0089F470 /* PushNotifications */,
@@ -466,6 +516,11 @@
 					3743D7E01A1BCA3B00BE6B15 = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = 332N44E879;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					3743D7F91A1BCA3B00BE6B15 = {
 						CreatedOnToolsVersion = 6.1;
@@ -500,6 +555,7 @@
 				3743D93C1A1BE4F500BE6B15 /* ViewControllerEnergia.xib in Resources */,
 				3743D9301A1BE4A700BE6B15 /* ViewController2.xib in Resources */,
 				3743D7F51A1BCA3B00BE6B15 /* LaunchScreen.xib in Resources */,
+				3708E79E1A2CB6C800A6EB55 /* MapViewController.xib in Resources */,
 				3743D9361A1BE4DA00BE6B15 /* ViewController3.xib in Resources */,
 				3743D7F21A1BCA3B00BE6B15 /* Images.xcassets in Resources */,
 				371B4A6B1A1E6D21007C0252 /* CellTableViewCell.xib in Resources */,
@@ -525,6 +581,7 @@
 				377F7CE81A1CBF340031F6A2 /* main.m in Sources */,
 				377BCB221A26593B0049B94E /* AFSecurityPolicy.m in Sources */,
 				371B4A6A1A1E6D21007C0252 /* CellTableViewCell.m in Sources */,
+				3708E7A21A2CBBC800A6EB55 /* Anotation.m in Sources */,
 				377BCB2C1A26593B0049B94E /* UIProgressView+AFNetworking.m in Sources */,
 				377BCB291A26593B0049B94E /* UIAlertView+AFNetworking.m in Sources */,
 				377BCB271A26593B0049B94E /* AFNetworkActivityIndicatorManager.m in Sources */,
@@ -548,7 +605,9 @@
 				377BCB211A26593B0049B94E /* AFNetworkReachabilityManager.m in Sources */,
 				37EFCB731A237D760075FAC4 /* Pet.m in Sources */,
 				37E360921A28EE610089F470 /* PushManager.m in Sources */,
+				3708E79D1A2CB6C800A6EB55 /* MapViewController.m in Sources */,
 				377BCB1E1A26593B0049B94E /* AFHTTPRequestOperation.m in Sources */,
+				3708E7A61A2CC17B00A6EB55 /* Location.m in Sources */,
 				377BCB201A26593B0049B94E /* AFHTTPSessionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
