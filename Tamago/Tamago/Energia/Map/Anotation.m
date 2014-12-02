@@ -10,7 +10,10 @@
 
 @interface  Anotation()
 
-@property (strong, nonatomic) NSString* auxiliar;
+@property (strong, nonatomic) NSString* city;
+@property (strong, nonatomic) NSString* street;
+@property (strong, nonatomic) NSString* country;
+@property (strong, nonatomic) NSString* auxiliarParametro;
 
 @end
 
@@ -74,21 +77,26 @@ see Using the Standard Annotation Views.*/
          if (!error && [placemarks count] > 0)
          {
              NSDictionary *dict = [[placemarks objectAtIndex:0] addressDictionary];
-             NSLog(@"street address: %@", [dict objectForKey:@"Street"]);
-             self.auxiliar = [dict objectForKey:@"Street"];
+             NSLog(@"settingInfo");
+             self.street = [dict objectForKey:@"Street"];
+             self.city = [dict objectForKey:@"City"];
+             self.country = [dict objectForKey:@"Country"];
+             
+             self.auxiliarParametro = [NSString stringWithFormat:@"Country< %@ \r\n City< %@ \r\n Street< %@ \r\n",
+                                       self.country,self.city,self.street];
          }
          else
          {
              NSLog(@"ERROR: %@", error);
          }
      }];
-    return self.auxiliar;
+    return self.auxiliarParametro;
 }
 
 //puente del selector.
 -(void)bridgeData
 {
-    [self showData:self.auxiliar];
+    [self showData:self.auxiliarParametro];
 }
 
 //alertview
@@ -96,7 +104,7 @@ see Using the Standard Annotation Views.*/
 {
     UIAlertView *message;
     message = [[UIAlertView alloc] initWithTitle:@"LOCATION!"
-                                         message:[NSString stringWithFormat:@"Your gochi is at %@",auxmessage]
+                                         message:[NSString stringWithFormat:@"%@",auxmessage]
                                         delegate:nil
                                cancelButtonTitle:@"ROGERDAT!"
                                otherButtonTitles:nil];
