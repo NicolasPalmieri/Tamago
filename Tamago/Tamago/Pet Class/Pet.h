@@ -23,6 +23,8 @@
 extern NSString *const MSG_LVLUP;
 extern NSString *const MSG_EXHAUST;
 extern NSString *const MSG_COD_PET;
+extern NSString *const BOOL_1ST_VIEW;
+extern NSString *const BOOL_2ND_VIEW;
 
 @interface Pet : NSObject
 

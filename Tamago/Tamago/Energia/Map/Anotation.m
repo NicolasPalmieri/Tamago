@@ -20,10 +20,6 @@
 
 @implementation Anotation
 
-/*If the annotation can be represented by a custom static image,
-create an instance of the MKAnnotationView class and assign the image to its image property;
-see Using the Standard Annotation Views.*/
-
 -(instancetype) initWithPet:(Pet*)pet;
 {
     self = [super init];

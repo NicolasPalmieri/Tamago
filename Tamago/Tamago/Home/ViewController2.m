@@ -66,6 +66,9 @@
         NSLog(@"Nick accepted");
         [self.nick addObject:[Pet sharedInstance]];//lo agrego al array
         
+        //BOOL INTRO_NAME
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:BOOL_1ST_VIEW];
+        
         ViewController3 *myView = [[ViewController3 alloc]
                                    initWithNibName:@"ViewController3"
                                    bundle:[NSBundle mainBundle]

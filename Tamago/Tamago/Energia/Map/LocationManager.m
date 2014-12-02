@@ -21,13 +21,16 @@
 - (void)startUpdate
 {
     if (nil == self.locationManager)
-    {
-        self.locationManager = [[CLLocationManager alloc] init];
-    }
+    self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // Presición
     self.locationManager.distanceFilter = 5; // Distancia mínima de updates
-    [self.locationManager startUpdatingLocation];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
+        [self.locationManager requestWhenInUseAuthorization];
+    } else {
+        [self.locationManager startUpdatingLocation];
+    }
+    
 }
 
 #pragma mark - Delegate
@@ -48,15 +51,7 @@
         
         //DO_POST en caso de moverse..
     }
- 
 }
 
-#pragma mark - Metodos Anotation
-/*+(void)addAnotation
- {
- Anotation *anot = [[Anotation alloc] init];
- [anot setCoordinate:[mapParking userLocation].location.coordinate];
- [mapParking addAnnotation:anot];
- }*/
 
 @end

@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface LocationManager : NSObject <MKMapViewDelegate>
+@interface LocationManager : NSObject <MKMapViewDelegate,CLLocationManagerDelegate>
 
 #pragma mark - Manager
 @property(strong, nonatomic) CLLocationManager *locationManager;

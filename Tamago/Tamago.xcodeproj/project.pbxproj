@@ -101,8 +101,8 @@
 		3743D7FA1A1BCA3B00BE6B15 /* TamagoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TamagoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3743D7FF1A1BCA3B00BE6B15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3743D8001A1BCA3B00BE6B15 /* TamagoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TamagoTests.m; sourceTree = "<group>"; };
-		3743D9291A1BE4A700BE6B15 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		3743D92A1A1BE4A700BE6B15 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3743D9291A1BE4A700BE6B15 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Home/AppDelegate.h; sourceTree = "<group>"; };
+		3743D92A1A1BE4A700BE6B15 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Home/AppDelegate.m; sourceTree = "<group>"; };
 		3743D92B1A1BE4A700BE6B15 /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		3743D92C1A1BE4A700BE6B15 /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		3743D92D1A1BE4A700BE6B15 /* ViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController2.xib; sourceTree = "<group>"; };
@@ -305,6 +305,8 @@
 		3743D7E31A1BCA3B00BE6B15 /* Tamago */ = {
 			isa = PBXGroup;
 			children = (
+				3743D9291A1BE4A700BE6B15 /* AppDelegate.h */,
+				3743D92A1A1BE4A700BE6B15 /* AppDelegate.m */,
 				37EFCB701A237AF10075FAC4 /* Pet */,
 				3708E7991A2CB5F000A6EB55 /* Map */,
 				37BFA73E1A2A038F00C3540A /* Rank */,
@@ -347,8 +349,6 @@
 		3743D9281A1BE4A700BE6B15 /* Intro */ = {
 			isa = PBXGroup;
 			children = (
-				3743D9291A1BE4A700BE6B15 /* AppDelegate.h */,
-				3743D92A1A1BE4A700BE6B15 /* AppDelegate.m */,
 				3743D92B1A1BE4A700BE6B15 /* ViewController2.h */,
 				3743D92C1A1BE4A700BE6B15 /* ViewController2.m */,
 				3743D92D1A1BE4A700BE6B15 /* ViewController2.xib */,
@@ -379,6 +379,13 @@
 			);
 			name = Home;
 			path = Energia;
+			sourceTree = "<group>";
+		};
+		374CEBB51A2E2E4E00BE1D94 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Storage;
 			sourceTree = "<group>";
 		};
 		377BCAF71A26589A0049B94E /* AFNetworking */ = {
@@ -487,6 +494,7 @@
 		37EFCB701A237AF10075FAC4 /* Pet */ = {
 			isa = PBXGroup;
 			children = (
+				374CEBB51A2E2E4E00BE1D94 /* Storage */,
 				37EFCB711A237D760075FAC4 /* Pet.h */,
 				37EFCB721A237D760075FAC4 /* Pet.m */,
 			);
@@ -545,6 +553,9 @@
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = 332N44E879;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.InAppPurchase = {
 								enabled = 0;
 							};

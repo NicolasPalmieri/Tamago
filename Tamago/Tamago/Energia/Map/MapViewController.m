@@ -23,10 +23,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-}
-
--(void)viewWillAppear:(BOOL)animated
-{
+    //SETANNOTATION
+    Anotation *anotacion = [[Anotation alloc] initWithPet:self.mascota];
+    [self.mapView addAnnotation:anotacion];
     self.mapView.delegate = self;
 }
 
@@ -38,9 +37,6 @@
 
 -(void)mapViewDidFinishLoadingMap:(MKMapView *)mapView
 {
-    //SETANNOTATION
-    Anotation *anotacion = [[Anotation alloc] initWithPet:self.mascota];
-    [self.mapView addAnnotation:anotacion];
     
     //CHANGES
     MKCoordinateRegion region;

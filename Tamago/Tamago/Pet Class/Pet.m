@@ -23,6 +23,8 @@
 NSString *const MSG_LVLUP =@"Alocaverna";
 NSString *const MSG_EXHAUST =@"Alobestia";
 NSString *const MSG_COD_PET =@"np0114";
+NSString *const BOOL_1ST_VIEW =@"ViewController3";
+NSString *const BOOL_2ND_VIEW =@"ViewControllerEnergia";
 
 
 @implementation Pet

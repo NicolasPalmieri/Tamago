@@ -92,8 +92,11 @@
 {
     if([Pet sharedInstance].imagen) //validar selection
     {
+        //BOOL CHOOSE_IMAGEN
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:BOOL_2ND_VIEW];
+        
         ViewControllerEnergia *myView = [[ViewControllerEnergia alloc] initWithNibName:@"ViewControllerEnergia" bundle:[NSBundle mainBundle] andPetNombre:self.labelPetName.text andPetPicture:[Pet sharedInstance].imagen andVarArray:[Pet sharedInstance].type];
-    [self.navigationController pushViewController:myView animated:YES];
+        [self.navigationController pushViewController:myView animated:YES];
     }
     else
     {

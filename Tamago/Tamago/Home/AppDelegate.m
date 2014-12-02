@@ -9,7 +9,9 @@
 #import "AppDelegate.h"
 #import "ViewController2.h"
 #import "ViewController3.h"
+#import "ViewControllerEnergia.h"
 #import <Parse/Parse.h>
+#import "Pet.h"
 
 @interface AppDelegate ()
 
@@ -22,10 +24,29 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    ViewController2* home = [[ViewController2 alloc] initWithNibName:@"ViewController2" bundle:nil];
-    UINavigationController* navControllerHome = [[UINavigationController alloc] initWithRootViewController:home];
     
-    [self.window setRootViewController:navControllerHome];
+    //BOOL_CAVERNICOLA
+    if([[NSUserDefaults standardUserDefaults]boolForKey:BOOL_1ST_VIEW])
+    {
+        ViewController3* home = [[ViewController3 alloc] initWithNibName:BOOL_1ST_VIEW bundle:nil];
+        UINavigationController* navControllerHome = [[UINavigationController alloc] initWithRootViewController:home];
+        [self.window setRootViewController:navControllerHome];
+        
+        if([[NSUserDefaults standardUserDefaults]boolForKey:BOOL_2ND_VIEW])
+        {
+            ViewControllerEnergia* home = [[ViewControllerEnergia alloc] initWithNibName:BOOL_2ND_VIEW bundle:nil];
+            UINavigationController* navControllerHome = [[UINavigationController alloc] initWithRootViewController:home];
+            [self.window setRootViewController:navControllerHome];
+        }
+    }
+        else
+    {
+        ViewController2* home = [[ViewController2 alloc] initWithNibName:@"ViewController2" bundle:nil];
+        UINavigationController* navControllerHome = [[UINavigationController alloc] initWithRootViewController:home];
+        [self.window setRootViewController:navControllerHome];
+
+    }
+    
     self.window.backgroundColor = [UIColor whiteColor];
     
     //Parse
@@ -87,9 +108,9 @@
 }
 
 
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+- (void)applicationWillResignActive:(UIApplication *)application
+{
+    //SAVELOAD?
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
@@ -105,19 +126,11 @@
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+- (void)applicationWillTerminate:(UIApplication *)application
+{
+    //SAVE?!
 }
 
-
-#pragma mark - Parse Local
-/*- (void)application:(UIApplication *)app didReceiveLocalNotification:(UILocalNotification *)notif 
-{
-    NSString *itemName = [notif.userInfo objectForKey:ToDoItemKey];
-    // custom method
-    [viewController displayItem:itemName];
-    app.applicationIconBadgeNumber = notification.applicationIconBadgeNumber - 1;
-}*/
 
 
 @end
