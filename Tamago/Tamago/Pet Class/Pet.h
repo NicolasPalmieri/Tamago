@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
+
 @protocol Petdelegate <NSObject>
 
 @required
@@ -26,7 +27,7 @@ extern NSString *const MSG_COD_PET;
 extern NSString *const BOOL_1ST_VIEW;
 extern NSString *const BOOL_2ND_VIEW;
 
-@interface Pet : NSObject
+@interface Pet : NSObject <NSCoding>
 
 typedef enum
 {
@@ -48,6 +49,7 @@ typedef enum
 -(instancetype) initWIthNAME:(NSString *)name andType:(mascotaTypes) tipo andLevel:(int) nivel andCode: (NSString*) codigo andLat:(float) latitud andLon:(float)longitud;
 
 +(instancetype) sharedInstance;
++(void) loadData;
 
 @property (weak, nonatomic) id <Petdelegate> delegate;
 

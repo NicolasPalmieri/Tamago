@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="ImageViewProfileEnergia" destination="NDJ-Qx-N9Y" id="iQv-kf-pSA"/>
                 <outlet property="ViewRango" destination="oI9-0y-4jO" id="hVK-2z-r8x"/>
+                <outlet property="btnData" destination="Owf-6a-Ohr" id="qUx-vh-dE9"/>
                 <outlet property="btnFeed" destination="BqQ-L8-EFn" id="T0j-ix-tZk"/>
                 <outlet property="btnTrain" destination="mJw-MC-BYv" id="22c-DW-LI8"/>
                 <outlet property="imgBringFood" destination="bcL-If-vp0" id="fbw-ln-5im"/>

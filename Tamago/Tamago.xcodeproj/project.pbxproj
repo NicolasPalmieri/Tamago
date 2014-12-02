@@ -27,6 +27,7 @@
 		3743D9361A1BE4DA00BE6B15 /* ViewController3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3743D9341A1BE4DA00BE6B15 /* ViewController3.xib */; };
 		3743D93B1A1BE4F500BE6B15 /* ViewControllerEnergia.m in Sources */ = {isa = PBXBuildFile; fileRef = 3743D9391A1BE4F500BE6B15 /* ViewControllerEnergia.m */; };
 		3743D93C1A1BE4F500BE6B15 /* ViewControllerEnergia.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3743D93A1A1BE4F500BE6B15 /* ViewControllerEnergia.xib */; };
+		374CEBB81A2E515F00BE1D94 /* Storage.m in Sources */ = {isa = PBXBuildFile; fileRef = 374CEBB71A2E515F00BE1D94 /* Storage.m */; };
 		3773F1BC1A28C15300501644 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3773F1BB1A28C15300501644 /* AudioToolbox.framework */; };
 		3773F1BE1A28C15D00501644 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3773F1BD1A28C15D00501644 /* CFNetwork.framework */; };
 		3773F1C01A28C16800501644 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3773F1BF1A28C16800501644 /* CoreGraphics.framework */; };
@@ -112,6 +113,8 @@
 		3743D9381A1BE4F500BE6B15 /* ViewControllerEnergia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerEnergia.h; sourceTree = "<group>"; };
 		3743D9391A1BE4F500BE6B15 /* ViewControllerEnergia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerEnergia.m; sourceTree = "<group>"; };
 		3743D93A1A1BE4F500BE6B15 /* ViewControllerEnergia.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerEnergia.xib; sourceTree = "<group>"; };
+		374CEBB61A2E515F00BE1D94 /* Storage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Storage.h; sourceTree = "<group>"; };
+		374CEBB71A2E515F00BE1D94 /* Storage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Storage.m; sourceTree = "<group>"; };
 		3773F1B11A28C02B00501644 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../parse-library-1/Bolts.framework"; sourceTree = "<group>"; };
 		3773F1B21A28C02B00501644 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../parse-library-1/Parse.framework"; sourceTree = "<group>"; };
 		3773F1BB1A28C15300501644 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -384,6 +387,8 @@
 		374CEBB51A2E2E4E00BE1D94 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				374CEBB61A2E515F00BE1D94 /* Storage.h */,
+				374CEBB71A2E515F00BE1D94 /* Storage.m */,
 			);
 			name = Storage;
 			sourceTree = "<group>";
@@ -645,6 +650,7 @@
 				371B4A601A1E5AEC007C0252 /* ComidaViewController.m in Sources */,
 				377BCB241A26593B0049B94E /* AFURLRequestSerialization.m in Sources */,
 				377BCB2D1A26593B0049B94E /* UIRefreshControl+AFNetworking.m in Sources */,
+				374CEBB81A2E515F00BE1D94 /* Storage.m in Sources */,
 				377BCB2B1A26593B0049B94E /* UIImageView+AFNetworking.m in Sources */,
 				377BCB211A26593B0049B94E /* AFNetworkReachabilityManager.m in Sources */,
 				37EFCB731A237D760075FAC4 /* Pet.m in Sources */,

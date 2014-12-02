@@ -15,6 +15,7 @@
 #import "RankViewController.h"
 #import "LocationManager.h"
 #import "MapViewController.h"
+#import "Storage.h"
 
 @interface ViewControllerEnergia ()
 
@@ -32,6 +33,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *labelNivel;
 @property (strong, nonatomic) IBOutlet UILabel *labelExp;
 @property (strong, nonatomic) IBOutlet UIButton *btnNotification;
+@property (strong, nonatomic) IBOutlet UIButton *btnData;
 
 #pragma mark - Properties
 @property (strong, nonatomic) MFMailComposeViewController *correo;
@@ -132,13 +134,23 @@
     
     //delegate
     [Pet sharedInstance].delegate = self;
-    
-    //lvl
-    [[Pet sharedInstance] getLvl1];
-    
+        
     //Location_pet
     self.manager = [[LocationManager alloc] init];
     [self.manager startUpdate];
+    
+    //ServicioLOAD disable
+    [self.btnData setEnabled:NO];
+    
+    //actualizacion view LoadRigido
+    self.labelNameENergy.text = [Pet sharedInstance].name;
+    NSString *auxlvl = [NSString stringWithFormat:@"%d", [[Pet sharedInstance] showLvl]];
+    self.labelNivel.text = auxlvl;
+    NSString *auxexp = [NSString stringWithFormat:@"%d", [[Pet sharedInstance] showExp]];
+    self.labelExp.text = auxexp;
+    self.progressEnergia.progress = [[Pet sharedInstance] showEnergy];
+    //imagen
+    [self asignoImagenLoad_type];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -424,7 +436,7 @@
     }];
 }
 
-#pragma mark - Show
+#pragma mark - Show // SavedataLocal
 -(void)showLvlUp
 {
     self.Current = [[Pet sharedInstance] showLvl];
@@ -439,6 +451,7 @@
     
     //SAVEDATA_FUNC
     [self saveGochi_POST];
+    [Storage savePet:[Pet sharedInstance]];
     //UPGRADE_VIEW
     self.labelNivel.text = [NSString stringWithFormat:@"%d",[[Pet sharedInstance] showLvl]];
     self.labelExp.text = [NSString stringWithFormat:@"%d",[[Pet sharedInstance] showExp]];

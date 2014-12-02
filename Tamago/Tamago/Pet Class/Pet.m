@@ -7,8 +7,19 @@
 //
 
 #import "Pet.h"
+#import "Storage.h"
 
 @interface Pet ()
+
+#pragma mark - LocalDEFINES
+#define KEY_NAME @"name"
+#define KEY_TYPE @"type"
+#define KEY_IMAGEN @"imagen"
+#define KEY_LEVEL @"level"
+#define KEY_EXP @"exp"
+#define KEY_CORD_LAT @"latitud"
+#define KEY_CORD_LONG @"longitud"
+#define KEY_ENERGY @"energy"
 
 @property (nonatomic) int energy;
 @property (nonatomic) int level;
@@ -29,16 +40,55 @@ NSString *const BOOL_2ND_VIEW =@"ViewControllerEnergia";
 
 @implementation Pet
 
+__strong static id _sharedObject = nil;
+
 + (instancetype) sharedInstance
 {
     static dispatch_once_t pred = 0;
-    __strong static id _sharedObject = nil;
     dispatch_once(&pred, ^
                 {
-                _sharedObject = [[self alloc] init]; });
+                    [Pet loadData];
+                    if(_sharedObject==nil)
+                        _sharedObject= [[self alloc] init];
+                });
     return _sharedObject;
 }
 
++(void) loadData
+{
+    _sharedObject = [Storage loadPet];
+}
+
+#pragma mark - Init/EncodeOBJ
+- (id) initWithCoder: (NSCoder *)coder
+{
+    if (self = [super init])
+    {
+        [self setName: [coder decodeObjectForKey:KEY_NAME]];
+        [self setType: [coder decodeIntForKey:KEY_TYPE]];
+        [self setImagen: [coder decodeObjectForKey:KEY_IMAGEN]];
+        [self setLevel: [coder decodeIntForKey:KEY_LEVEL]];
+        [self setLatitud: [coder decodeFloatForKey: KEY_CORD_LAT]];
+        [self setLongitud: [coder decodeFloatForKey:KEY_CORD_LONG]];
+         self.energy = [coder decodeIntForKey:KEY_ENERGY];
+         self.exp = [coder decodeIntForKey: KEY_EXP];
+    }
+    return self;
+}
+
+- (void) encodeWithCoder: (NSCoder *)coder
+{
+    [coder encodeObject: self.name forKey:KEY_NAME];
+    [coder encodeInt: self.type forKey:KEY_TYPE];
+    [coder encodeObject:self.imagen forKey:KEY_IMAGEN];
+    [coder encodeInt: self.level forKey:KEY_LEVEL];
+    [coder encodeFloat:self.latitud forKey:KEY_CORD_LAT];
+    [coder encodeFloat:self.longitud forKey:KEY_CORD_LONG];
+    [coder encodeInt:self.energy forKey:KEY_ENERGY];
+    [coder encodeInt:self.exp forKey:KEY_EXP];
+}
+
+#pragma mark - ConstCustom
 -(instancetype) initWIthNAME:(NSString *)name andType:(mascotaTypes) tipo andLevel:(int) nivel andCode: (NSString*) codigo andLat:(float) latitud andLon:(float)longitud
 {
     self = [super init];
@@ -69,6 +119,7 @@ NSString *const BOOL_2ND_VIEW =@"ViewControllerEnergia";
     return self;
 }
 
+#pragma mark - petActions
 -(void) timeToEat
 {
     self.energy +=50;
@@ -100,6 +151,7 @@ NSString *const BOOL_2ND_VIEW =@"ViewControllerEnergia";
     }
 }
 
+#pragma mark - Metodos horribles
 -(BOOL) valEjercitar
 {
     return self.energy > 0;
@@ -109,11 +161,6 @@ NSString *const BOOL_2ND_VIEW =@"ViewControllerEnergia";
 {
     self.exprequired = 100*(int)pow(self.level,2);
     NSLog(@"req: %d",self.exprequired);
-}
-
--(void) getLvl1
-{
-    self.level =1;
 }
 
 -(int) showLvl
@@ -131,6 +178,7 @@ NSString *const BOOL_2ND_VIEW =@"ViewControllerEnergia";
     return self.exp;
 }
 
+#pragma mark - Parseo
 -(NSDictionary*)fillDictionary
 {
     self.POST = [NSDictionary dictionaryWithObjectsAndKeys:

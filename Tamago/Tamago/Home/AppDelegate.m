@@ -12,6 +12,7 @@
 #import "ViewControllerEnergia.h"
 #import <Parse/Parse.h>
 #import "Pet.h"
+#import "Storage.h"
 
 @interface AppDelegate ()
 
@@ -23,7 +24,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
     
     //BOOL_CAVERNICOLA
     if([[NSUserDefaults standardUserDefaults]boolForKey:BOOL_1ST_VIEW])
@@ -44,7 +44,6 @@
         ViewController2* home = [[ViewController2 alloc] initWithNibName:@"ViewController2" bundle:nil];
         UINavigationController* navControllerHome = [[UINavigationController alloc] initWithRootViewController:home];
         [self.window setRootViewController:navControllerHome];
-
     }
     
     self.window.backgroundColor = [UIColor whiteColor];
@@ -110,12 +109,12 @@
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    //SAVELOAD?
+    
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    [Storage savePet:[Pet sharedInstance]];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -128,7 +127,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    //SAVE?!
+    [Storage savePet:[Pet sharedInstance]];
 }
 
 
