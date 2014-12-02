@@ -60,7 +60,7 @@
   
     if (nil == annotationView)
     {
-        annotationView = [myAnot getAnnotationView];
+        annotationView = [myAnot getAnnotationView];        
     }
     else
     {

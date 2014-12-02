@@ -10,6 +10,8 @@
 
 @interface  Anotation()
 
+@property (strong, nonatomic) NSString* auxiliar;
+
 @end
 
 
@@ -33,7 +35,7 @@ see Using the Standard Annotation Views.*/
     return self;
 }
 
-
+#pragma mark - CustomAnnotation
 -(MKAnnotationView*) getAnnotationView
 
 {
@@ -41,11 +43,64 @@ see Using the Standard Annotation Views.*/
     view.enabled = YES;
     view.canShowCallout = YES;
     UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.image]];
-    imageView.frame = CGRectMake(0, 0, 50, 50);
+    imageView.frame = CGRectMake(0, 0, 40, 40);
     view.leftCalloutAccessoryView = imageView;
     view.image = [UIImage imageNamed:self.image];
-    view.bounds = CGRectMake(0, 0, 50, 50);
+    view.bounds = CGRectMake(0, 0, 40, 40);
+    
+    //Recibo el geocode
+    NSString *auxmessage = [self doRevGeocodeUsingLat:self.coordinate.latitude andLng:self.coordinate.longitude];
+    
+    //Boton de info, reflejado en AlertView.
+    if (view && (view.rightCalloutAccessoryView == nil))
+    {
+        view.canShowCallout = YES;
+        UIButton *aux =[UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        [aux addTarget:self action:@selector(bridgeData) forControlEvents:UIControlEventTouchUpInside];
+        view.rightCalloutAccessoryView = aux;
+    }
+    
     return view;
+}
+
+#pragma mark - Geocode
+-(NSString*)doRevGeocodeUsingLat:(float)lat andLng:(float)lng
+{
+    CLLocation *c = [[CLLocation alloc] initWithLatitude:lat longitude:lng];
+    CLGeocoder *revGeo = [[CLGeocoder alloc] init];
+    [revGeo reverseGeocodeLocation:c
+                 completionHandler:^(NSArray *placemarks, NSError *error)
+     {
+         if (!error && [placemarks count] > 0)
+         {
+             NSDictionary *dict = [[placemarks objectAtIndex:0] addressDictionary];
+             NSLog(@"street address: %@", [dict objectForKey:@"Street"]);
+             self.auxiliar = [dict objectForKey:@"Street"];
+         }
+         else
+         {
+             NSLog(@"ERROR: %@", error);
+         }
+     }];
+    return self.auxiliar;
+}
+
+//puente del selector.
+-(void)bridgeData
+{
+    [self showData:self.auxiliar];
+}
+
+//alertview
+-(void) showData:(NSString*)auxmessage
+{
+    UIAlertView *message;
+    message = [[UIAlertView alloc] initWithTitle:@"LOCATION!"
+                                         message:[NSString stringWithFormat:@"Your gochi is at %@",auxmessage]
+                                        delegate:nil
+                               cancelButtonTitle:@"ROGERDAT!"
+                               otherButtonTitles:nil];
+    [message show];
 }
 
 @end
