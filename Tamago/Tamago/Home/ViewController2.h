@@ -17,6 +17,4 @@ typedef void (^Failure)(NSURLSessionDataTask*, NSError*);
 
 @property (strong, nonatomic) NSMutableArray *nick;
 
-- (void) getEvents:(Success) success failure:(Failure) failure;
-
 @end

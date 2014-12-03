@@ -8,11 +8,11 @@
 
 #import "RankViewController.h"
 #import "RankTableViewCell.h"
-#import "Pet.h"
 #import "ViewControllerEnergia.h"
 #import "NetworkManage.h"
 #import "MapViewController.h"
 #import "LocationManager.h"
+#import "RankHelper.h"
 
 @interface RankViewController ()
 
@@ -36,11 +36,14 @@
     //Array
     self.arregloRank = [[NSMutableArray alloc] init];
     
+    //callGETALL
+    [self performSelector:@selector(loadDataALL) withObject:nil afterDelay:5.0f];
+    
+    //selectTable
+    self.arregloSorteado = [NSArray arrayWithArray:[[RankHelper sharedInstance] selectRanking]];
+    
     //DATArefresh
     [self.tableRank reloadData];
-    
-    //callGETALL
-    [self loadDataALL];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,6 +58,8 @@
                              parameters:nil
                                 success:[self successBlockLoadALL]
                                 failure:[self failureBlock]];
+    
+    NSLog(@"Update rank!");
 }
 
 -(Success) successBlockLoadALL
@@ -81,6 +86,12 @@
         }
         //sort b4 refresh
         self.arregloSorteado = [self sortArray];
+        
+        //actualizo a lo bestia deleteando..
+        [[RankHelper sharedInstance] deleteRanking];
+        //e insertando.
+        [[RankHelper sharedInstance] insertRanking:self.arregloRank];
+        
         //fillTable
         [weakerSelf.tableRank reloadData];
     };
@@ -134,7 +145,7 @@
     
     if([((Pet *)self.arregloSorteado[indexPath.row]).code isEqualToString:MSG_COD_PET])
     {
-        [cell setBackgroundColor:[UIColor grayColor]];
+        [cell setBackgroundColor:[UIColor blueColor]];
     }
     else
     {

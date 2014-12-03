@@ -40,6 +40,8 @@ NSString *const BOOL_2ND_VIEW =@"ViewControllerEnergia";
 
 @implementation Pet
 
+@synthesize name, imagen, type, level, latitud, longitud, exp, exprequired, energy, code, POST, GET, delegate;
+
 __strong static id _sharedObject = nil;
 
 + (instancetype) sharedInstance
@@ -91,7 +93,7 @@ __strong static id _sharedObject = nil;
 #pragma mark - ConstCustom
 -(instancetype) initWIthNAME:(NSString *)name andType:(mascotaTypes) tipo andLevel:(int) nivel andCode: (NSString*) codigo andLat:(float) latitud andLon:(float)longitud
 {
-    self = [super init];
+    self = [[RankHelper sharedInstance] allocPet];
     if(self)
     {
         self.code = codigo;

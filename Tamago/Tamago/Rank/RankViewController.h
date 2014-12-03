@@ -10,6 +10,7 @@
 #import "RankTableViewCell.h"
 #import "Pet.h"
 
+
 @interface RankViewController : UIViewController <UITableViewDataSource, RankTableViewCelldelegate>
 
 @property(strong, nonatomic) NSMutableArray *arregloRank;

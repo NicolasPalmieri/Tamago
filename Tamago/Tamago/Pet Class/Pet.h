@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
-#import <CoreData/CoreData.h>
+#import "RankHelper.h"
+
 
 @protocol Petdelegate <NSObject>
 
@@ -27,7 +28,7 @@ extern NSString *const MSG_COD_PET;
 extern NSString *const BOOL_1ST_VIEW;
 extern NSString *const BOOL_2ND_VIEW;
 
-@interface Pet : NSObject <NSCoding>
+@interface Pet : NSManagedObject <NSCoding>
 
 typedef enum
 {
@@ -57,7 +58,6 @@ typedef enum
 -(void) timeToExercise;
 -(BOOL) valEjercitar;
 -(void) calcularExpLvl;
--(void) getLvl1;
 -(int) showLvl;
 -(NSDictionary*)fillDictionary;
 -(void)fillPet: (NSDictionary*) dic;

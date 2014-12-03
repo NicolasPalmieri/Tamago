@@ -31,7 +31,7 @@
 		374CEBBA1A2F609500BE1D94 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374CEBB91A2F609500BE1D94 /* CoreData.framework */; };
 		374CEBBE1A2F615C00BE1D94 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 374CEBBC1A2F615C00BE1D94 /* Model.xcdatamodeld */; };
 		374CEBC11A2F625B00BE1D94 /* DataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 374CEBC01A2F625B00BE1D94 /* DataHelper.m */; };
-		374CEBC51A2F63E400BE1D94 /* DataRanking.m in Sources */ = {isa = PBXBuildFile; fileRef = 374CEBC41A2F63E400BE1D94 /* DataRanking.m */; };
+		374CEBC81A2F895200BE1D94 /* RankHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 374CEBC71A2F895200BE1D94 /* RankHelper.m */; };
 		3773F1BC1A28C15300501644 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3773F1BB1A28C15300501644 /* AudioToolbox.framework */; };
 		3773F1BE1A28C15D00501644 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3773F1BD1A28C15D00501644 /* CFNetwork.framework */; };
 		3773F1C01A28C16800501644 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3773F1BF1A28C16800501644 /* CoreGraphics.framework */; };
@@ -123,8 +123,8 @@
 		374CEBBD1A2F615C00BE1D94 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		374CEBBF1A2F625B00BE1D94 /* DataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHelper.h; sourceTree = "<group>"; };
 		374CEBC01A2F625B00BE1D94 /* DataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHelper.m; sourceTree = "<group>"; };
-		374CEBC31A2F63E400BE1D94 /* DataRanking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataRanking.h; sourceTree = "<group>"; };
-		374CEBC41A2F63E400BE1D94 /* DataRanking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataRanking.m; sourceTree = "<group>"; };
+		374CEBC61A2F895200BE1D94 /* RankHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankHelper.h; sourceTree = "<group>"; };
+		374CEBC71A2F895200BE1D94 /* RankHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankHelper.m; sourceTree = "<group>"; };
 		3773F1B11A28C02B00501644 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../parse-library-1/Bolts.framework"; sourceTree = "<group>"; };
 		3773F1B21A28C02B00501644 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../parse-library-1/Parse.framework"; sourceTree = "<group>"; };
 		3773F1BB1A28C15300501644 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -323,7 +323,6 @@
 				3743D9291A1BE4A700BE6B15 /* AppDelegate.h */,
 				3743D92A1A1BE4A700BE6B15 /* AppDelegate.m */,
 				37EFCB701A237AF10075FAC4 /* Pet */,
-				374CEBC21A2F633A00BE1D94 /* Ranking */,
 				3708E7991A2CB5F000A6EB55 /* Map */,
 				37BFA73E1A2A038F00C3540A /* Rank */,
 				3743D9281A1BE4A700BE6B15 /* Intro */,
@@ -416,15 +415,6 @@
 			name = DataModel;
 			sourceTree = "<group>";
 		};
-		374CEBC21A2F633A00BE1D94 /* Ranking */ = {
-			isa = PBXGroup;
-			children = (
-				374CEBC31A2F63E400BE1D94 /* DataRanking.h */,
-				374CEBC41A2F63E400BE1D94 /* DataRanking.m */,
-			);
-			name = Ranking;
-			sourceTree = "<group>";
-		};
 		377BCAF71A26589A0049B94E /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -505,6 +495,8 @@
 				37BFA7401A2A03CA00C3540A /* RankViewController.m */,
 				37BFA7411A2A03CA00C3540A /* RankViewController.xib */,
 				37BFA7441A2A04E800C3540A /* Cell Custom */,
+				374CEBC61A2F895200BE1D94 /* RankHelper.h */,
+				374CEBC71A2F895200BE1D94 /* RankHelper.m */,
 			);
 			name = Rank;
 			sourceTree = "<group>";
@@ -664,7 +656,6 @@
 				377BCB2C1A26593B0049B94E /* UIProgressView+AFNetworking.m in Sources */,
 				377BCB291A26593B0049B94E /* UIAlertView+AFNetworking.m in Sources */,
 				377BCB271A26593B0049B94E /* AFNetworkActivityIndicatorManager.m in Sources */,
-				374CEBC51A2F63E400BE1D94 /* DataRanking.m in Sources */,
 				370CA09A1A2CE26900F5730F /* LocationManager.m in Sources */,
 				374CEBC11A2F625B00BE1D94 /* DataHelper.m in Sources */,
 				377BCB1F1A26593B0049B94E /* AFHTTPRequestOperationManager.m in Sources */,
@@ -684,6 +675,7 @@
 				374CEBBE1A2F615C00BE1D94 /* Model.xcdatamodeld in Sources */,
 				3743D9351A1BE4DA00BE6B15 /* ViewController3.m in Sources */,
 				371B4A601A1E5AEC007C0252 /* ComidaViewController.m in Sources */,
+				374CEBC81A2F895200BE1D94 /* RankHelper.m in Sources */,
 				377BCB241A26593B0049B94E /* AFURLRequestSerialization.m in Sources */,
 				377BCB2D1A26593B0049B94E /* UIRefreshControl+AFNetworking.m in Sources */,
 				374CEBB81A2E515F00BE1D94 /* Storage.m in Sources */,

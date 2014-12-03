@@ -16,6 +16,4 @@
 @property (strong, nonatomic) CLLocation *cordinate;
 @property (strong, nonatomic) Pet *mascota;
 
-- (instancetype)initWithPet:(Pet*)Pet;
-
 @end

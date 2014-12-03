@@ -17,5 +17,6 @@
 
 - (NSURL *)applicationDocumentsDirectory;
 
++(instancetype) sharedInstance;
 
 @end
