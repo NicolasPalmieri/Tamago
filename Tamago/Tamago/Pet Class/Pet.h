@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
-
+#import <CoreData/CoreData.h>
 
 @protocol Petdelegate <NSObject>
 
