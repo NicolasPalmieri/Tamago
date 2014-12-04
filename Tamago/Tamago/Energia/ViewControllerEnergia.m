@@ -148,7 +148,7 @@
     self.labelNivel.text = auxlvl;
     NSString *auxexp = [NSString stringWithFormat:@"%d", [[Pet sharedInstance] showExp]];
     self.labelExp.text = auxexp;
-    self.progressEnergia.progress = [[Pet sharedInstance] showEnergy];
+    self.progressEnergia.progress = [[Pet sharedInstance] showEnergy]/100;
     //imagen
     [self asignoImagenLoad_type];
 }
@@ -283,7 +283,7 @@
         weakerSelf.labelNivel.text = auxlvl;
         NSString *auxexp = [NSString stringWithFormat:@"%d", [[Pet sharedInstance] showExp]];
         weakerSelf.labelExp.text = auxexp;
-        weakerSelf.progressEnergia.progress = [[Pet sharedInstance] showEnergy];
+        weakerSelf.progressEnergia.progress = [[Pet sharedInstance] showEnergy]/100;
         //imagen
         [weakerSelf asignoImagenLoad_type];
     };
