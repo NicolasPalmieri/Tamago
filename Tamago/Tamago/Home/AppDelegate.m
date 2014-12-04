@@ -10,9 +10,11 @@
 #import "ViewController2.h"
 #import "ViewController3.h"
 #import "ViewControllerEnergia.h"
+#import "VisitaViewController.h"
 #import <Parse/Parse.h>
 #import "Pet.h"
 #import "Storage.h"
+
 
 @interface AppDelegate ()
 
@@ -104,6 +106,35 @@
                                         delegate:nil
                                cancelButtonTitle:@"F*CK!"
                                otherButtonTitles:nil];
+}
+
+//openURL
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+
+{
+    NSString *value = [[NSString alloc] init];
+    
+    NSArray* parameters = [url.absoluteString componentsSeparatedByString:@"//"];
+    if([parameters count] != 2)
+    {
+        return NO; //This does not have parameters but should.
+    }
+    
+    NSString* parametersAsString = [parameters objectAtIndex:1];
+    for(NSString* param in [parametersAsString componentsSeparatedByString:@"&"])
+    {
+        NSArray* keyValue = [param componentsSeparatedByString:@"="];
+        NSString* key = [keyValue objectAtIndex:0];
+        value = [keyValue objectAtIndex:1];
+        NSLog(@"Key: %@ / Value: %@", key, value);
+    }
+    
+    //llamo a la view, code por parametro.
+    VisitaViewController *myView = [[VisitaViewController alloc] initWithNibName:@"VisitaViewController" bundle:[NSBundle mainBundle] andCode:value];
+    UINavigationController* navControllerHome = [[UINavigationController alloc] initWithRootViewController:myView];
+    [self.window setRootViewController:navControllerHome];
+    
+    return YES;
 }
 
 

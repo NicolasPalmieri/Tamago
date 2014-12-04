@@ -150,7 +150,7 @@
     self.labelExp.text = auxexp;
     self.progressEnergia.progress = [[Pet sharedInstance] showEnergy]/100;
     //imagen
-    [self asignoImagenLoad_type];
+    [self asignoImagenLoadtype];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -285,7 +285,7 @@
         weakerSelf.labelExp.text = auxexp;
         weakerSelf.progressEnergia.progress = [[Pet sharedInstance] showEnergy]/100;
         //imagen
-        [weakerSelf asignoImagenLoad_type];
+        [weakerSelf asignoImagenLoadtype];
     };
 }
 
@@ -297,7 +297,7 @@
     };
 }
 
--(void) asignoImagenLoad_type
+-(void) asignoImagenLoadtype
 {
     switch ([Pet sharedInstance].type)
     {

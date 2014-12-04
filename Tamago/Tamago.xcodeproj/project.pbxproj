@@ -43,6 +43,8 @@
 		3773F1CE1A28C20000501644 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3773F1CD1A28C20000501644 /* SystemConfiguration.framework */; };
 		3773F1CF1A28C9B400501644 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3773F1B11A28C02B00501644 /* Bolts.framework */; };
 		3773F1D01A28C9B400501644 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3773F1B21A28C02B00501644 /* Parse.framework */; };
+		377701421A30DD5A005A28E2 /* VisitaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 377701401A30DD5A005A28E2 /* VisitaViewController.m */; };
+		377701431A30DD5A005A28E2 /* VisitaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 377701411A30DD5A005A28E2 /* VisitaViewController.xib */; };
 		377BCB1E1A26593B0049B94E /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 377BCAFA1A26593B0049B94E /* AFHTTPRequestOperation.m */; };
 		377BCB1F1A26593B0049B94E /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 377BCAFC1A26593B0049B94E /* AFHTTPRequestOperationManager.m */; };
 		377BCB201A26593B0049B94E /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 377BCAFE1A26593B0049B94E /* AFHTTPSessionManager.m */; };
@@ -136,6 +138,9 @@
 		3773F1C71A28C1A500501644 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3773F1C91A28C1F000501644 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		3773F1CD1A28C20000501644 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3777013F1A30DD5A005A28E2 /* VisitaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VisitaViewController.h; path = Visita/VisitaViewController.h; sourceTree = "<group>"; };
+		377701401A30DD5A005A28E2 /* VisitaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VisitaViewController.m; path = Visita/VisitaViewController.m; sourceTree = "<group>"; };
+		377701411A30DD5A005A28E2 /* VisitaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VisitaViewController.xib; path = Visita/VisitaViewController.xib; sourceTree = "<group>"; };
 		377BCAF91A26593B0049B94E /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		377BCAFA1A26593B0049B94E /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		377BCAFB1A26593B0049B94E /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -320,6 +325,7 @@
 		3743D7E31A1BCA3B00BE6B15 /* Tamago */ = {
 			isa = PBXGroup;
 			children = (
+				3777013E1A30DD2C005A28E2 /* VisitandoPets */,
 				3743D9291A1BE4A700BE6B15 /* AppDelegate.h */,
 				3743D92A1A1BE4A700BE6B15 /* AppDelegate.m */,
 				37EFCB701A237AF10075FAC4 /* Pet */,
@@ -413,6 +419,16 @@
 				374CEBC01A2F625B00BE1D94 /* DataHelper.m */,
 			);
 			name = DataModel;
+			sourceTree = "<group>";
+		};
+		3777013E1A30DD2C005A28E2 /* VisitandoPets */ = {
+			isa = PBXGroup;
+			children = (
+				3777013F1A30DD5A005A28E2 /* VisitaViewController.h */,
+				377701401A30DD5A005A28E2 /* VisitaViewController.m */,
+				377701411A30DD5A005A28E2 /* VisitaViewController.xib */,
+			);
+			name = VisitandoPets;
 			sourceTree = "<group>";
 		};
 		377BCAF71A26589A0049B94E /* AFNetworking */ = {
@@ -621,6 +637,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				377701431A30DD5A005A28E2 /* VisitaViewController.xib in Resources */,
 				3743D93C1A1BE4F500BE6B15 /* ViewControllerEnergia.xib in Resources */,
 				37BFA7491A2A051700C3540A /* RankTableViewCell.xib in Resources */,
 				3743D9301A1BE4A700BE6B15 /* ViewController2.xib in Resources */,
@@ -655,6 +672,7 @@
 				3708E7A21A2CBBC800A6EB55 /* Anotation.m in Sources */,
 				377BCB2C1A26593B0049B94E /* UIProgressView+AFNetworking.m in Sources */,
 				377BCB291A26593B0049B94E /* UIAlertView+AFNetworking.m in Sources */,
+				377701421A30DD5A005A28E2 /* VisitaViewController.m in Sources */,
 				377BCB271A26593B0049B94E /* AFNetworkActivityIndicatorManager.m in Sources */,
 				370CA09A1A2CE26900F5730F /* LocationManager.m in Sources */,
 				374CEBC11A2F625B00BE1D94 /* DataHelper.m in Sources */,
