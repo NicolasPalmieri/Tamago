@@ -109,25 +109,16 @@
 }
 
 //openURL
+//- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return YES;
+}
+
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 
 {
-    NSString *value = [[NSString alloc] init];
-    
-    NSArray* parameters = [url.absoluteString componentsSeparatedByString:@"//"];
-    if([parameters count] != 2)
-    {
-        return NO; //This does not have parameters but should.
-    }
-    
-    NSString* parametersAsString = [parameters objectAtIndex:1];
-    for(NSString* param in [parametersAsString componentsSeparatedByString:@"&"])
-    {
-        NSArray* keyValue = [param componentsSeparatedByString:@"="];
-        NSString* key = [keyValue objectAtIndex:0];
-        value = [keyValue objectAtIndex:1];
-        NSLog(@"Key: %@ / Value: %@", key, value);
-    }
+    //url lastPathComponent
+    NSString *value = [url lastPathComponent];
     
     //llamo a la view, code por parametro.
     VisitaViewController *myView = [[VisitaViewController alloc] initWithNibName:@"VisitaViewController" bundle:[NSBundle mainBundle] andCode:value];

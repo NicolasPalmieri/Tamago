@@ -140,7 +140,7 @@
     [self.manager startUpdate];
     
     //ServicioLOAD disable
-    [self.btnData setEnabled:NO];
+    [self.btnData setEnabled:YES];
     
     //actualizacion view LoadRigido
     self.labelNameENergy.text = [Pet sharedInstance].name;

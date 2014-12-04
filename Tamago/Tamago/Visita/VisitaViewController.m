@@ -68,19 +68,16 @@
     return ^(NSURLSessionDataTask *task, id responseObject)
     {
         NSLog(@"%@",responseObject);
-        [[Pet sharedInstance] fillPet:responseObject];
+        
         //actualizacion view //weakerSelf.
-        if([[Pet sharedInstance].code isEqualToString: weakerSelf.code])
-        {
-            weakerSelf.lblCode.text = weakerSelf.code;
-            weakerSelf.lblNombre.text = [Pet sharedInstance].name;
-            NSString *auxlvl = [NSString stringWithFormat:@"%d", [[Pet sharedInstance] showLvl]];
-            weakerSelf.lblLevel.text = auxlvl;
-            NSString *auxenergy = [NSString stringWithFormat:@"%d", [[Pet sharedInstance] showEnergy]];
-            weakerSelf.lblEnergy.text = auxenergy;
-            //imagen
-            [weakerSelf asignoImagenLoadtype];
-        }
+        weakerSelf.lblCode.text = weakerSelf.code;
+        weakerSelf.lblNombre.text = [NSString stringWithFormat:@"%@", [responseObject objectForKey:@"name"]];
+        NSString *auxlvl = [NSString stringWithFormat:@"%@", [responseObject objectForKey:@"level"]];
+        weakerSelf.lblLevel.text = auxlvl;
+        NSString *auxenergy = [NSString stringWithFormat:@"%@", [responseObject objectForKey:@"energy"]];
+        weakerSelf.lblEnergy.text = auxenergy;
+        //imagen
+        [weakerSelf asignoImagenLoadtype];
     };
 }
 
