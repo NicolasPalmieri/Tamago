@@ -63,5 +63,7 @@ typedef enum
 -(void)fillPet: (NSDictionary*) dic;
 -(int) showEnergy;
 -(int) showExp;
+-(void) setEnergia:(int)energia;
+-(void) setExperience:(int) expe;
 
 @end

@@ -180,6 +180,16 @@ __strong static id _sharedObject = nil;
     return self.exp;
 }
 
+-(void) setEnergia:(int)energia
+{
+    self.energy = energia;
+}
+
+-(void) setExperience:(int) expe
+{
+    self.exp = expe;
+}
+
 #pragma mark - Parseo
 -(NSDictionary*)fillDictionary
 {

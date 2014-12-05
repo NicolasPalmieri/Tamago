@@ -32,6 +32,7 @@
 		374CEBBE1A2F615C00BE1D94 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 374CEBBC1A2F615C00BE1D94 /* Model.xcdatamodeld */; };
 		374CEBC11A2F625B00BE1D94 /* DataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 374CEBC01A2F625B00BE1D94 /* DataHelper.m */; };
 		374CEBC81A2F895200BE1D94 /* RankHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 374CEBC71A2F895200BE1D94 /* RankHelper.m */; };
+		374DECEE1A31F265004C23F9 /* Test123probando.m in Sources */ = {isa = PBXBuildFile; fileRef = 374DECED1A31F265004C23F9 /* Test123probando.m */; };
 		3773F1BC1A28C15300501644 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3773F1BB1A28C15300501644 /* AudioToolbox.framework */; };
 		3773F1BE1A28C15D00501644 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3773F1BD1A28C15D00501644 /* CFNetwork.framework */; };
 		3773F1C01A28C16800501644 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3773F1BF1A28C16800501644 /* CoreGraphics.framework */; };
@@ -127,6 +128,7 @@
 		374CEBC01A2F625B00BE1D94 /* DataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHelper.m; sourceTree = "<group>"; };
 		374CEBC61A2F895200BE1D94 /* RankHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankHelper.h; sourceTree = "<group>"; };
 		374CEBC71A2F895200BE1D94 /* RankHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankHelper.m; sourceTree = "<group>"; };
+		374DECED1A31F265004C23F9 /* Test123probando.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test123probando.m; sourceTree = "<group>"; };
 		3773F1B11A28C02B00501644 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../parse-library-1/Bolts.framework"; sourceTree = "<group>"; };
 		3773F1B21A28C02B00501644 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../parse-library-1/Parse.framework"; sourceTree = "<group>"; };
 		3773F1BB1A28C15300501644 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -347,6 +349,7 @@
 			children = (
 				3743D8001A1BCA3B00BE6B15 /* TamagoTests.m */,
 				3743D7FE1A1BCA3B00BE6B15 /* Supporting Files */,
+				374DECED1A31F265004C23F9 /* Test123probando.m */,
 			);
 			path = TamagoTests;
 			sourceTree = "<group>";
@@ -712,6 +715,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3743D8011A1BCA3B00BE6B15 /* TamagoTests.m in Sources */,
+				374DECEE1A31F265004C23F9 /* Test123probando.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
