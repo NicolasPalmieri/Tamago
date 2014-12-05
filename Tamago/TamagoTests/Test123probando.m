@@ -45,16 +45,24 @@
     int auxilio = 215;
     [mascotest timeToExercise];
     XCTAssertTrue([mascotest showExp] == auxilio, @"NOT TODAY, DIRTBAG!");
+    NSLog(@"VOILA!");
 }
 
 -(void) test3Lvlup
 {
-
+    Pet *mascotest = [Pet sharedInstance];
+    [mascotest setLevelhardcode:1];
+    [mascotest setExperience:200];
+    [mascotest setRequiredExperience:210];
+    int auxilio = 215;
+    [mascotest timeToExercise];
+    XCTAssertTrue([mascotest showLvl] == 2 && [mascotest showExp] == auxilio, @"HOLY SHIET!");
+    NSLog(@"LVLUP!");
 }
 
 -(void) test4ServiceGET1
 {
-
+    
 }
 
 -(void) test5ServiceGETALL

@@ -190,6 +190,16 @@ __strong static id _sharedObject = nil;
     self.exp = expe;
 }
 
+-(void) setRequiredExperience:(int) required
+{
+    self.exprequired = required;
+}
+
+-(void) setLevelhardcode:(int) leveleando
+{
+    self.level = leveleando;
+}
+
 #pragma mark - Parseo
 -(NSDictionary*)fillDictionary
 {

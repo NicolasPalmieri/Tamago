@@ -65,5 +65,7 @@ typedef enum
 -(int) showExp;
 -(void) setEnergia:(int)energia;
 -(void) setExperience:(int) expe;
+-(void) setRequiredExperience:(int) required;
+-(void) setLevelhardcode:(int) leveleando;
 
 @end

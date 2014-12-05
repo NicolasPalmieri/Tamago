@@ -34,6 +34,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *labelExp;
 @property (strong, nonatomic) IBOutlet UIButton *btnNotification;
 @property (strong, nonatomic) IBOutlet UIButton *btnData;
+@property (strong, nonatomic) IBOutlet UIImageView *imgAura;
 
 #pragma mark - Properties
 @property (strong, nonatomic) MFMailComposeViewController *correo;
@@ -151,6 +152,9 @@
     self.progressEnergia.progress = [[Pet sharedInstance] showEnergy]/100;
     //imagen
     [self asignoImagenLoadtype];
+    
+    //AURA
+    [self auraPichaku];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -403,6 +407,17 @@
     [self.ImageViewProfileEnergia startAnimating];
 }
 
+-(void) auraPichaku
+{
+    NSArray *imagenesArrayAura = @[[UIImage imageNamed:@"Super-1"],
+                                   [UIImage imageNamed:@"Super-2"],
+                                   [UIImage imageNamed:@"Super-3"]];
+    
+    [self.imgAura setAnimationImages:imagenesArrayAura];
+    [self.imgAura setAnimationDuration:0.2f];
+    [self.imgAura setAnimationRepeatCount:0];
+    [self.imgAura startAnimating];
+}
 
 -(void) moreProgress:(int) value
 {
