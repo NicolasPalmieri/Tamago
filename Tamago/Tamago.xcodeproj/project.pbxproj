@@ -33,6 +33,13 @@
 		374CEBC11A2F625B00BE1D94 /* DataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 374CEBC01A2F625B00BE1D94 /* DataHelper.m */; };
 		374CEBC81A2F895200BE1D94 /* RankHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 374CEBC71A2F895200BE1D94 /* RankHelper.m */; };
 		374DECEE1A31F265004C23F9 /* Test123probando.m in Sources */ = {isa = PBXBuildFile; fileRef = 374DECED1A31F265004C23F9 /* Test123probando.m */; };
+		3751A2811A333A3B00ED318F /* ContactosTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3751A27F1A333A3B00ED318F /* ContactosTableViewCell.m */; };
+		3751A2821A333A3B00ED318F /* ContactosTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3751A2801A333A3B00ED318F /* ContactosTableViewCell.xib */; };
+		3751A2871A333AE300ED318F /* ContactosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3751A2851A333AE300ED318F /* ContactosViewController.m */; };
+		3751A2881A333AE300ED318F /* ContactosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3751A2861A333AE300ED318F /* ContactosViewController.xib */; };
+		3751A28B1A333BA000ED318F /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 3751A28A1A333BA000ED318F /* Contact.m */; };
+		3751A28D1A333CE200ED318F /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3751A28C1A333CE200ED318F /* AddressBook.framework */; };
+		3751A2901A33561400ED318F /* ContactManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3751A28F1A33561400ED318F /* ContactManager.m */; };
 		3773F1BC1A28C15300501644 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3773F1BB1A28C15300501644 /* AudioToolbox.framework */; };
 		3773F1BE1A28C15D00501644 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3773F1BD1A28C15D00501644 /* CFNetwork.framework */; };
 		3773F1C01A28C16800501644 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3773F1BF1A28C16800501644 /* CoreGraphics.framework */; };
@@ -129,6 +136,17 @@
 		374CEBC61A2F895200BE1D94 /* RankHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankHelper.h; sourceTree = "<group>"; };
 		374CEBC71A2F895200BE1D94 /* RankHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankHelper.m; sourceTree = "<group>"; };
 		374DECED1A31F265004C23F9 /* Test123probando.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test123probando.m; sourceTree = "<group>"; };
+		3751A27E1A333A3B00ED318F /* ContactosTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactosTableViewCell.h; path = Contactos/ContactosTableViewCell.h; sourceTree = "<group>"; };
+		3751A27F1A333A3B00ED318F /* ContactosTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactosTableViewCell.m; path = Contactos/ContactosTableViewCell.m; sourceTree = "<group>"; };
+		3751A2801A333A3B00ED318F /* ContactosTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactosTableViewCell.xib; path = Contactos/ContactosTableViewCell.xib; sourceTree = "<group>"; };
+		3751A2841A333AE300ED318F /* ContactosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactosViewController.h; path = Contactos/ContactosViewController.h; sourceTree = "<group>"; };
+		3751A2851A333AE300ED318F /* ContactosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactosViewController.m; path = Contactos/ContactosViewController.m; sourceTree = "<group>"; };
+		3751A2861A333AE300ED318F /* ContactosViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactosViewController.xib; path = Contactos/ContactosViewController.xib; sourceTree = "<group>"; };
+		3751A2891A333BA000ED318F /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Contact.h; path = Contactos/Contact.h; sourceTree = "<group>"; };
+		3751A28A1A333BA000ED318F /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Contact.m; path = Contactos/Contact.m; sourceTree = "<group>"; };
+		3751A28C1A333CE200ED318F /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		3751A28E1A33561400ED318F /* ContactManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactManager.h; path = Contactos/ContactManager.h; sourceTree = "<group>"; };
+		3751A28F1A33561400ED318F /* ContactManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactManager.m; path = Contactos/ContactManager.m; sourceTree = "<group>"; };
 		3773F1B11A28C02B00501644 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../parse-library-1/Bolts.framework"; sourceTree = "<group>"; };
 		3773F1B21A28C02B00501644 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../parse-library-1/Parse.framework"; sourceTree = "<group>"; };
 		3773F1BB1A28C15300501644 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -202,6 +220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3751A28D1A333CE200ED318F /* AddressBook.framework in Frameworks */,
 				374CEBBA1A2F609500BE1D94 /* CoreData.framework in Frameworks */,
 				3708E7971A2CB49A00A6EB55 /* MapKit.framework in Frameworks */,
 				37E3608F1A28EB930089F470 /* MessageUI.framework in Frameworks */,
@@ -232,6 +251,7 @@
 		3708E7981A2CB4D900A6EB55 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3751A28C1A333CE200ED318F /* AddressBook.framework */,
 				374CEBB91A2F609500BE1D94 /* CoreData.framework */,
 				3708E7961A2CB49A00A6EB55 /* MapKit.framework */,
 				37E3608E1A28EB930089F470 /* MessageUI.framework */,
@@ -327,9 +347,10 @@
 		3743D7E31A1BCA3B00BE6B15 /* Tamago */ = {
 			isa = PBXGroup;
 			children = (
-				3777013E1A30DD2C005A28E2 /* VisitandoPets */,
 				3743D9291A1BE4A700BE6B15 /* AppDelegate.h */,
 				3743D92A1A1BE4A700BE6B15 /* AppDelegate.m */,
+				3751A27D1A3339E700ED318F /* Contactos */,
+				3777013E1A30DD2C005A28E2 /* VisitandoPets */,
 				37EFCB701A237AF10075FAC4 /* Pet */,
 				3708E7991A2CB5F000A6EB55 /* Map */,
 				37BFA73E1A2A038F00C3540A /* Rank */,
@@ -422,6 +443,31 @@
 				374CEBC01A2F625B00BE1D94 /* DataHelper.m */,
 			);
 			name = DataModel;
+			sourceTree = "<group>";
+		};
+		3751A27D1A3339E700ED318F /* Contactos */ = {
+			isa = PBXGroup;
+			children = (
+				3751A2891A333BA000ED318F /* Contact.h */,
+				3751A28A1A333BA000ED318F /* Contact.m */,
+				3751A28E1A33561400ED318F /* ContactManager.h */,
+				3751A28F1A33561400ED318F /* ContactManager.m */,
+				3751A2841A333AE300ED318F /* ContactosViewController.h */,
+				3751A2851A333AE300ED318F /* ContactosViewController.m */,
+				3751A2861A333AE300ED318F /* ContactosViewController.xib */,
+				3751A2831A333AB900ED318F /* Cell 2btn */,
+			);
+			name = Contactos;
+			sourceTree = "<group>";
+		};
+		3751A2831A333AB900ED318F /* Cell 2btn */ = {
+			isa = PBXGroup;
+			children = (
+				3751A27E1A333A3B00ED318F /* ContactosTableViewCell.h */,
+				3751A27F1A333A3B00ED318F /* ContactosTableViewCell.m */,
+				3751A2801A333A3B00ED318F /* ContactosTableViewCell.xib */,
+			);
+			name = "Cell 2btn";
 			sourceTree = "<group>";
 		};
 		3777013E1A30DD2C005A28E2 /* VisitandoPets */ = {
@@ -648,8 +694,10 @@
 				3743D7F51A1BCA3B00BE6B15 /* LaunchScreen.xib in Resources */,
 				3708E79E1A2CB6C800A6EB55 /* MapViewController.xib in Resources */,
 				3743D9361A1BE4DA00BE6B15 /* ViewController3.xib in Resources */,
+				3751A2821A333A3B00ED318F /* ContactosTableViewCell.xib in Resources */,
 				3743D7F21A1BCA3B00BE6B15 /* Images.xcassets in Resources */,
 				371B4A6B1A1E6D21007C0252 /* CellTableViewCell.xib in Resources */,
+				3751A2881A333AE300ED318F /* ContactosViewController.xib in Resources */,
 				371B4A611A1E5AEC007C0252 /* ComidaViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -672,6 +720,7 @@
 				377F7CE81A1CBF340031F6A2 /* main.m in Sources */,
 				377BCB221A26593B0049B94E /* AFSecurityPolicy.m in Sources */,
 				371B4A6A1A1E6D21007C0252 /* CellTableViewCell.m in Sources */,
+				3751A28B1A333BA000ED318F /* Contact.m in Sources */,
 				3708E7A21A2CBBC800A6EB55 /* Anotation.m in Sources */,
 				377BCB2C1A26593B0049B94E /* UIProgressView+AFNetworking.m in Sources */,
 				377BCB291A26593B0049B94E /* UIAlertView+AFNetworking.m in Sources */,
@@ -688,9 +737,11 @@
 				3743D92F1A1BE4A700BE6B15 /* ViewController2.m in Sources */,
 				37BFA7481A2A051700C3540A /* RankTableViewCell.m in Sources */,
 				37BFA7421A2A03CA00C3540A /* RankViewController.m in Sources */,
+				3751A2811A333A3B00ED318F /* ContactosTableViewCell.m in Sources */,
 				371B4A651A1E5B95007C0252 /* Meal.m in Sources */,
 				378576251A1FCC7600A14A10 /* ArrayConst.m in Sources */,
 				377BCB311A265A720049B94E /* NetworkManage.m in Sources */,
+				3751A2871A333AE300ED318F /* ContactosViewController.m in Sources */,
 				377BCB261A26593B0049B94E /* AFURLSessionManager.m in Sources */,
 				377BCB251A26593B0049B94E /* AFURLResponseSerialization.m in Sources */,
 				374CEBBE1A2F615C00BE1D94 /* Model.xcdatamodeld in Sources */,
@@ -705,6 +756,7 @@
 				37EFCB731A237D760075FAC4 /* Pet.m in Sources */,
 				37E360921A28EE610089F470 /* PushManager.m in Sources */,
 				3708E79D1A2CB6C800A6EB55 /* MapViewController.m in Sources */,
+				3751A2901A33561400ED318F /* ContactManager.m in Sources */,
 				377BCB1E1A26593B0049B94E /* AFHTTPRequestOperation.m in Sources */,
 				377BCB201A26593B0049B94E /* AFHTTPSessionManager.m in Sources */,
 			);
