@@ -31,8 +31,7 @@
     } else
     {
         [self.locationManager startUpdatingLocation];
-    }
-    
+    }    
 }
 
 #pragma mark - Delegate

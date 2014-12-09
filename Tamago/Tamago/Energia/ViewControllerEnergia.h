@@ -8,13 +8,24 @@
 
 #import <UIKit/UIKit.h>
 #import "FoodProtocol.h"
-#import <MessageUI/MessageUI.h>
+#import <AddressBook/AddressBook.h>
+#import "ComidaViewController.h"
+#import "ArrayConst.h"
+#import "Meal.h"
 #import "Pet.h"
+#import "NetworkManage.h"
+#import "PushManager.h"
+#import "RankViewController.h"
+#import "LocationManager.h"
+#import "MapViewController.h"
+#import "ContactosViewController.h"
+#import "Storage.h"
+
 
 typedef void (^Success)(NSURLSessionDataTask*,id);
 typedef void (^Failure)(NSURLSessionDataTask*, NSError*);
 
-@interface ViewControllerEnergia : UIViewController <FoodProtocol, MFMailComposeViewControllerDelegate, Petdelegate>
+@interface ViewControllerEnergia : UIViewController <FoodProtocol, Petdelegate>
 
 #pragma mark - Intancias
 -(instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andPetNombre: (NSString *)PetName andPetPicture: (NSString *)imagen andVarArray: (int) var;

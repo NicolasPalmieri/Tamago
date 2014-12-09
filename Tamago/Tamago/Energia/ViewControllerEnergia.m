@@ -7,20 +7,8 @@
 //
 
 #import "ViewControllerEnergia.h"
-#import "ComidaViewController.h"
-#import "ArrayConst.h"
-#import "Meal.h"
-#import "NetworkManage.h"
-#import "PushManager.h"
-#import "RankViewController.h"
-#import "LocationManager.h"
-#import "MapViewController.h"
-#import "Storage.h"
 
 @interface ViewControllerEnergia ()
-
-#pragma mark - localDef
-#define MAIL_BODY_MSG @"Buenas! Soy %@, qué tal? Quería comentarte que estuve usando la App Tamago para comerme todo y está genial. Bajatela YA!! Saludos!"
 
 #pragma mark - IBOutlet
 @property (strong, nonatomic) IBOutlet UIImageView *ImageViewProfileEnergia;
@@ -37,7 +25,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imgAura;
 
 #pragma mark - Properties
-@property (strong, nonatomic) MFMailComposeViewController *correo;
 @property (strong, nonatomic) ArrayConst *gif;
 @property (strong, nonatomic) ArrayConst *train;
 @property (strong, nonatomic) ArrayConst *cansado;
@@ -52,6 +39,7 @@
 @property (nonatomic) mascotaTypes type;
 @property (strong, nonatomic) NSMutableArray *rankArray;
 @property (strong, nonatomic) LocationManager *manager;
+
 
 @end
 
@@ -113,11 +101,12 @@
     
     //mailBtn
     UIButton *buttonREF = [UIButton buttonWithType:UIButtonTypeCustom];
-    UIImage* mail_image = [UIImage imageNamed:@"correo"];
+    UIImage* mail_image = [UIImage imageNamed:@"contact"];
     [buttonREF setBackgroundImage:mail_image forState:UIControlStateNormal];
-    [buttonREF addTarget:self action:@selector(showMail) forControlEvents:UIControlEventTouchUpInside]; //metodo
+    [buttonREF addTarget:self action:@selector(popContact) forControlEvents:UIControlEventTouchUpInside]; //metodo
     [buttonREF setShowsTouchWhenHighlighted:YES]; // brilla al touch?
-    buttonREF.frame = CGRectMake(0, 0, mail_image.size.width-20, mail_image.size.height-20); //orig_size excede navbar
+    buttonREF.frame = CGRectMake(0, 0, mail_image.size.width-150, mail_image.size.height-150);
+    //orig_size excede navbar
     UIBarButtonItem *mail =[[UIBarButtonItem alloc] initWithCustomView:buttonREF];
     self.navigationItem.rightBarButtonItem = mail; // >
 
@@ -236,6 +225,13 @@
 - (void)goback
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+-(void) popContact
+{
+    ContactosViewController *myVista = [[ContactosViewController alloc] initWithNibName:@"ContactosViewController" bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:myVista animated:YES];
 }
 
 
@@ -475,96 +471,5 @@
     
 }
 
-#pragma mark - Mail
--(void)showMail
-{
-    MFMailComposeViewController *correo = [[MFMailComposeViewController alloc] init];
-    correo.mailComposeDelegate = self;
-    
-    //Subject
-    NSString *mailSubj = [[NSString alloc] initWithFormat:@"Que app flipante"];
-    [correo setSubject:mailSubj];
-    
-    //BodyText
-    NSString *mailBody = [[NSString alloc] initWithFormat:MAIL_BODY_MSG, self.labelNameENergy.text];
-    [correo setMessageBody:mailBody isHTML:NO];
-
-    //Interface
-    [self presentViewController:correo animated:YES completion:nil];
-}
-
-- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
-{
-    UIAlertView *message;
-    switch (result)
-    {
-        case MFMailComposeResultSent:
-            
-            NSLog(@"SEND!:D");
-            message = [[UIAlertView alloc] initWithTitle:@"STATUS!"
-                                                              message:@"Message sended!"
-                                                             delegate:nil
-                                                    cancelButtonTitle:@"OKey"
-                                                    otherButtonTitles:nil];
-            [message show];
-            break;
-            
-        case MFMailComposeResultSaved:
-            
-            NSLog(@"BORRADOR!");
-            message = [[UIAlertView alloc] initWithTitle:@"STATUS!"
-                                                              message:@"Message stored!"
-                                                             delegate:nil
-                                                    cancelButtonTitle:@"OKey"
-                                                    otherButtonTitles:nil];
-            [message show];
-            break;
-            
-        case MFMailComposeResultCancelled:
-            
-            NSLog(@"CANCELED!:C");
-            message = [[UIAlertView alloc] initWithTitle:@"STATUS!"
-                                                              message:@"Message canceled!"
-                                                             delegate:nil
-                                                    cancelButtonTitle:@"OKey"
-                                                    otherButtonTitles:nil];
-            [message show];
-            break;
-            
-        case MFMailComposeResultFailed:
-            
-            NSLog(@"COMP FAILED!");
-            message = [[UIAlertView alloc] initWithTitle:@"STATUS!"
-                                                              message:@"Compose ERROR!"
-                                                             delegate:nil
-                                                    cancelButtonTitle:@"OKey"
-                                                    otherButtonTitles:nil];
-            [message show];
-            break;
-            
-        default:
-            
-            NSLog(@"ERROR DEF!");
-            message = [[UIAlertView alloc] initWithTitle:@"STATUS!"
-                                                              message:@"ERROR DEF!"
-                                                             delegate:nil
-                                                    cancelButtonTitle:@"OKey"
-                                                    otherButtonTitles:nil];
-            [message show];
-            break;
-    }
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
